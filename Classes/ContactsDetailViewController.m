@@ -10,6 +10,8 @@
 
 @implementation ContactsDetailViewController
 
+#pragma mark -
+
 /*
 // The designated initializer.  Override if you create the controller
 // programmatically and want to perform customization that is not
@@ -23,6 +25,14 @@
     return self;
 }
 */
+
+- (void)dealloc
+{
+    [super dealloc];
+}
+
+#pragma mark -
+#pragma mark UIViewController
 
 /*
 // Implement loadView to create a view hierarchy programmatically,
@@ -64,12 +74,5 @@
 	// Release any retained subviews of the main view.
 	// e.g. self.myOutlet = nil;
 }
-
-
-- (void)dealloc
-{
-    [super dealloc];
-}
-
 
 @end

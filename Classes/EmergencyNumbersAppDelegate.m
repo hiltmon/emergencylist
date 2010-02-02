@@ -16,6 +16,8 @@
 @synthesize contactsNavController;
 @synthesize model;
 
+#pragma mark -
+
 - (void)applicationDidFinishLaunching:(UIApplication *)application
 {
 	EmergencyNumbersModel *aModel = [[EmergencyNumbersModel alloc] initialize];

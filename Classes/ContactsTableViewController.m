@@ -15,6 +15,8 @@
 @synthesize contactsArray;
 @synthesize contactsDetailViewController;
 
+#pragma mark -
+
 /*
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -28,6 +30,19 @@
     return self;
 }
 */
+
+- (void)dealloc
+{
+	[contactsDetailViewController release];
+    [super dealloc];
+}
+
+#pragma mark -
+#pragma mark Action Methods
+
+
+#pragma mark -
+#pragma mark UIViewController
 
 - (void)viewDidLoad
 {
@@ -100,7 +115,8 @@
 	// e.g. self.myOutlet = nil;
 }
 
-#pragma mark Table view methods
+#pragma mark -
+#pragma mark UITableViewDataSource Protocol
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -125,7 +141,7 @@
     if (cell == nil)
 	{
         cell = [[[UITableViewCell alloc] 
-				 initWithStyle:UITableViewCellStyleDefault 
+				 initWithStyle:UITableViewCellStyleSubtitle 
 				 reuseIdentifier:CellIdentifier] 
 					autorelease];
     }
@@ -134,9 +150,14 @@
 	NSUInteger row = [indexPath row];
 	cell.textLabel.text = [[contactsArray objectAtIndex:row] 
 						   valueForKey:@"name"];
+	cell.detailTextLabel.text = [[contactsArray objectAtIndex:row] 
+								 valueForKey:@"number"];
 	
     return cell;
 }
+
+#pragma mark -
+#pragma mark UITableViewDelegate Protocol
 
 - (void)tableView:(UITableView *)tableView 
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -221,12 +242,6 @@ moveRowAtIndexPath:(NSIndexPath *)fromIndexPath
     return YES;
 }
 */
-
-- (void)dealloc
-{
-	[contactsDetailViewController release];
-    [super dealloc];
-}
 
 @end
 

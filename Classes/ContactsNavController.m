@@ -10,19 +10,29 @@
 
 @implementation ContactsNavController
 
+#pragma mark -
+
 /*
-// The designated initializer.  Override if you create the controller
-// programmatically and want to perform customization that is not
-// appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+ // The designated initializer.  Override if you create the controller
+ // programmatically and want to perform customization that is not
+ // appropriate for viewDidLoad.
+ - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+ {
+ if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])
+ {
+ // Custom initialization
+ }
+ return self;
+ }
+ */
+
+- (void)dealloc
 {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])
-	{
-        // Custom initialization
-    }
-    return self;
+    [super dealloc];
 }
-*/
+
+#pragma mark -
+#pragma mark UIViewController
 
 /*
 // Implement loadView to create a view hierarchy programmatically, 
@@ -63,11 +73,6 @@
 {
 	// Release any retained subviews of the main view.
 	// e.g. self.myOutlet = nil;
-}
-
-- (void)dealloc
-{
-    [super dealloc];
 }
 
 @end
