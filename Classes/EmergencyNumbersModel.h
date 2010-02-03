@@ -17,6 +17,6 @@
 
 @property (nonatomic, retain) NSMutableArray *contactsArray;
 
-- (id)initialize;
+//- (id)init;
 
 @end

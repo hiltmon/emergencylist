@@ -11,7 +11,10 @@
 
 @interface FavoritesViewController ()
 
-- (void)setTitle:(NSString *)title forButton:(UIButton *)button;
+- (void)setTitle:(NSString *)title 
+		andColor:(NSString *)myColor 
+	   forButton:(UIButton *)button;
+- (void)reloadData;
 
 @end
 
@@ -45,21 +48,43 @@
 }
 
 // Ugly in API, need to set the title of a button for all states
-// TODO: Add comment, color and icon
-- (void)setTitle:(NSString *)title forButton:(UIButton *)button
+// TODO: Add comment and icon
+- (void)setTitle:(NSString *)title 
+		andColor:(NSString *)myColor 
+	   forButton:(UIButton *)button
 {
+	// Set the title to be the same for ALL states
 	[button setTitle:title forState:UIControlStateNormal];
 	[button setTitle:title forState:UIControlStateHighlighted];
 	[button setTitle:title forState:UIControlStateDisabled];
 	[button setTitle:title forState:UIControlStateSelected];
+	
+	// TODO: Optimize by cacheing images
+	// Create the button backgrounds
+	[button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+	
+	NSString *backgroundImageName = 
+		[NSString stringWithFormat:@"%@Button.png", myColor];
+	UIImage *buttonBackground = [UIImage imageNamed:backgroundImageName];
+	UIImage *newImage = [buttonBackground 
+						 stretchableImageWithLeftCapWidth:12.0 
+						 topCapHeight:0.0];
+	[button setBackgroundImage:newImage 
+					   forState:UIControlStateNormal];
+	
+	// Pressed is always Gray
+	UIImage *buttonPressedBackground = [UIImage imageNamed:@"GrayButton.png"];
+	UIImage *newPressedImage = [buttonPressedBackground 
+								stretchableImageWithLeftCapWidth:12.0 
+								topCapHeight:0.0];
+	[button setBackgroundImage:newPressedImage 
+					   forState:UIControlStateHighlighted];
+	
+	// In case the parent draws a back image
+	button.backgroundColor = [UIColor clearColor];
 }
 
-#pragma mark -
-#pragma mark UIViewController
-
-// Implement viewDidLoad to do additional setup after loading the view, 
-// typically from a nib.
-- (void)viewDidLoad
+- (void)reloadData
 {
 	button1.hidden = YES;
 	button2.hidden = YES;
@@ -67,22 +92,10 @@
 	button4.hidden = YES;
 	button5.hidden = YES;
 	
-	// Testing button colors
-	[button1 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-	UIImage *buttonBackground = [UIImage imageNamed:@"RedButton.png"];
-	UIImage *newImage = [buttonBackground stretchableImageWithLeftCapWidth:12.0 topCapHeight:0.0];
-	[button1 setBackgroundImage:newImage forState:UIControlStateNormal];
-	
-	UIImage *buttonPressedBackground = [UIImage imageNamed:@"GrayButton.png"];
-	UIImage *newPressedImage = [buttonPressedBackground stretchableImageWithLeftCapWidth:12.0 topCapHeight:0.0];
-	[button1 setBackgroundImage:newPressedImage forState:UIControlStateHighlighted];
-	// In case the parent draws a back image
-	button1.backgroundColor = [UIColor clearColor];
-	
 	// Get to the data by finding the application delegate
 	EmergencyNumbersAppDelegate *appDelegate = 
-		(EmergencyNumbersAppDelegate *)
-			[[UIApplication sharedApplication] delegate];
+	(EmergencyNumbersAppDelegate *)
+	[[UIApplication sharedApplication] delegate];
 	NSMutableArray *contactsArray = appDelegate.model.contactsArray;
 	
 	// Set the buttons...
@@ -90,34 +103,63 @@
 	{
 		if ([[item valueForKey:@"button"] isEqualToString:@"1"])
 		{
-			[self setTitle:[item valueForKey:@"name"] forButton:button1];
+			[self setTitle:[item valueForKey:@"name"] 
+				  andColor:[item valueForKey:@"color"]
+				 forButton:button1];
 			button1.hidden = NO;
 		}
 		
 		if ([[item valueForKey:@"button"] isEqualToString:@"2"])
 		{
-			[self setTitle:[item valueForKey:@"name"] forButton:button2];
+			[self setTitle:[item valueForKey:@"name"]
+				  andColor:[item valueForKey:@"color"]
+				 forButton:button2];
 			button2.hidden = NO;
 		}
-			 
+		
 		if ([[item valueForKey:@"button"] isEqualToString:@"3"])
 		{
-			[self setTitle:[item valueForKey:@"name"] forButton:button3];
+			[self setTitle:[item valueForKey:@"name"]
+				  andColor:[item valueForKey:@"color"]
+				 forButton:button3];
 			button3.hidden = NO;
 		}
 		
 		if ([[item valueForKey:@"button"] isEqualToString:@"4"])
 		{
-			[self setTitle:[item valueForKey:@"name"] forButton:button4];
+			[self setTitle:[item valueForKey:@"name"] 
+				  andColor:[item valueForKey:@"color"]
+				 forButton:button4];
 			button4.hidden = NO;
 		}
 		
 		if ([[item valueForKey:@"button"] isEqualToString:@"5"])
 		{
-			[self setTitle:[item valueForKey:@"name"] forButton:button5];
+			[self setTitle:[item valueForKey:@"name"] 
+				  andColor:[item valueForKey:@"color"]
+				 forButton:button5];
 			button5.hidden = NO;
 		}
 	}
+}
+
+#pragma mark -
+#pragma mark UIViewController
+
+//  Override inherited method to automatically refresh table view's data
+//
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self reloadData];
+}
+
+// Implement viewDidLoad to do additional setup after loading the view, 
+// typically from a nib.
+- (void)viewDidLoad
+{
+	[self reloadData];
 	
 	[super viewDidLoad];
 }

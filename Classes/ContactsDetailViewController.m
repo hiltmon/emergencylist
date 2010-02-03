@@ -10,6 +10,11 @@
 
 @implementation ContactsDetailViewController
 
+@synthesize nameField;
+@synthesize numberField;
+
+@synthesize currentRecord;
+
 #pragma mark -
 
 /*
@@ -28,7 +33,46 @@
 
 - (void)dealloc
 {
+	// Clear outlets or [CALayer release] tries to release these again
+	nameField = nil;
+	numberField = nil;
+	
+	[nameField dealloc];
+	[numberField dealloc];
+
     [super dealloc];
+}
+
+#pragma mark -
+#pragma mark Action Methods
+
+- (IBAction)textFieldDoneEditing:(id)sender
+{
+	//NSLog(@"ContactsDetailViewController textFieldDoneEditing");
+	
+	// Hide the keyboard
+	[sender resignFirstResponder];
+}
+
+- (IBAction)textFieldValueChanged:(id)sender
+{
+	//NSLog(@"ContactsDetailViewController textFieldValueChanged");
+	if (sender == nameField)
+	{
+		[self.currentRecord setValue:nameField.text forKey:@"name"];
+	}
+	
+	if (sender == numberField)
+	{
+		[self.currentRecord setValue:numberField.text forKey:@"number"];
+	}
+}
+
+- (IBAction)backgroundTap:(id)sender
+{
+	// Hide the keyboard
+	[nameField resignFirstResponder];
+	[numberField resignFirstResponder];
 }
 
 #pragma mark -
@@ -42,14 +86,15 @@
 }
 */
 
-/*
 // Implement viewDidLoad to do additional setup after loading the view,
 // typically from a nib.
 - (void)viewDidLoad
 {
+	[self.nameField setText:[self.currentRecord valueForKey:@"name"]];
+	[self.numberField setText:[self.currentRecord valueForKey:@"number"]];
+	
     [super viewDidLoad];
 }
-*/
 
 /*
 // Override to allow orientations other than the default portrait orientation.

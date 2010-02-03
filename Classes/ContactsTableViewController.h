@@ -16,11 +16,11 @@
 	IBOutlet UITableView *contactsTableView;
 	
 	NSMutableArray *contactsArray;
-	ContactsDetailViewController *contactsDetailViewController;
+	//ContactsDetailViewController *contactsDetailViewController;
 }
 
 @property (nonatomic, retain) NSMutableArray *contactsArray;
-@property (nonatomic, retain) 
-	ContactsDetailViewController *contactsDetailViewController;
+//@property (nonatomic, retain) 
+//	ContactsDetailViewController *contactsDetailViewController;
 
 @end

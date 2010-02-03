@@ -6,6 +6,9 @@
 //  Copyright 2010 NoVerse.com. All rights reserved.
 // ------------------------------------------------------------------------
 
+#import <stdlib.h>		// For random numbers
+#import <time.h>
+
 #import "EmergencyNumbersModel.h"
 
 @interface EmergencyNumbersModel ()
@@ -19,8 +22,9 @@
 @synthesize contactsArray;
 
 #pragma mark -
+#pragma mark init and dealloc
 
-- (id)initialize
+- (id)init
 {
 	// Load the data file if one exists
 	NSString *filePath = [self dataFilePath];
@@ -36,12 +40,37 @@
 	{
 		// In DEBUG create a new file
 		NSMutableArray *array = [[NSMutableArray alloc] init];
+		srandom(time(NULL));
 		
 		for (int i = 1; i < 15; i++)
 		{
 			NSMutableDictionary *element1 = [[NSMutableDictionary alloc] init];
 			[element1 setObject:[NSString stringWithFormat:@"Contact %d", i] 
 						 forKey:@"name"];
+			
+			// Pick a random color
+			int c = random() % 5;
+			[element1 setObject:@"Default" forKey:@"color"];
+			
+			if (c == 1)
+			{
+				[element1 setObject:@"Red" forKey:@"color"];
+			}
+			
+			if (c == 2)
+			{
+				[element1 setObject:@"Green" forKey:@"color"];
+			}
+			
+			if (c == 3)
+			{
+				[element1 setObject:@"Blue" forKey:@"color"];
+			}
+			
+			if (c == 4)
+			{
+				[element1 setObject:@"Yellow" forKey:@"color"];
+			}
 			
 			if (i < 10)
 			{

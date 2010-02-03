@@ -20,7 +20,7 @@
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application
 {
-	EmergencyNumbersModel *aModel = [[EmergencyNumbersModel alloc] initialize];
+	EmergencyNumbersModel *aModel = [[EmergencyNumbersModel alloc] init];
 	self.model = aModel;
 	[aModel release];
 	

@@ -13,7 +13,7 @@
 @implementation ContactsTableViewController
 
 @synthesize contactsArray;
-@synthesize contactsDetailViewController;
+//@synthesize contactsDetailViewController;
 
 #pragma mark -
 
@@ -33,7 +33,7 @@
 
 - (void)dealloc
 {
-	[contactsDetailViewController release];
+	//[contactsDetailViewController release];
     [super dealloc];
 }
 
@@ -43,6 +43,16 @@
 
 #pragma mark -
 #pragma mark UIViewController
+
+//  Override inherited method to automatically refresh table view's data
+//
+- (void)viewWillAppear:(BOOL)animated
+{
+	//NSLog(@"ContactsTableViewController viewWillAppear");
+    [super viewWillAppear:animated];
+    
+    [[self tableView] reloadData];
+}
 
 - (void)viewDidLoad
 {
@@ -170,25 +180,32 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 	// [anotherViewController release];
 	
 	NSUInteger row = [indexPath	row];
-	if (self.contactsDetailViewController == nil)
-	{
+	//if (self.contactsDetailViewController == nil)
+	//{
 		ContactsDetailViewController *aContactsDetail = 
 			[[ContactsDetailViewController alloc]
 				initWithNibName:@"ContactsDetailView" bundle:nil];
-		self.contactsDetailViewController = aContactsDetail;
-		[aContactsDetail release];
-	}
+	//	self.contactsDetailViewController = aContactsDetail;
+	//	[aContactsDetail release];
+	//}
 	
-	contactsDetailViewController.title =
+	aContactsDetail.title =
 		[NSString stringWithFormat:@"%@", 
 			[[contactsArray objectAtIndex:row] valueForKey:@"name"]];
 	
+	[aContactsDetail 
+		setCurrentRecord:[contactsArray objectAtIndex:row]];
+	
 	// Get to the navigation bar by findin the application delegate
-	EmergencyNumbersAppDelegate *appDelegate = 
-		(EmergencyNumbersAppDelegate *)
-			[[UIApplication sharedApplication] delegate];
-	[appDelegate.contactsNavController 
-		pushViewController:contactsDetailViewController animated:YES];
+	//EmergencyNumbersAppDelegate *appDelegate = 
+	//	(EmergencyNumbersAppDelegate *)
+	//		[[UIApplication sharedApplication] delegate];
+	
+	[self.navigationController
+	//[appDelegate.contactsNavController 
+		pushViewController:aContactsDetail animated:YES];
+	
+	[aContactsDetail release];	// pushViewController does an autorelease?
 }
 
 /*
