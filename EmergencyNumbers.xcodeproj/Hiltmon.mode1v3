@@ -522,7 +522,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>286995625.47659397</real>
+	<real>287004123.60513002</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -539,10 +539,9 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>3C4E3EA6111B55B7009F8620</string>
+		<string>3C4E3EAB111B55B7009F8620</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
-		<string>3C4E3D24111B2E34009F8620</string>
-		<string>3C4E3D2C111B2E34009F8620</string>
-		<string>3C4E3D28111B2E34009F8620</string>
 		<string>3C4E3D32111B2E34009F8620</string>
 		<string>3C4E3D33111B2E34009F8620</string>
 		<string>1CD10A99069EF8BA00B06720</string>
@@ -718,6 +717,8 @@
 									<array>
 										<string>Name</string>
 										<real>120</real>
+										<string>Type</string>
+										<real>84</real>
 										<string>Value</string>
 										<real>85</real>
 										<string>Summary</string>

@@ -17,8 +17,8 @@
 	UISegmentedControl *favoriteSegmentedControl;
 	UISegmentedControl *colorSegmentedControl;
 	
-	NSDictionary *currentRecord;
 	EmergencyNumbersModel *model;
+	NSString *oldButton;
 }
 
 @property (nonatomic, retain) IBOutlet UITextField *nameField;
@@ -28,7 +28,6 @@
 @property (nonatomic, retain) IBOutlet 
 	UISegmentedControl *colorSegmentedControl;
 
-@property (nonatomic, assign) NSDictionary *currentRecord;
 @property (nonatomic, assign) EmergencyNumbersModel *model;
 
 - (IBAction)textFieldDoneEditing:(id)sender;

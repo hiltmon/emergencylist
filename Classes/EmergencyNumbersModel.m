@@ -14,12 +14,14 @@
 @interface EmergencyNumbersModel ()
 
 - (NSString *)dataFilePath;
+- (NSDictionary *)currentContactRecord;
 
 @end
 
 @implementation EmergencyNumbersModel
 
-@synthesize contactsArray;
+//@synthesize contactsArray;
+@synthesize currentContactIndex;
 
 #pragma mark -
 #pragma mark init and dealloc
@@ -33,12 +35,12 @@
 		// Load the file
 		NSMutableArray *array = [[NSMutableArray alloc] 
 								 initWithContentsOfFile:filePath];
-		self.contactsArray = array;
+		contactsArray = [array retain];
 		[array release];
 	}
 	else
 	{
-		// In DEBUG create a new file
+		// TODO: Create a default file
 		NSMutableArray *array = [[NSMutableArray alloc] init];
 		srandom(time(NULL));
 		
@@ -99,24 +101,139 @@
 			[element1 release];
 		}
 		
-		self.contactsArray = array;
+		contactsArray = [array retain];
 		[array release];
 	}
 	
 	return self;
 }
 
-- (void) dealloc
+- (void)dealloc
 {
 	[contactsArray dealloc];
 	[super dealloc];
 }
 
+- (NSString *)dataFilePath
+{
+	NSArray *paths = 
+		NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, 
+											NSUserDomainMask, 
+											YES);
+	NSString *documentsDirectory = [paths objectAtIndex:0];
+	return [documentsDirectory stringByAppendingPathComponent:kFilename];
+}
+
+- (NSUInteger)count
+{
+	return [contactsArray count];
+}
+
+- (BOOL)isButtonInUse:(NSString *)button
+{
+	if ([button isEqualToString:@"0"])
+	{
+		return NO;
+	}
+	
+	for (NSDictionary *item in contactsArray)
+	{
+		if ([[item valueForKey:@"button"] isEqualToString:button])
+		{
+			return YES;
+		}
+	}
+	
+	return NO;
+}
+
+- (NSString *)contactNameForButton:(NSString *)button
+{
+	for (NSDictionary *item in contactsArray)
+	{
+		if ([[item valueForKey:@"button"] isEqualToString:button])
+		{
+			return [item valueForKey:@"name"];
+		}
+	}
+	
+	return @"";
+}
+
+- (NSDictionary *)currentContactRecord
+{
+	return [contactsArray objectAtIndex:self.currentContactIndex];
+}
+
 #pragma mark -
+#pragma mark Virtual Accessors
+
+- (NSString *)currentContactName
+{
+	return [self contactNameAtIndex:self.currentContactIndex];
+}
+
+- (void)setCurrentContactName:(NSString *)name
+{
+	[[self currentContactRecord] setValue:name forKey:@"name"];
+}
+
+- (NSString *)contactNameAtIndex:(NSUInteger)index
+{
+	return [[contactsArray objectAtIndex:index] valueForKey:@"name"];
+}
+
+- (NSString *)currentContactNumber
+{
+	return [self contactNumberAtIndex:self.currentContactIndex];
+}
+
+- (void)setCurrentContactNumber:(NSString *)number
+{
+	[[self currentContactRecord] setValue:number forKey:@"number"];
+}
+
+- (NSString *)contactNumberAtIndex:(NSUInteger)index
+{
+	return [[contactsArray objectAtIndex:index] valueForKey:@"number"];
+}
+
+- (NSString *)currentContactButton
+{
+	return [self contactButtonAtIndex:self.currentContactIndex];
+}
+
+- (void)setCurrentContactButton:(NSString *)button
+{
+	[[self currentContactRecord] setValue:button forKey:@"button"];
+}
+
+- (NSString *)contactButtonAtIndex:(NSUInteger)index
+{
+	return [[contactsArray objectAtIndex:index] valueForKey:@"button"];
+}
+
+- (NSString *)currentContactColor
+{
+	return [self contactColorAtIndex:self.currentContactIndex];
+}
+
+- (void)setCurrentContactColor:(NSString *)color
+{
+	[[self currentContactRecord] setValue:color forKey:@"color"];
+}
+
+- (NSString *)contactColorAtIndex:(NSUInteger)index
+{
+	return [[contactsArray objectAtIndex:index] valueForKey:@"color"];
+}
+
+#pragma mark -
+#pragma mark Actions
 
 - (void)clearButton:(NSString *)button
 {
-	for (NSDictionary *item in self.contactsArray)
+	for (NSDictionary *item in contactsArray)
 	{
 		if ([[item valueForKey:@"button"] isEqualToString:button])
 		{
@@ -125,20 +242,10 @@
 	}
 }
 
-- (NSString *)dataFilePath
-{
-	NSArray *paths = NSSearchPathForDirectoriesInDomains(
-		NSDocumentDirectory, NSUserDomainMask, YES);
-	NSString *documentsDirectory = [paths objectAtIndex:0];
-	return [documentsDirectory stringByAppendingPathComponent:kFilename];
-}
-
 - (void)save
 {
-	NSLog(@"EmergencyNumbersModel save");
-	// Load the data file if one exists
 	NSString *filePath = [self dataFilePath];
-	[self.contactsArray writeToFile:filePath atomically:YES];
+	[contactsArray writeToFile:filePath atomically:YES];
 }
 
 @end

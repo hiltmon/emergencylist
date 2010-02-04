@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class EmergencyNumbersModel;
+
 @interface FavoritesViewController : UIViewController
 {
 	UIButton *button1;
@@ -15,6 +17,8 @@
 	UIButton *button3;
 	UIButton *button4;
 	UIButton *button5;
+	
+	EmergencyNumbersModel *model;
 }
 
 @property (nonatomic, assign) IBOutlet UIButton *button1;

@@ -13,11 +13,35 @@
 @interface EmergencyNumbersModel : NSObject
 {
 	NSMutableArray *contactsArray;
+	
+	NSUInteger currentContactIndex;
 }
 
-@property (nonatomic, retain) NSMutableArray *contactsArray;
+@property (nonatomic, assign) NSUInteger currentContactIndex;
 
 //- (id)init;
+- (NSUInteger)count;
+- (BOOL)isButtonInUse:(NSString *)button;
+- (NSString *)contactNameForButton:(NSString *)button;
+
+// Virtual Accessors
+- (NSString *)currentContactName;
+- (void)setCurrentContactName:(NSString *)name;
+- (NSString *)contactNameAtIndex:(NSUInteger)index;
+
+- (NSString *)currentContactNumber;
+- (void)setCurrentContactNumber:(NSString *)number;
+- (NSString *)contactNumberAtIndex:(NSUInteger)index;
+
+- (NSString *)currentContactButton;
+- (void)setCurrentContactButton:(NSString *)button;
+- (NSString *)contactButtonAtIndex:(NSUInteger)index;
+
+- (NSString *)currentContactColor;
+- (void)setCurrentContactColor:(NSString *)color;
+- (NSString *)contactColorAtIndex:(NSUInteger)index;
+
+//  Actions
 - (void)save;
 - (void)clearButton:(NSString *)button;
 

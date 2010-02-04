@@ -8,7 +8,9 @@
 
 #import "FavoritesViewController.h"
 #import "EmergencyNumbersAppDelegate.h"	// Needed to get to model
+#import "EmergencyNumbersModel.h"
 
+// Private methods
 @interface FavoritesViewController ()
 
 - (void)setTitle:(NSString *)title 
@@ -27,20 +29,6 @@
 @synthesize button5;
 
 #pragma mark -
-
-/*
-// The designated initializer.  Override if you create the controller 
-// programmatically and want to perform customization that is not
-// appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])
-	{
-        // Custom initialization
-    }
-    return self;
-}
-*/
 
 - (void)dealloc
 {
@@ -92,51 +80,45 @@
 	button4.hidden = YES;
 	button5.hidden = YES;
 	
-	// Get to the data by finding the application delegate
-	EmergencyNumbersAppDelegate *appDelegate = 
-	(EmergencyNumbersAppDelegate *)
-	[[UIApplication sharedApplication] delegate];
-	NSMutableArray *contactsArray = appDelegate.model.contactsArray;
-	
 	// Set the buttons...
-	for (NSDictionary *item in contactsArray)
+	for (int i = 0; i < [model count]; i++)
 	{
-		if ([[item valueForKey:@"button"] isEqualToString:@"1"])
+		if ([[model contactButtonAtIndex:i] isEqualToString:@"1"])
 		{
-			[self setTitle:[item valueForKey:@"name"] 
-				  andColor:[item valueForKey:@"color"]
+			[self setTitle:[model contactNameAtIndex:i] 
+				  andColor:[model contactColorAtIndex:i]
 				 forButton:button1];
 			button1.hidden = NO;
 		}
 		
-		if ([[item valueForKey:@"button"] isEqualToString:@"2"])
+		if ([[model contactButtonAtIndex:i] isEqualToString:@"2"])
 		{
-			[self setTitle:[item valueForKey:@"name"]
-				  andColor:[item valueForKey:@"color"]
+			[self setTitle:[model contactNameAtIndex:i]
+				  andColor:[model contactColorAtIndex:i]
 				 forButton:button2];
 			button2.hidden = NO;
 		}
 		
-		if ([[item valueForKey:@"button"] isEqualToString:@"3"])
+		if ([[model contactButtonAtIndex:i] isEqualToString:@"3"])
 		{
-			[self setTitle:[item valueForKey:@"name"]
-				  andColor:[item valueForKey:@"color"]
+			[self setTitle:[model contactNameAtIndex:i]
+				  andColor:[model contactColorAtIndex:i]
 				 forButton:button3];
 			button3.hidden = NO;
 		}
 		
-		if ([[item valueForKey:@"button"] isEqualToString:@"4"])
+		if ([[model contactButtonAtIndex:i] isEqualToString:@"4"])
 		{
-			[self setTitle:[item valueForKey:@"name"] 
-				  andColor:[item valueForKey:@"color"]
+			[self setTitle:[model contactNameAtIndex:i] 
+				  andColor:[model contactColorAtIndex:i]
 				 forButton:button4];
 			button4.hidden = NO;
 		}
 		
-		if ([[item valueForKey:@"button"] isEqualToString:@"5"])
+		if ([[model contactButtonAtIndex:i] isEqualToString:@"5"])
 		{
-			[self setTitle:[item valueForKey:@"name"] 
-				  andColor:[item valueForKey:@"color"]
+			[self setTitle:[model contactNameAtIndex:i] 
+				  andColor:[model contactColorAtIndex:i]
 				 forButton:button5];
 			button5.hidden = NO;
 		}
@@ -147,7 +129,6 @@
 #pragma mark UIViewController
 
 //  Override inherited method to automatically refresh table view's data
-//
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -159,20 +140,16 @@
 // typically from a nib.
 - (void)viewDidLoad
 {
-	[self reloadData];
-	
 	[super viewDidLoad];
+	
+	// Access the model
+	EmergencyNumbersAppDelegate *appDelegate = 
+		(EmergencyNumbersAppDelegate *)
+			[[UIApplication sharedApplication] delegate];
+	model = appDelegate.model;
+	
+	[self reloadData];
 }
-
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:
-	(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
 
 - (void)didReceiveMemoryWarning
 {

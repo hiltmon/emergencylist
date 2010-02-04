@@ -13,29 +13,10 @@
 
 @implementation ContactsTableViewController
 
-//@synthesize contactsArray;
-//@synthesize contactsDetailViewController;
-@synthesize model;
-
 #pragma mark -
-
-/*
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    // Override initWithStyle: if you create the controller
-	// programmatically and want to perform customization that
-	// is not appropriate for viewDidLoad.
-    if (self = [super initWithStyle:style])
-	{
-    
-	}
-    return self;
-}
-*/
 
 - (void)dealloc
 {
-	//[contactsDetailViewController release];
     [super dealloc];
 }
 
@@ -47,10 +28,8 @@
 #pragma mark UIViewController
 
 //  Override inherited method to automatically refresh table view's data
-//
 - (void)viewWillAppear:(BOOL)animated
 {
-	//NSLog(@"ContactsTableViewController viewWillAppear");
     [super viewWillAppear:animated];
     
     [[self tableView] reloadData];
@@ -61,57 +40,17 @@
     [super viewDidLoad];
 	
 	self.title = NSLocalizedString(@"Contacts", @"My Emergency Contacts");
-	
-	//NSMutableArray *array = [[NSArray alloc] 
-	//		initWithObjects:@"Contact 1", @"Contact 2", @"Contact 3", nil];
-	//self.contactsArray = array;
-	//[array release];
-	
+
+	// Acess the model
 	EmergencyNumbersAppDelegate *appDelegate = 
 		(EmergencyNumbersAppDelegate *)
 			[[UIApplication sharedApplication] delegate];
-	self.model = appDelegate.model;
+	model = appDelegate.model;
 
     // Uncomment the following line to display an Edit button 
 	// in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-
-
-/*
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
-*/
-/*
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-*/
-/*
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-}
-*/
-/*
-- (void)viewDidDisappear:(BOOL)animated
-{
-	[super viewDidDisappear:animated];
-}
-*/
-
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:
-	(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
 
 - (void)didReceiveMemoryWarning
 {
@@ -139,7 +78,7 @@
 - (NSInteger)tableView:(UITableView *)tableView 
  numberOfRowsInSection:(NSInteger)section
 {
-    return [self.model.contactsArray count];
+    return model.count;
 }
 
 // Customize the appearance of table view cells.
@@ -160,11 +99,8 @@
     
     // Set up the cell...
 	NSUInteger row = [indexPath row];
-	cell.textLabel.text = [[model.contactsArray objectAtIndex:row] 
-						   valueForKey:@"name"];
-	cell.detailTextLabel.text = [[model.contactsArray objectAtIndex:row] 
-								 valueForKey:@"number"];
-	
+	cell.textLabel.text = [model contactNameAtIndex:row];
+	cell.detailTextLabel.text = [model contactNumberAtIndex:row];
     return cell;
 }
 
@@ -174,41 +110,18 @@
 - (void)tableView:(UITableView *)tableView 
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-	// AnotherViewController *anotherViewController = 
-	//     [[AnotherViewController alloc] 
-	//		   initWithNibName:@"AnotherView" bundle:nil];
-	// [self.navigationController pushViewController:anotherViewController];
-	// [anotherViewController release];
+	[model setCurrentContactIndex:[indexPath row]];
+
+	ContactsDetailViewController *aContactsDetail = 
+		[[ContactsDetailViewController alloc]
+			initWithNibName:@"ContactsDetailView" bundle:nil];
 	
-	NSUInteger row = [indexPath	row];
-	//if (self.contactsDetailViewController == nil)
-	//{
-		ContactsDetailViewController *aContactsDetail = 
-			[[ContactsDetailViewController alloc]
-				initWithNibName:@"ContactsDetailView" bundle:nil];
-	//	self.contactsDetailViewController = aContactsDetail;
-	//	[aContactsDetail release];
-	//}
-	
-	aContactsDetail.title =
-		[NSString stringWithFormat:@"%@", 
-			[[model.contactsArray objectAtIndex:row] valueForKey:@"name"]];
-	
-	[aContactsDetail 
-		setCurrentRecord:[model.contactsArray objectAtIndex:row]];
+	aContactsDetail.title = model.currentContactName;
 	[aContactsDetail setModel:model];
 	
-	// Get to the navigation bar by findin the application delegate
-	//EmergencyNumbersAppDelegate *appDelegate = 
-	//	(EmergencyNumbersAppDelegate *)
-	//		[[UIApplication sharedApplication] delegate];
-	
 	[self.navigationController
-	//[appDelegate.contactsNavController 
 		pushViewController:aContactsDetail animated:YES];
-	
-	[aContactsDetail release];	// pushViewController does an autorelease?
+	[aContactsDetail release];
 }
 
 /*

@@ -15,15 +15,8 @@
 	<UITableViewDataSource, UITableViewDelegate>
 {
 	IBOutlet UITableView *contactsTableView;
-	
-	//NSMutableArray *contactsArray;
-	//ContactsDetailViewController *contactsDetailViewController;
+
 	EmergencyNumbersModel *model;
 }
-
-//@property (nonatomic, retain) NSMutableArray *contactsArray;
-//@property (nonatomic, retain) 
-//	ContactsDetailViewController *contactsDetailViewController;
-@property (nonatomic, assign) EmergencyNumbersModel *model;
 
 @end
