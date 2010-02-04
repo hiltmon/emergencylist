@@ -8,12 +8,14 @@
 
 #import "ContactsTableViewController.h"
 #import "ContactsDetailViewController.h"
-#import "EmergencyNumbersAppDelegate.h"	// Needed to get to the nav controller
+#import "EmergencyNumbersAppDelegate.h"	// Needed to get to model
+#import "EmergencyNumbersModel.h"
 
 @implementation ContactsTableViewController
 
-@synthesize contactsArray;
+//@synthesize contactsArray;
 //@synthesize contactsDetailViewController;
+@synthesize model;
 
 #pragma mark -
 
@@ -68,7 +70,7 @@
 	EmergencyNumbersAppDelegate *appDelegate = 
 		(EmergencyNumbersAppDelegate *)
 			[[UIApplication sharedApplication] delegate];
-	self.contactsArray = appDelegate.model.contactsArray;
+	self.model = appDelegate.model;
 
     // Uncomment the following line to display an Edit button 
 	// in the navigation bar for this view controller.
@@ -137,7 +139,7 @@
 - (NSInteger)tableView:(UITableView *)tableView 
  numberOfRowsInSection:(NSInteger)section
 {
-    return [self.contactsArray count];
+    return [self.model.contactsArray count];
 }
 
 // Customize the appearance of table view cells.
@@ -158,9 +160,9 @@
     
     // Set up the cell...
 	NSUInteger row = [indexPath row];
-	cell.textLabel.text = [[contactsArray objectAtIndex:row] 
+	cell.textLabel.text = [[model.contactsArray objectAtIndex:row] 
 						   valueForKey:@"name"];
-	cell.detailTextLabel.text = [[contactsArray objectAtIndex:row] 
+	cell.detailTextLabel.text = [[model.contactsArray objectAtIndex:row] 
 								 valueForKey:@"number"];
 	
     return cell;
@@ -191,10 +193,11 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 	
 	aContactsDetail.title =
 		[NSString stringWithFormat:@"%@", 
-			[[contactsArray objectAtIndex:row] valueForKey:@"name"]];
+			[[model.contactsArray objectAtIndex:row] valueForKey:@"name"]];
 	
 	[aContactsDetail 
-		setCurrentRecord:[contactsArray objectAtIndex:row]];
+		setCurrentRecord:[model.contactsArray objectAtIndex:row]];
+	[aContactsDetail setModel:model];
 	
 	// Get to the navigation bar by findin the application delegate
 	//EmergencyNumbersAppDelegate *appDelegate = 

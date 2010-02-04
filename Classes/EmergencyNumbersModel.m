@@ -106,7 +106,7 @@
 	return self;
 }
 
-- (void)dealloc
+- (void) dealloc
 {
 	[contactsArray dealloc];
 	[super dealloc];
@@ -114,12 +114,31 @@
 
 #pragma mark -
 
+- (void)clearButton:(NSString *)button
+{
+	for (NSDictionary *item in self.contactsArray)
+	{
+		if ([[item valueForKey:@"button"] isEqualToString:button])
+		{
+			[item setValue:@"0" forKey:@"button"];
+		}
+	}
+}
+
 - (NSString *)dataFilePath
 {
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(
 		NSDocumentDirectory, NSUserDomainMask, YES);
 	NSString *documentsDirectory = [paths objectAtIndex:0];
 	return [documentsDirectory stringByAppendingPathComponent:kFilename];
+}
+
+- (void)save
+{
+	NSLog(@"EmergencyNumbersModel save");
+	// Load the data file if one exists
+	NSString *filePath = [self dataFilePath];
+	[self.contactsArray writeToFile:filePath atomically:YES];
 }
 
 @end

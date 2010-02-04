@@ -18,5 +18,7 @@
 @property (nonatomic, retain) NSMutableArray *contactsArray;
 
 //- (id)init;
+- (void)save;
+- (void)clearButton:(NSString *)button;
 
 @end

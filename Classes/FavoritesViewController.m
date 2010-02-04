@@ -7,7 +7,7 @@
 // ------------------------------------------------------------------------
 
 #import "FavoritesViewController.h"
-#import "EmergencyNumbersAppDelegate.h"	// Needed to get to the nav controller
+#import "EmergencyNumbersAppDelegate.h"	// Needed to get to model
 
 @interface FavoritesViewController ()
 

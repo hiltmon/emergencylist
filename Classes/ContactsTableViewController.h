@@ -8,19 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
-@class ContactsDetailViewController;
+//@class ContactsDetailViewController;
+@class EmergencyNumbersModel;
 
 @interface ContactsTableViewController : UITableViewController 
 	<UITableViewDataSource, UITableViewDelegate>
 {
 	IBOutlet UITableView *contactsTableView;
 	
-	NSMutableArray *contactsArray;
+	//NSMutableArray *contactsArray;
 	//ContactsDetailViewController *contactsDetailViewController;
+	EmergencyNumbersModel *model;
 }
 
-@property (nonatomic, retain) NSMutableArray *contactsArray;
+//@property (nonatomic, retain) NSMutableArray *contactsArray;
 //@property (nonatomic, retain) 
 //	ContactsDetailViewController *contactsDetailViewController;
+@property (nonatomic, assign) EmergencyNumbersModel *model;
 
 @end
