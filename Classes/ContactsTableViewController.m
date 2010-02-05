@@ -53,7 +53,10 @@
 {
 	if (addedContact)
 	{
-		// Nothing to do, the contact is already added
+		// Nothing to do, the contact is already added to the model
+		// so save it and display it
+		[model save];
+		[model sort];
 		[[self tableView] reloadData];
 	}
 	else
@@ -73,6 +76,7 @@
 {
     [super viewWillAppear:animated];
     
+	[model sort];
     [[self tableView] reloadData];
 }
 

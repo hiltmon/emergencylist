@@ -248,6 +248,15 @@
 	[contactsArray writeToFile:filePath atomically:YES];
 }
 
+- (void)sort
+{
+	NSSortDescriptor *descriptor = 
+		[[[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES] 
+			autorelease];
+	NSArray *descriptors = [NSArray arrayWithObjects:descriptor, nil];
+	[contactsArray sortUsingDescriptors:descriptors];
+}
+
 - (void)deleteRow:(NSUInteger)row
 {
 	[contactsArray removeObjectAtIndex:row];

@@ -43,6 +43,7 @@
 
 //  Actions
 - (void)save;
+- (void)sort;
 - (void)clearButton:(NSString *)button;
 - (void)deleteRow:(NSUInteger)row;
 - (void)addObject:(NSString *)name;
