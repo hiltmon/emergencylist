@@ -23,6 +23,47 @@
 #pragma mark -
 #pragma mark Action Methods
 
+- (void)addNew
+{
+	[model addObject:@""];
+	[model setCurrentContactIndex:[model count]-1];
+	
+	ContactsDetailViewController *addController = 
+		[[ContactsDetailViewController alloc]
+			initWithNibName:@"ContactsDetailView" bundle:nil];
+	addController.delegate = self;
+	
+	addController.title = @"New Contact";
+	[addController setModel:model];
+	
+	UINavigationController *addNavController = 
+		[[UINavigationController alloc]
+			initWithRootViewController:addController];
+	
+	[self.navigationController 
+		presentModalViewController:addNavController 
+						  animated:YES];
+	[addNavController release];
+	[addController release];
+}
+
+- (void)contactAddViewController:
+	(ContactsDetailViewController *)contactsDetailViewController
+                   didAddContact:(BOOL)addedContact
+{
+	if (addedContact)
+	{
+		// Nothing to do, the contact is already added
+		[[self tableView] reloadData];
+	}
+	else
+	{
+		// Cancelled, so remove the last contact
+		[model deleteRow:[model count]-1];
+	}
+
+	[self.navigationController dismissModalViewControllerAnimated:YES];
+}
 
 #pragma mark -
 #pragma mark UIViewController
@@ -49,7 +90,16 @@
 
     // Uncomment the following line to display an Edit button 
 	// in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    //self.navigationItem.rightBarButtonItem = self.editButtonItem;
+	
+	// Setup the ADD button
+	UIBarButtonItem *addButton = 
+		[[UIBarButtonItem alloc]
+			initWithBarButtonSystemItem:UIBarButtonSystemItemAdd 
+								 target:self 
+								 action:@selector(addNew)];
+	self.navigationItem.rightBarButtonItem = addButton;
+	[addButton release];
 }
 
 - (void)didReceiveMemoryWarning
@@ -111,7 +161,7 @@
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	[model setCurrentContactIndex:[indexPath row]];
-
+	
 	ContactsDetailViewController *aContactsDetail = 
 		[[ContactsDetailViewController alloc]
 			initWithNibName:@"ContactsDetailView" bundle:nil];
@@ -135,7 +185,6 @@ canEditRowAtIndexPath:(NSIndexPath *)indexPath
 */
 
 
-/*
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView 
  commitEditingStyle:(UITableViewCellEditingStyle)editingStyle 
@@ -144,16 +193,20 @@ canEditRowAtIndexPath:(NSIndexPath *)indexPath
     if (editingStyle == UITableViewCellEditingStyleDelete)
 	{
         // Delete the row from the data source
+		NSUInteger row = [indexPath row];
+		[model deleteRow:row];
+		[model save];
+		
+		// And delete from the view
         [tableView deleteRowsAtIndexPaths:
 			[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
     }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert)
-	{
+    //else if (editingStyle == UITableViewCellEditingStyleInsert)
+	//{
         // Create a new instance of the appropriate class, insert it
 		// into the array, and add a new row to the table view
-    }   
+    //}   
 }
-*/
 
 
 /*

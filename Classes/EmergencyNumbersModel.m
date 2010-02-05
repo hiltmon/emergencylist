@@ -248,4 +248,21 @@
 	[contactsArray writeToFile:filePath atomically:YES];
 }
 
+- (void)deleteRow:(NSUInteger)row
+{
+	[contactsArray removeObjectAtIndex:row];
+}
+
+- (void)addObject:(NSString *)name
+{
+	NSMutableDictionary *newItem = [[NSMutableDictionary alloc] init];
+	[newItem setObject:name forKey:@"name"];
+	[newItem setObject:@"Default" forKey:@"color"];
+	[newItem setObject:@"" forKey:@"number"];
+	[newItem setObject:@"0" forKey:@"button"];
+	
+	[contactsArray addObject:newItem];
+	[newItem release];
+}
+
 @end

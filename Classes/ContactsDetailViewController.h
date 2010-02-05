@@ -10,6 +10,8 @@
 
 @class EmergencyNumbersModel;
 
+@protocol ContactAddDelegate;
+
 @interface ContactsDetailViewController : UIViewController
 {
 	UITextField *nameField;
@@ -19,6 +21,8 @@
 	
 	EmergencyNumbersModel *model;
 	NSString *oldButton;
+	
+	id<ContactAddDelegate> delegate;
 }
 
 @property (nonatomic, retain) IBOutlet UITextField *nameField;
@@ -30,8 +34,18 @@
 
 @property (nonatomic, assign) EmergencyNumbersModel *model;
 
+@property (nonatomic, assign) id<ContactAddDelegate> delegate;
+
 - (IBAction)textFieldDoneEditing:(id)sender;
 - (IBAction)textFieldValueChanged:(id)sender;
 - (IBAction)backgroundTap:(id)sender;
+
+@end
+
+@protocol ContactAddDelegate <NSObject>
+
+- (void)contactAddViewController:
+	(ContactsDetailViewController *)contactsDetailViewController
+                   didAddContact:(BOOL)addedContact;
 
 @end

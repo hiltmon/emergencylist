@@ -44,5 +44,7 @@
 //  Actions
 - (void)save;
 - (void)clearButton:(NSString *)button;
+- (void)deleteRow:(NSUInteger)row;
+- (void)addObject:(NSString *)name;
 
 @end

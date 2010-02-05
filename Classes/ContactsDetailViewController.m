@@ -21,6 +21,7 @@
 @synthesize numberField;
 @synthesize favoriteSegmentedControl;
 @synthesize colorSegmentedControl;
+@synthesize delegate;
 
 @synthesize model;
 
@@ -43,6 +44,16 @@
 	[oldButton dealloc];
 
     [super dealloc];
+}
+
+- (void)cancelAdd
+{
+	[delegate contactAddViewController:self didAddContact:NO];
+}
+
+- (void)saveAdd
+{
+	[delegate contactAddViewController:self didAddContact:YES];
 }
 
 - (void)setButton:(NSString *)button
@@ -94,8 +105,9 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
 	if (buttonIndex == 1)
 	{
 		// YES
-		NSString *whichButton = [NSString stringWithFormat:@"%d", 
-								 [favoriteSegmentedControl selectedSegmentIndex]];
+		NSString *whichButton = 
+			[NSString stringWithFormat:@"%d", 
+				[favoriteSegmentedControl selectedSegmentIndex]];
 		[self setButton:whichButton];
 	}
 	else
@@ -186,6 +198,29 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
 								 action:@selector(colorSegmentAction:) 
 					   forControlEvents:UIControlEventValueChanged];
 	
+	// TODO: New plan, user could use this string!
+	if ([[self title] isEqualToString:@"New Contact"])
+	{
+		// Add the save and cancel UI buttons
+		// Setup the CANCEL button
+		UIBarButtonItem *cancelButton = 
+			[[UIBarButtonItem alloc]
+				initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+				target:self 
+				action:@selector(cancelAdd)];
+		self.navigationItem.leftBarButtonItem = cancelButton;
+		[cancelButton release];
+		
+		// Setup the SAVE button
+		UIBarButtonItem *saveButton = 
+			[[UIBarButtonItem alloc]
+				initWithBarButtonSystemItem:UIBarButtonSystemItemSave
+				target:self 
+				action:@selector(saveAdd)];
+		self.navigationItem.rightBarButtonItem = saveButton;
+		[saveButton release];
+	}
+
     [super viewDidLoad];
 }
 
