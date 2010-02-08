@@ -199,7 +199,7 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
 					   forControlEvents:UIControlEventValueChanged];
 	
 	// TODO: New plan, user could use this string!
-	if ([[self title] isEqualToString:@"New Contact"])
+	if ([[self title] isEqualToString:kNewItem])
 	{
 		// Add the save and cancel UI buttons
 		// Setup the CANCEL button

@@ -27,11 +27,14 @@
 @synthesize button3;
 @synthesize button4;
 @synthesize button5;
+@synthesize button6;
 
 #pragma mark -
 
 - (void)dealloc
 {
+	[buttonArray dealloc];
+	
     [super dealloc];
 }
 
@@ -47,7 +50,7 @@
 	[button setTitle:title forState:UIControlStateDisabled];
 	[button setTitle:title forState:UIControlStateSelected];
 	
-	// TODO: Optimize by cacheing images
+	// TODO: Optimize by caching images
 	// Create the button backgrounds
 	[button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
 	
@@ -56,7 +59,7 @@
 	UIImage *buttonBackground = [UIImage imageNamed:backgroundImageName];
 	UIImage *newImage = [buttonBackground 
 						 stretchableImageWithLeftCapWidth:12.0 
-						 topCapHeight:0.0];
+						 topCapHeight:12.0];
 	[button setBackgroundImage:newImage 
 					   forState:UIControlStateNormal];
 	
@@ -64,7 +67,7 @@
 	UIImage *buttonPressedBackground = [UIImage imageNamed:@"GrayButton.png"];
 	UIImage *newPressedImage = [buttonPressedBackground 
 								stretchableImageWithLeftCapWidth:12.0 
-								topCapHeight:0.0];
+								topCapHeight:12.0];
 	[button setBackgroundImage:newPressedImage 
 					   forState:UIControlStateHighlighted];
 	
@@ -83,44 +86,13 @@
 	// Set the buttons...
 	for (int i = 0; i < [model count]; i++)
 	{
-		if ([[model contactButtonAtIndex:i] isEqualToString:@"1"])
+		NSInteger whichButton = [[model contactButtonAtIndex:i] intValue];
+		if (whichButton > 0)
 		{
 			[self setTitle:[model contactNameAtIndex:i] 
 				  andColor:[model contactColorAtIndex:i]
-				 forButton:button1];
-			button1.hidden = NO;
-		}
-		
-		if ([[model contactButtonAtIndex:i] isEqualToString:@"2"])
-		{
-			[self setTitle:[model contactNameAtIndex:i]
-				  andColor:[model contactColorAtIndex:i]
-				 forButton:button2];
-			button2.hidden = NO;
-		}
-		
-		if ([[model contactButtonAtIndex:i] isEqualToString:@"3"])
-		{
-			[self setTitle:[model contactNameAtIndex:i]
-				  andColor:[model contactColorAtIndex:i]
-				 forButton:button3];
-			button3.hidden = NO;
-		}
-		
-		if ([[model contactButtonAtIndex:i] isEqualToString:@"4"])
-		{
-			[self setTitle:[model contactNameAtIndex:i] 
-				  andColor:[model contactColorAtIndex:i]
-				 forButton:button4];
-			button4.hidden = NO;
-		}
-		
-		if ([[model contactButtonAtIndex:i] isEqualToString:@"5"])
-		{
-			[self setTitle:[model contactNameAtIndex:i] 
-				  andColor:[model contactColorAtIndex:i]
-				 forButton:button5];
-			button5.hidden = NO;
+				 forButton:[buttonArray objectAtIndex:whichButton-1]];
+			[[buttonArray objectAtIndex:whichButton-1] setHidden:NO];
 		}
 	}
 }
@@ -147,6 +119,9 @@
 		(EmergencyNumbersAppDelegate *)
 			[[UIApplication sharedApplication] delegate];
 	model = appDelegate.model;
+	
+	buttonArray = [[NSArray alloc] initWithObjects:button1, button2,
+				   button3, button4, button5, button6, nil];
 	
 	[self reloadData];
 }

@@ -12,8 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="35"/>
-			<integer value="2"/>
+			<integer value="49"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -38,11 +37,10 @@
 			</object>
 			<object class="IBUICustomObject" id="664661524"/>
 			<object class="IBUIWindow" id="380026005">
-				<reference key="NSNextResponder"/>
+				<nil key="NSNextResponder"/>
 				<int key="NSvFlags">1316</int>
 				<object class="NSPSMatrix" key="NSFrameMatrix"/>
 				<string key="NSFrameSize">{320, 480}</string>
-				<reference key="NSSuperview"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">1</int>
 					<bytes key="NSRGB">MSAxIDEAA</bytes>
@@ -54,48 +52,52 @@
 			<object class="IBUITabBarController" id="191665562">
 				<object class="IBUISimulatedTabBarMetrics" key="IBUISimulatedBottomBarMetrics"/>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
-				<object class="IBUIViewController" key="IBUISelectedViewController" id="754898267">
+				<object class="IBUINavigationController" key="IBUISelectedViewController" id="717819329">
 					<string key="IBUITitle"/>
-					<object class="IBUITabBarItem" key="IBUITabBarItem" id="43060975">
-						<string key="IBUITitle"/>
+					<object class="IBUITabBarItem" key="IBUITabBarItem" id="72190302">
+						<string key="IBUITitle">Emergency List</string>
+						<object class="NSCustomResource" key="IBUIImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">Emergency.png</string>
+						</object>
 						<reference key="IBUITabBar"/>
-						<int key="IBUISystemItemIdentifier">1</int>
 					</object>
+					<reference key="IBUIToolbarItems" ref="0"/>
 					<reference key="IBUIParentViewController" ref="191665562"/>
-					<string key="IBUINibName">FavoritesView</string>
+					<object class="IBUINavigationBar" key="IBUINavigationBar" id="870563855">
+						<nil key="NSNextResponder"/>
+						<int key="NSvFlags">256</int>
+						<string key="NSFrameSize">{320, 44}</string>
+						<bool key="IBUIOpaque">NO</bool>
+						<bool key="IBUIClipsSubviews">YES</bool>
+						<bool key="IBUIMultipleTouchEnabled">YES</bool>
+					</object>
+					<object class="NSMutableArray" key="IBUIViewControllers">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="IBUIViewController" id="873086824">
+							<reference key="IBUIToolbarItems" ref="0"/>
+							<object class="IBUINavigationItem" key="IBUINavigationItem" id="568668900">
+								<reference key="IBUINavigationBar"/>
+								<string key="IBUITitle">Item</string>
+							</object>
+							<reference key="IBUIParentViewController" ref="717819329"/>
+							<string key="IBUINibName">ContactsTableView</string>
+						</object>
+					</object>
 				</object>
 				<object class="NSMutableArray" key="IBUIViewControllers">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<reference ref="754898267"/>
-					<object class="IBUINavigationController" id="717819329">
+					<object class="IBUIViewController" id="754898267">
 						<string key="IBUITitle"/>
-						<object class="IBUITabBarItem" key="IBUITabBarItem" id="72190302">
+						<object class="IBUITabBarItem" key="IBUITabBarItem" id="43060975">
 							<string key="IBUITitle"/>
 							<reference key="IBUITabBar"/>
-							<int key="IBUISystemItemIdentifier">5</int>
+							<int key="IBUISystemItemIdentifier">1</int>
 						</object>
-						<reference key="IBUIToolbarItems" ref="0"/>
 						<reference key="IBUIParentViewController" ref="191665562"/>
-						<object class="IBUINavigationBar" key="IBUINavigationBar" id="870563855">
-							<nil key="NSNextResponder"/>
-							<int key="NSvFlags">256</int>
-							<string key="NSFrameSize">{320, 44}</string>
-							<bool key="IBUIOpaque">NO</bool>
-							<bool key="IBUIClipsSubviews">YES</bool>
-							<bool key="IBUIMultipleTouchEnabled">YES</bool>
-						</object>
-						<object class="NSMutableArray" key="IBUIViewControllers">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBUIViewController" id="873086824">
-								<reference key="IBUIToolbarItems" ref="0"/>
-								<object class="IBUINavigationItem" key="IBUINavigationItem" id="568668900">
-									<string key="IBUITitle">Item</string>
-								</object>
-								<reference key="IBUIParentViewController" ref="717819329"/>
-								<string key="IBUINibName">ContactsTableView</string>
-							</object>
-						</object>
+						<string key="IBUINibName">FavoritesView</string>
 					</object>
+					<reference ref="717819329"/>
 				</object>
 				<object class="IBUITabBar" key="IBUITabBar" id="421604604">
 					<nil key="NSNextResponder"/>
@@ -288,7 +290,7 @@
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>EmergencyNumbersAppDelegate</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>{{329, 597}, {320, 480}}</string>
+					<string>{{1181, 657}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>FavoritesViewController</string>
@@ -382,9 +384,11 @@
 							<string>button3</string>
 							<string>button4</string>
 							<string>button5</string>
+							<string>button6</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>UIButton</string>
 							<string>UIButton</string>
 							<string>UIButton</string>
 							<string>UIButton</string>

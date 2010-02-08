@@ -287,7 +287,7 @@
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>080E96DDFE201D6D7F000001</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
-								<string>19C28FACFE9D520D11CA2CBB</string>
+								<string>3C00C5BD1118913800A83BB0</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>1C37FAAC04509CD000000102</string>
 								<string>1C37FABC05509CD000000102</string>
@@ -295,12 +295,12 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>1</integer>
+									<integer>21</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {186, 475}}</string>
+							<string>{{0, 92}, {186, 475}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -400,9 +400,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>3C1FB150111C843C00581D96</string>
+				<string>3CD9D5811120988C0037618F</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>3C1FB151111C843C00581D96</string>
+				<string>3CD9D5821120988C0037618F</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -523,7 +523,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>287089387.348634</real>
+	<real>287348876.40640497</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -540,14 +540,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>3C1FB288111CA27F00581D96</string>
-		<string>3C1FB285111CA27F00581D96</string>
-		<string>1C530D57069F1CE1000CFCEE</string>
-		<string>3C1FB181111C88DF00581D96</string>
-		<string>3C1FB182111C88DF00581D96</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>3C36384E11171CCF004A128B</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/Hiltmon/Projects/Apps/EmergencyNumbers/EmergencyNumbers.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -589,8 +583,6 @@
 							<string>0pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -630,7 +622,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>3C36384E11171CCF004A128B</string>
-				<string>3C1FB152111C843C00581D96</string>
+				<string>3CD9D5831120988C0037618F</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -643,7 +635,7 @@
 			<key>WindowToolGUID</key>
 			<string>3C36384E11171CCF004A128B</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -754,13 +746,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>3C1FB177111C88DF00581D96</string>
+				<string>3CD9D5841120988C0037618F</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>3C1FB178111C88DF00581D96</string>
-				<string>3C1FB179111C88DF00581D96</string>
-				<string>3C1FB17A111C88DF00581D96</string>
-				<string>3C1FB17B111C88DF00581D96</string>
-				<string>3C1FB17C111C88DF00581D96</string>
+				<string>3CD9D5851120988C0037618F</string>
+				<string>3CD9D5861120988C0037618F</string>
+				<string>3CD9D5871120988C0037618F</string>
+				<string>3CD9D5881120988C0037618F</string>
+				<string>3CD9D5891120988C0037618F</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -914,7 +906,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>3C1FB17F111C88DF00581D96</string>
+				<string>3C63A4B211209235004CFC05</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>

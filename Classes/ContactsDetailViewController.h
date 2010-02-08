@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define kNewItem @"New List Entry"
+
 @class EmergencyNumbersModel;
 
 @protocol ContactAddDelegate;

@@ -33,7 +33,8 @@
 			initWithNibName:@"ContactsDetailView" bundle:nil];
 	addController.delegate = self;
 	
-	addController.title = @"New Contact";
+	addController.title = kNewItem;
+	//self.title = NSLocalizedString(@"Emergency List", @"Emergency List Header");
 	[addController setModel:model];
 	
 	UINavigationController *addNavController = 
@@ -84,7 +85,7 @@
 {
     [super viewDidLoad];
 	
-	self.title = NSLocalizedString(@"Contacts", @"My Emergency Contacts");
+	self.title = NSLocalizedString(@"Emergency List", @"Emergency List Header");
 
 	// Acess the model
 	EmergencyNumbersAppDelegate *appDelegate = 
