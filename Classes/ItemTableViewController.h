@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define kNewItem @"New List Entry"
+
 @class EmergencyNumbersModel;
 
 @protocol ItemAddDelegate;
@@ -30,12 +32,14 @@ enum
 }
 
 @property (nonatomic, assign) EmergencyNumbersModel *model;
+@property (nonatomic, assign) id<ItemAddDelegate> delegate;
 
 @end
 
 @protocol ItemAddDelegate <NSObject>
 
-- (void)contactAddViewController:(ItemTableViewController *)controller
+- (void)contactAddViewController:
+	(ItemTableViewController *)ItemTableViewController
                    didAddContact:(BOOL)addedContact;
 
 @end

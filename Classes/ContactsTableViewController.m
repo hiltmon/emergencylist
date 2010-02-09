@@ -7,7 +7,6 @@
 // ------------------------------------------------------------------------
 
 #import "ContactsTableViewController.h"
-//#import "ContactsDetailViewController.h"
 #import "ItemTableViewController.h"
 #import "EmergencyNumbersAppDelegate.h"	// Needed to get to model
 #import "EmergencyNumbersModel.h"
@@ -29,13 +28,12 @@
 	[model addObject:@""];
 	[model setCurrentContactIndex:[model count]-1];
 	
-	ContactsDetailViewController *addController = 
-		[[ContactsDetailViewController alloc]
-			initWithNibName:@"ContactsDetailView" bundle:nil];
+	ItemTableViewController *addController = 
+		[[ItemTableViewController alloc]
+			initWithNibName:@"ItemTableView" bundle:nil];
 	addController.delegate = self;
 	
 	addController.title = kNewItem;
-	//self.title = NSLocalizedString(@"Emergency List", @"Emergency List Header");
 	[addController setModel:model];
 	
 	UINavigationController *addNavController = 
@@ -50,7 +48,7 @@
 }
 
 - (void)contactAddViewController:
-	(ContactsDetailViewController *)contactsDetailViewController
+	(ItemTableViewController *)ItemTableViewController
                    didAddContact:(BOOL)addedContact
 {
 	if (addedContact)
@@ -65,6 +63,7 @@
 	{
 		// Cancelled, so remove the last contact
 		[model deleteRow:[model count]-1];
+		[model setCurrentContactIndex:0];	// Scroll to the top
 	}
 
 	[self.navigationController dismissModalViewControllerAnimated:YES];
@@ -80,6 +79,12 @@
     
 	[model sort];
     [[self tableView] reloadData];
+	
+	[[self tableView] 
+		scrollToRowAtIndexPath:
+			[NSIndexPath indexPathForRow:[model currentContactIndex] inSection:0]
+				atScrollPosition:UITableViewScrollPositionMiddle 
+						animated:YES];
 }
 
 - (void)viewDidLoad
@@ -93,10 +98,6 @@
 		(EmergencyNumbersAppDelegate *)
 			[[UIApplication sharedApplication] delegate];
 	model = appDelegate.model;
-
-    // Uncomment the following line to display an Edit button 
-	// in the navigation bar for this view controller.
-    //self.navigationItem.rightBarButtonItem = self.editButtonItem;
 	
 	// Setup the ADD button
 	UIBarButtonItem *addButton = 
@@ -156,7 +157,7 @@
     // Set up the cell...
 	NSUInteger row = [indexPath row];
 	cell.textLabel.text = [model contactNameAtIndex:row];
-	cell.detailTextLabel.text = [model contactNumberAtIndex:row];
+	cell.detailTextLabel.text = [model formattedContactNumberAtIndex:row];
     return cell;
 }
 
@@ -168,41 +169,17 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	[model setCurrentContactIndex:[indexPath row]];
 	
-	/* Old form
-	ContactsDetailViewController *aContactsDetail = 
-		[[ContactsDetailViewController alloc]
-			initWithNibName:@"ContactsDetailView" bundle:nil];
-	
-	aContactsDetail.title = model.currentContactName;
-	[aContactsDetail setModel:model];
-	
-	[self.navigationController
-		pushViewController:aContactsDetail animated:YES];
-	[aContactsDetail release];
-	*/
-	
 	ItemTableViewController *aItemController =
 		[[ItemTableViewController alloc] initWithNibName:@"ItemTableView" 
 												  bundle:nil];
 	
-	aItemController.title = model.currentContactName;
+	aItemController.title = @"Info";
 	[aItemController setModel:model];
 	
 	[self.navigationController
 		pushViewController:aItemController animated:YES];
 	[aItemController release];
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView 
-canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
 
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView 
@@ -226,27 +203,6 @@ canEditRowAtIndexPath:(NSIndexPath *)indexPath
 		// into the array, and add a new row to the table view
     //}   
 }
-
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView
-moveRowAtIndexPath:(NSIndexPath *)fromIndexPath 
-	  toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView 
- canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 @end
 

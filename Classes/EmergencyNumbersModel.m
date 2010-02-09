@@ -79,13 +79,13 @@
 			if (i < 10)
 			{
 				[element1 
-					setObject:[NSString stringWithFormat:@"1-917-555-000%d", i]  
+					setObject:[NSString stringWithFormat:@"1917555000%d", i]  
 					   forKey:@"number"];
 			}
 			else 
 			{
 				[element1
-					setObject:[NSString stringWithFormat:@"1-917-555-00%d", i]  
+					setObject:[NSString stringWithFormat:@"191755500%d", i]  
 						forKey:@"number"];
 			}
 			
@@ -185,6 +185,41 @@
 	return [contactsArray objectAtIndex:self.currentContactIndex];
 }
 
+- (NSString *)formatPhoneNumber:(NSString *)phoneNumber
+{
+	if ([phoneNumber isEqualToString:@""])
+	{
+		return phoneNumber;
+	}
+	
+	// ALERT: USA Only, need to implement locales...
+	NSMutableString *formatted = 
+		[[NSMutableString alloc] initWithString:phoneNumber];
+	
+	// Has 1 prefix?
+	NSString *prefix = [phoneNumber substringWithRange: NSMakeRange (0, 1)];
+	if (!([prefix isEqualToString:@"1"]) && ([phoneNumber length] > 7))
+	{
+		// insert the 1
+		[formatted insertString:@"1" atIndex:0];
+	}
+	
+	// Here either 1xxxxxxxxxx or xxxxxxx
+	if ([formatted length] == 7)
+	{
+		[formatted insertString:@"-" atIndex:3];
+	}
+	
+	if ([formatted length] == 11)
+	{
+		[formatted insertString:@"-" atIndex:7];
+		[formatted insertString:@") " atIndex:4];
+		[formatted insertString:@" (" atIndex:1];
+	}
+
+	return [formatted autorelease];
+}
+
 #pragma mark -
 #pragma mark Virtual Accessors
 
@@ -208,6 +243,12 @@
 	return [self contactNumberAtIndex:self.currentContactIndex];
 }
 
+- (NSString *)formattedCurrentContactNumber
+{
+	return [self formatPhoneNumber:
+			[self contactNumberAtIndex:self.currentContactIndex]];
+}
+
 - (void)setCurrentContactNumber:(NSString *)number
 {
 	[[self currentContactRecord] setValue:number forKey:@"number"];
@@ -216,6 +257,12 @@
 - (NSString *)contactNumberAtIndex:(NSUInteger)index
 {
 	return [[contactsArray objectAtIndex:index] valueForKey:@"number"];
+}
+
+- (NSString *)formattedContactNumberAtIndex:(NSUInteger)index
+{
+	return [self formatPhoneNumber:
+			[[contactsArray objectAtIndex:index] valueForKey:@"number"]];
 }
 
 - (NSString *)currentContactButton
@@ -264,17 +311,31 @@
 
 - (void)save
 {
+	//NSLog(@"save...");
 	NSString *filePath = [self dataFilePath];
 	[contactsArray writeToFile:filePath atomically:YES];
 }
 
 - (void)sort
 {
+	NSString *oldContactName = [[self currentContactName] copy];
+	
 	NSSortDescriptor *descriptor = 
 		[[[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES] 
 			autorelease];
 	NSArray *descriptors = [NSArray arrayWithObjects:descriptor, nil];
 	[contactsArray sortUsingDescriptors:descriptors];
+	
+	[self setCurrentContactIndex:0];
+	// Find the contact index where this is the name
+	for (int i = 0; i < [contactsArray count]; i++)
+	{
+		if ([[[contactsArray objectAtIndex:i] valueForKey:@"name"] 
+			 isEqualToString:oldContactName])
+		{
+			[self setCurrentContactIndex:i];
+		}
+	}
 }
 
 - (void)deleteRow:(NSUInteger)row

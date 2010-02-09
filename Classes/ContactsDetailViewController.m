@@ -9,20 +9,10 @@
 #import "ContactsDetailViewController.h"
 #import "EmergencyNumbersModel.h"
 
-@interface ContactsDetailViewController ()
-
-- (void)setButton:(NSString *)button;
-
-@end
-
 @implementation ContactsDetailViewController
 
 @synthesize nameField;
 @synthesize numberField;
-@synthesize favoriteSegmentedControl;
-@synthesize colorSegmentedControl;
-@synthesize delegate;
-
 @synthesize model;
 
 #pragma mark -
@@ -32,100 +22,11 @@
 	// Clear outlets or [CALayer release] tries to release these again
 	nameField = nil;
 	numberField = nil;
-	favoriteSegmentedControl = nil;
-	colorSegmentedControl = nil;
 	
 	[nameField dealloc];
 	[numberField dealloc];
-	[favoriteSegmentedControl dealloc];
-	[colorSegmentedControl dealloc];
-	
-	oldButton = nil;
-	[oldButton dealloc];
 
     [super dealloc];
-}
-
-- (void)cancelAdd
-{
-	[delegate contactAddViewController:self didAddContact:NO];
-}
-
-- (void)saveAdd
-{
-	[delegate contactAddViewController:self didAddContact:YES];
-}
-
-- (void)setButton:(NSString *)button
-{
-	[model clearButton:button];
-	[model setCurrentContactButton:button];
-	[oldButton release];
-	oldButton = [button copy];
-	
-	[model save];
-}
-
-- (void)favoritesSegmentAction:(id)sender
-{
-	NSString *whichButton = [NSString stringWithFormat:@"%d", 
-							 [favoriteSegmentedControl selectedSegmentIndex]];
-	
-	if ([whichButton isEqualToString:oldButton])
-	{
-		return;
-	}
-	
-	if ([model isButtonInUse:whichButton])
-	{
-		// Open a alert
-		// TODO: Fixup strings
-		NSString *message = 
-			[NSString stringWithFormat:
-				@"Used by %@, do you still want to change it?",
-					[model contactNameForButton:whichButton]];
-		UIAlertView *alert = 
-			[[UIAlertView alloc] initWithTitle:@"Button In Use" 
-									   message:message
-									  delegate:self 
-							 cancelButtonTitle:@"No" 
-							 otherButtonTitles:@"Yes", nil];
-		[alert show];
-		[alert release];
-	}
-	else
-	{
-		[self setButton:whichButton];
-	}
-}
-
-- (void)alertView:(UIAlertView *)alertView 
-clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-	if (buttonIndex == 1)
-	{
-		// YES
-		NSString *whichButton = 
-			[NSString stringWithFormat:@"%d", 
-				[favoriteSegmentedControl selectedSegmentIndex]];
-		[self setButton:whichButton];
-	}
-	else
-	{
-		// NO
-		[favoriteSegmentedControl setSelectedSegmentIndex:
-			[oldButton intValue]];
-	}
-}
-
-- (void)colorSegmentAction:(id)sender
-{
-	NSString *whichColor = [NSString stringWithFormat:@"%@", 
-		 [colorSegmentedControl titleForSegmentAtIndex:[
-				colorSegmentedControl selectedSegmentIndex]]];
-	[model setCurrentContactColor:whichColor];
-	
-	[model save];
 }
 
 #pragma mark -
@@ -134,7 +35,7 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
 - (IBAction)textFieldDoneEditing:(id)sender
 {
 	// Hide the keyboard
-	[sender resignFirstResponder];
+	//[sender resignFirstResponder];
 	
 	[model save];
 }
@@ -152,87 +53,41 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
 	}
 }
 
-- (IBAction)backgroundTap:(id)sender
+#pragma mark -
+#pragma mark UITextFieldDelegate Protocol
+
+// Implemented to catch 'next' on keypad
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-	// Hide the keyboard
-	[nameField resignFirstResponder];
-	[numberField resignFirstResponder];
+	if (textField == nameField)
+	{
+		[numberField becomeFirstResponder];
+	}
+	else
+	{
+		[nameField becomeFirstResponder];
+	}
+
+	return NO;
 }
 
 #pragma mark -
 #pragma mark UIViewController
 
-/*
-// Implement loadView to create a view hierarchy programmatically,
-// without using a nib.
-- (void)loadView
-{
-}
-*/
-
 // Implement viewDidLoad to do additional setup after loading the view,
 // typically from a nib.
 - (void)viewDidLoad
 {
+	[super viewDidLoad];
+	
 	[nameField setText:[model currentContactName]];
 	[numberField setText:[model currentContactNumber]];
 	
-	[favoriteSegmentedControl setSelectedSegmentIndex:
-		[[model currentContactButton] intValue]];
-	oldButton = [[model currentContactButton] copy];
-	[favoriteSegmentedControl addTarget:self 
-								 action:@selector(favoritesSegmentAction:) 
-					   forControlEvents:UIControlEventValueChanged];
-
-	int indexToSelect = 0;
-	for (int i = 0; i < [colorSegmentedControl numberOfSegments]; i++)
-	{
-		if ([[colorSegmentedControl titleForSegmentAtIndex:i] 
-			 isEqualToString:[model currentContactColor]])
-		{
-			indexToSelect = i;
-		}
-	}
-	[colorSegmentedControl setSelectedSegmentIndex:indexToSelect];
-	[colorSegmentedControl addTarget:self 
-								 action:@selector(colorSegmentAction:) 
-					   forControlEvents:UIControlEventValueChanged];
+	self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
 	
-	// TODO: New plan, user could use this string!
-	if ([[self title] isEqualToString:kNewItem])
-	{
-		// Add the save and cancel UI buttons
-		// Setup the CANCEL button
-		UIBarButtonItem *cancelButton = 
-			[[UIBarButtonItem alloc]
-				initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
-				target:self 
-				action:@selector(cancelAdd)];
-		self.navigationItem.leftBarButtonItem = cancelButton;
-		[cancelButton release];
-		
-		// Setup the SAVE button
-		UIBarButtonItem *saveButton = 
-			[[UIBarButtonItem alloc]
-				initWithBarButtonSystemItem:UIBarButtonSystemItemSave
-				target:self 
-				action:@selector(saveAdd)];
-		self.navigationItem.rightBarButtonItem = saveButton;
-		[saveButton release];
-	}
-
-    [super viewDidLoad];
+	// Edit the name
+	[nameField becomeFirstResponder];
 }
-
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:
-	(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
 
 - (void)didReceiveMemoryWarning
 {

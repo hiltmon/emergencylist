@@ -34,8 +34,10 @@
 - (NSString *)contactNameAtIndex:(NSUInteger)index;
 
 - (NSString *)currentContactNumber;
+- (NSString *)formattedCurrentContactNumber;
 - (void)setCurrentContactNumber:(NSString *)number;
 - (NSString *)contactNumberAtIndex:(NSUInteger)index;
+- (NSString *)formattedContactNumberAtIndex:(NSUInteger)index;
 
 - (NSString *)currentContactButton;
 - (void)setCurrentContactButton:(NSString *)button;

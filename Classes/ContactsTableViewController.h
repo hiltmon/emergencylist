@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-#import "ContactsDetailViewController.h"
+#import "ItemTableViewController.h"
 
 //@class ContactsDetailViewController;
 @class EmergencyNumbersModel;
 
 @interface ContactsTableViewController : UITableViewController 
-	<UITableViewDataSource, UITableViewDelegate, ContactAddDelegate>
+	<UITableViewDataSource, UITableViewDelegate, ItemAddDelegate>
 {
 	IBOutlet UITableView *contactsTableView;
 
