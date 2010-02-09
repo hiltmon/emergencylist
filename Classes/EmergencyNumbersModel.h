@@ -13,11 +13,13 @@
 @interface EmergencyNumbersModel : NSObject
 {
 	NSMutableArray *contactsArray;
+	NSArray *buttonsArray;
 	
 	NSUInteger currentContactIndex;
 }
 
 @property (nonatomic, assign) NSUInteger currentContactIndex;
+@property (nonatomic, readonly) NSArray *buttonsArray;
 
 //- (id)init;
 - (NSUInteger)count;

@@ -22,6 +22,7 @@
 
 //@synthesize contactsArray;
 @synthesize currentContactIndex;
+@synthesize buttonsArray;
 
 #pragma mark -
 #pragma mark init and dealloc
@@ -105,12 +106,20 @@
 		[array release];
 	}
 	
+	// Setup the master arrays
+	buttonsArray = [[NSArray alloc] initWithObjects:@"No Button",
+					@"Top Left", @"Top Right",
+					@"Middle Left", @"Middle Right", 
+					@"Bottom Left", @"Bottom Right", nil];
+	
 	return self;
 }
 
 - (void)dealloc
 {
 	[contactsArray dealloc];
+	[buttonsArray dealloc];
+	
 	[super dealloc];
 }
 
@@ -149,6 +158,11 @@
 
 - (NSString *)contactNameForButton:(NSString *)button
 {
+	if ([button isEqualToString:@"0"])
+	{
+		return @"";
+	}
+	
 	for (NSDictionary *item in contactsArray)
 	{
 		if ([[item valueForKey:@"button"] isEqualToString:button])

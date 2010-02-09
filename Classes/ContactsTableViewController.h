@@ -19,7 +19,6 @@
 	IBOutlet UITableView *contactsTableView;
 
 	EmergencyNumbersModel *model;
-	EmergencyNumbersModel *newModel;
 }
 
 @end

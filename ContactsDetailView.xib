@@ -257,7 +257,6 @@
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
 					<bytes key="NSWhite">MQA</bytes>
-					<reference key="NSCustomColorSpace" ref="435290527"/>
 				</object>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
 				<object class="IBUISimulatedTabBarMetrics" key="IBUISimulatedBottomBarMetrics"/>
@@ -384,14 +383,14 @@
 						<reference key="object" ref="191373211"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="429946062"/>
-							<reference ref="685323599"/>
-							<reference ref="427874980"/>
-							<reference ref="128259454"/>
 							<reference ref="540646666"/>
-							<reference ref="417107612"/>
-							<reference ref="131517558"/>
 							<reference ref="431626373"/>
+							<reference ref="128259454"/>
+							<reference ref="427874980"/>
+							<reference ref="685323599"/>
+							<reference ref="131517558"/>
+							<reference ref="417107612"/>
+							<reference ref="429946062"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -407,23 +406,13 @@
 						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">6</int>
-						<reference key="object" ref="417107612"/>
+						<int key="objectID">13</int>
+						<reference key="object" ref="540646666"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">7</int>
-						<reference key="object" ref="131517558"/>
-						<reference key="parent" ref="191373211"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">8</int>
-						<reference key="object" ref="429946062"/>
-						<reference key="parent" ref="191373211"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">9</int>
-						<reference key="object" ref="685323599"/>
+						<int key="objectID">12</int>
+						<reference key="object" ref="128259454"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -437,13 +426,23 @@
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">12</int>
-						<reference key="object" ref="128259454"/>
+						<int key="objectID">9</int>
+						<reference key="object" ref="685323599"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">13</int>
-						<reference key="object" ref="540646666"/>
+						<int key="objectID">7</int>
+						<reference key="object" ref="131517558"/>
+						<reference key="parent" ref="191373211"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">6</int>
+						<reference key="object" ref="417107612"/>
+						<reference key="parent" ref="191373211"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">8</int>
+						<reference key="object" ref="429946062"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</object>
@@ -499,7 +498,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">34</int>
+			<int key="maxID">35</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

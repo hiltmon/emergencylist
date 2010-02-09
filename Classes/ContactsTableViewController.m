@@ -7,7 +7,8 @@
 // ------------------------------------------------------------------------
 
 #import "ContactsTableViewController.h"
-#import "ContactsDetailViewController.h"
+//#import "ContactsDetailViewController.h"
+#import "ItemTableViewController.h"
 #import "EmergencyNumbersAppDelegate.h"	// Needed to get to model
 #import "EmergencyNumbersModel.h"
 
@@ -167,6 +168,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	[model setCurrentContactIndex:[indexPath row]];
 	
+	/* Old form
 	ContactsDetailViewController *aContactsDetail = 
 		[[ContactsDetailViewController alloc]
 			initWithNibName:@"ContactsDetailView" bundle:nil];
@@ -177,6 +179,18 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 	[self.navigationController
 		pushViewController:aContactsDetail animated:YES];
 	[aContactsDetail release];
+	*/
+	
+	ItemTableViewController *aItemController =
+		[[ItemTableViewController alloc] initWithNibName:@"ItemTableView" 
+												  bundle:nil];
+	
+	aItemController.title = model.currentContactName;
+	[aItemController setModel:model];
+	
+	[self.navigationController
+		pushViewController:aItemController animated:YES];
+	[aItemController release];
 }
 
 /*
