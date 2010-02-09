@@ -1,15 +1,16 @@
 // ------------------------------------------------------------------------
-//  ButtonLookupTableViewController.m
+//  ColorLookupTableViewController.m
 //  EmergencyNumbers
 //
 //  Created by Hilton Lipschitz on 2/9/10.
 //  Copyright 2010 NoVerse.com. All rights reserved.
 // ------------------------------------------------------------------------
 
-#import "ButtonLookupTableViewController.h"
+#import "ColorLookupTableViewController.h"
 #import "EmergencyNumbersModel.h"
+#import "UIImage_Resize.h"
 
-@implementation ButtonLookupTableViewController
+@implementation ColorLookupTableViewController
 
 @synthesize model;
 
@@ -21,13 +22,13 @@
 }
 
 /*
- - (id)initWithStyle:(UITableViewStyle)style {
- // Override initWithStyle: if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
- if (self = [super initWithStyle:style]) {
- }
- return self;
- }
- */
+- (id)initWithStyle:(UITableViewStyle)style {
+    // Override initWithStyle: if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
+    if (self = [super initWithStyle:style]) {
+    }
+    return self;
+}
+*/
 
 #pragma mark -
 #pragma mark Action Methods
@@ -99,14 +100,14 @@
 - (NSInteger)tableView:(UITableView *)tableView 
  numberOfRowsInSection:(NSInteger)section
 {
-    return [model.buttonsArray count];
+    return [model.colorsArray count];
 }
-
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView 
 		 cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView 
@@ -120,22 +121,17 @@
     
     // Set up the cell...
 	NSUInteger row = [indexPath row];
-	cell.textLabel.text = [model contactNameForButton:
-						 [NSString stringWithFormat:@"%d", row]];
-	cell.textLabel.textColor = [UIColor blackColor];
+	cell.textLabel.text = [model.colorsArray objectAtIndex:row];
 	[cell setAccessoryType:UITableViewCellAccessoryNone];
 	
-	if ([cell.textLabel.text isEqualToString:@""])
-	{
-		cell.textLabel.text = [model.buttonsArray objectAtIndex:row];
-		cell.textLabel.textColor = [UIColor lightGrayColor];
-	}
 	NSString *rowImageName = 
-		[NSString stringWithFormat:@"WhichButton%d.png", row];
+	[NSString stringWithFormat:@"%@Button.png", 
+		[model.colorsArray objectAtIndex:row]];
 	cell.imageView.image = 
-		[UIImage imageNamed:rowImageName] ;
+		[[UIImage imageNamed:rowImageName] 
+			scaleToSize:CGSizeMake(32.0f, 32.0f)];
 	
-	if ([model.currentContactButton intValue] == row)
+	if ([cell.textLabel.text isEqualToString:model.currentContactColor])
 	{
 		[cell setAccessoryType:UITableViewCellAccessoryCheckmark];
 	}
@@ -143,8 +139,6 @@
     return cell;
 }
 
-#pragma mark -
-#pragma mark UITableViewDataSource Protocol
 
 - (void)tableView:(UITableView *)tableView 
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -155,9 +149,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 	// [anotherViewController release];
 	
 	NSUInteger row = [indexPath row];
-	NSString *whichButton = [NSString stringWithFormat:@"%d", row];
-	[model clearButton:whichButton];
-	[model setCurrentContactButton:whichButton];
+	[model setCurrentContactColor:[model.colorsArray objectAtIndex:row]];
 	
 	[tableView reloadData];
 }

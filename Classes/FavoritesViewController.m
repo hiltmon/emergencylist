@@ -82,6 +82,7 @@
 	button3.hidden = YES;
 	button4.hidden = YES;
 	button5.hidden = YES;
+	button6.hidden = YES;
 	
 	// Set the buttons...
 	for (int i = 0; i < [model count]; i++)

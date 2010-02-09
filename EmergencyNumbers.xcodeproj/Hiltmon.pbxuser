@@ -155,7 +155,7 @@
 					20,
 					317,
 					20,
-					48.16259765625,
+					48,
 					43,
 					43,
 					20,
@@ -193,8 +193,13 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 287427075;
-			PBXWorkspaceStateSaveDate = 287427075;
+			PBXPerProjectTemplateStateSaveDate = 287427615;
+			PBXWorkspaceStateSaveDate = 287427615;
+		};
+		perUserProjectItems = {
+			3C719A6D1121D5C500074034 /* PBXTextBookmark */ = 3C719A6D1121D5C500074034 /* PBXTextBookmark */;
+			3C719A6E1121D5C500074034 /* PBXTextBookmark */ = 3C719A6E1121D5C500074034 /* PBXTextBookmark */;
+			3C719A6F1121D5C500074034 /* PBXTextBookmark */ = 3C719A6F1121D5C500074034 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 3C36385011171CCF004A128B /* Source Control */;
 		userBuildSettings = {
@@ -217,9 +222,9 @@
 	};
 	3C2A950611209C8D00D10B62 /* ItemTableViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1048, 3302}}";
-			sepNavSelRange = "{5116, 0}";
-			sepNavVisRange = "{4128, 1014}";
+			sepNavIntBoundsRect = "{{0, 0}, {908, 3575}}";
+			sepNavSelRange = "{5491, 0}";
+			sepNavVisRange = "{4588, 1018}";
 			sepNavWindowFrame = "{{616, 570}, {746, 585}}";
 		};
 	};
@@ -294,16 +299,16 @@
 	3C36385411171D53004A128B /* FavoritesViewController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {691, 442}}";
-			sepNavSelRange = "{581, 0}";
+			sepNavSelRange = "{516, 18}";
 			sepNavVisRange = "{0, 948}";
 			sepNavWindowFrame = "{{831, 604}, {750, 558}}";
 		};
 	};
 	3C36385511171D53004A128B /* FavoritesViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {691, 1794}}";
-			sepNavSelRange = "{1510, 88}";
-			sepNavVisRange = "{1358, 1060}";
+			sepNavIntBoundsRect = "{{0, 0}, {691, 1846}}";
+			sepNavSelRange = "{2424, 0}";
+			sepNavVisRange = "{1756, 1000}";
 			sepNavWindowFrame = "{{831, 604}, {750, 558}}";
 		};
 	};
@@ -328,7 +333,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 57;
-		modificationTime = 287427085.360183;
+		modificationTime = 287430013.373005;
 		originalNumberOfMultipleMatches = 1;
 		state = 0;
 	};
@@ -345,7 +350,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 57;
-		modificationTime = 287427085.360217;
+		modificationTime = 287430013.373073;
 		originalNumberOfMultipleMatches = 1;
 		state = 0;
 	};
@@ -362,7 +367,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 57;
-		modificationTime = 287427085.360233;
+		modificationTime = 287430013.373147;
 		originalNumberOfMultipleMatches = 1;
 		state = 0;
 	};
@@ -408,40 +413,101 @@
 	};
 	3C363A7611173F05004A128B /* ContactsDetailViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {691, 3263}}";
+			sepNavIntBoundsRect = "{{0, 0}, {691, 3276}}";
 			sepNavSelRange = "{349, 33}";
-			sepNavVisRange = "{0, 823}";
+			sepNavVisRange = "{3339, 917}";
 			sepNavWindowFrame = "{{989, 563}, {750, 558}}";
 		};
+	};
+	3C719A2F1121CDA600074034 /* ColorLookupTableViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {687, 457}}";
+			sepNavSelRange = "{364, 0}";
+			sepNavVisRange = "{0, 622}";
+		};
+	};
+	3C719A301121CDA600074034 /* ColorLookupTableViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1069, 2665}}";
+			sepNavSelRange = "{413, 0}";
+			sepNavVisRange = "{0, 862}";
+			sepNavWindowFrame = "{{570, 531}, {746, 585}}";
+		};
+	};
+	3C719A3C1121D2D400074034 /* UIImage_Resize.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {687, 457}}";
+			sepNavSelRange = "{399, 0}";
+			sepNavVisRange = "{0, 444}";
+			sepNavWindowFrame = "{{61, 546}, {746, 585}}";
+		};
+	};
+	3C719A3D1121D2D400074034 /* UIImage_Resize.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {687, 457}}";
+			sepNavSelRange = "{370, 0}";
+			sepNavVisRange = "{0, 888}";
+		};
+	};
+	3C719A6D1121D5C500074034 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3C36385411171D53004A128B /* FavoritesViewController.h */;
+		name = "FavoritesViewController.h: 20";
+		rLen = 18;
+		rLoc = 516;
+		rType = 0;
+		vrLen = 948;
+		vrLoc = 0;
+	};
+	3C719A6E1121D5C500074034 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3C36385511171D53004A128B /* FavoritesViewController.m */;
+		name = "FavoritesViewController.m: 57";
+		rLen = 88;
+		rLoc = 1510;
+		rType = 0;
+		vrLen = 942;
+		vrLoc = 1861;
+	};
+	3C719A6F1121D5C500074034 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3C36385511171D53004A128B /* FavoritesViewController.m */;
+		name = "FavoritesViewController.m: 85";
+		rLen = 0;
+		rLoc = 2424;
+		rType = 0;
+		vrLen = 1000;
+		vrLoc = 1756;
 	};
 	3CAC819E11176B1E00A18521 /* EmergencyNumbersModel.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {687, 702}}";
-			sepNavSelRange = "{704, 53}";
-			sepNavVisRange = "{415, 1041}";
-			sepNavWindowFrame = "{{192, 541}, {746, 585}}";
+			sepNavSelRange = "{301, 33}";
+			sepNavVisRange = "{0, 1029}";
+			sepNavWindowFrame = "{{386, 342}, {746, 585}}";
 		};
 	};
 	3CAC819F11176B1E00A18521 /* EmergencyNumbersModel.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {687, 3978}}";
-			sepNavSelRange = "{3364, 0}";
-			sepNavVisRange = "{2975, 556}";
+			sepNavIntBoundsRect = "{{0, 0}, {687, 3848}}";
+			sepNavSelRange = "{2369, 0}";
+			sepNavVisRange = "{2314, 803}";
 			sepNavWindowFrame = "{{386, 342}, {746, 585}}";
 		};
 	};
 	3CC6F3021121B6AB002B68B9 /* ButtonLookupTableViewController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {687, 457}}";
-			sepNavSelRange = "{618, 0}";
+			sepNavSelRange = "{365, 0}";
 			sepNavVisRange = "{0, 625}";
+			sepNavWindowFrame = "{{1000, 572}, {746, 585}}";
 		};
 	};
 	3CC6F3031121B6AB002B68B9 /* ButtonLookupTableViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1048, 2665}}";
-			sepNavSelRange = "{4956, 0}";
-			sepNavVisRange = "{4450, 1077}";
+			sepNavIntBoundsRect = "{{0, 0}, {1048, 2795}}";
+			sepNavSelRange = "{234, 75}";
+			sepNavVisRange = "{114, 761}";
 			sepNavWindowFrame = "{{993, 563}, {746, 585}}";
 		};
 	};

@@ -23,6 +23,7 @@
 //@synthesize contactsArray;
 @synthesize currentContactIndex;
 @synthesize buttonsArray;
+@synthesize colorsArray;
 
 #pragma mark -
 #pragma mark init and dealloc
@@ -112,6 +113,10 @@
 					@"Middle Left", @"Middle Right", 
 					@"Bottom Left", @"Bottom Right", nil];
 	
+	colorsArray = [[NSArray alloc] initWithObjects:@"Default",
+					@"Red", @"Green",
+					@"Blue", @"Yellow", nil];
+	
 	return self;
 }
 
@@ -119,6 +124,7 @@
 {
 	[contactsArray dealloc];
 	[buttonsArray dealloc];
+	[colorsArray dealloc];
 	
 	[super dealloc];
 }

@@ -28,6 +28,9 @@
 		3C363A3711173B78004A128B /* ContactsTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C363A3611173B78004A128B /* ContactsTableView.xib */; };
 		3C363A7411173EF4004A128B /* ContactsDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C363A7311173EF4004A128B /* ContactsDetailView.xib */; };
 		3C363A7711173F05004A128B /* ContactsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C363A7611173F05004A128B /* ContactsDetailViewController.m */; };
+		3C719A311121CDA600074034 /* ColorLookupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C719A301121CDA600074034 /* ColorLookupTableViewController.m */; };
+		3C719A331121CDBB00074034 /* ColorLookupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C719A321121CDBB00074034 /* ColorLookupView.xib */; };
+		3C719A3E1121D2D400074034 /* UIImage_Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C719A3D1121D2D400074034 /* UIImage_Resize.m */; };
 		3CAC81A011176B1E00A18521 /* EmergencyNumbersModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CAC819F11176B1E00A18521 /* EmergencyNumbersModel.m */; };
 		3CC3D797112089FE001EDDC5 /* Emergency.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CC3D796112089FE001EDDC5 /* Emergency.png */; };
 		3CC6F3041121B6AB002B68B9 /* ButtonLookupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC6F3031121B6AB002B68B9 /* ButtonLookupTableViewController.m */; };
@@ -71,6 +74,11 @@
 		3C363A7311173EF4004A128B /* ContactsDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactsDetailView.xib; sourceTree = "<group>"; };
 		3C363A7511173F05004A128B /* ContactsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsDetailViewController.h; sourceTree = "<group>"; };
 		3C363A7611173F05004A128B /* ContactsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsDetailViewController.m; sourceTree = "<group>"; };
+		3C719A2F1121CDA600074034 /* ColorLookupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorLookupTableViewController.h; sourceTree = "<group>"; };
+		3C719A301121CDA600074034 /* ColorLookupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorLookupTableViewController.m; sourceTree = "<group>"; };
+		3C719A321121CDBB00074034 /* ColorLookupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorLookupView.xib; sourceTree = "<group>"; };
+		3C719A3C1121D2D400074034 /* UIImage_Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImage_Resize.h; sourceTree = "<group>"; };
+		3C719A3D1121D2D400074034 /* UIImage_Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImage_Resize.m; sourceTree = "<group>"; };
 		3CAC819E11176B1E00A18521 /* EmergencyNumbersModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmergencyNumbersModel.h; sourceTree = "<group>"; };
 		3CAC819F11176B1E00A18521 /* EmergencyNumbersModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmergencyNumbersModel.m; sourceTree = "<group>"; };
 		3CC3D796112089FE001EDDC5 /* Emergency.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Emergency.png; sourceTree = "<group>"; };
@@ -120,6 +128,10 @@
 				3C2A950611209C8D00D10B62 /* ItemTableViewController.m */,
 				3CC6F3021121B6AB002B68B9 /* ButtonLookupTableViewController.h */,
 				3CC6F3031121B6AB002B68B9 /* ButtonLookupTableViewController.m */,
+				3C719A2F1121CDA600074034 /* ColorLookupTableViewController.h */,
+				3C719A301121CDA600074034 /* ColorLookupTableViewController.m */,
+				3C719A3C1121D2D400074034 /* UIImage_Resize.h */,
+				3C719A3D1121D2D400074034 /* UIImage_Resize.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -164,6 +176,7 @@
 				3C363A7311173EF4004A128B /* ContactsDetailView.xib */,
 				3C2A950811209CAD00D10B62 /* ItemTableView.xib */,
 				3CC6F3051121B6C1002B68B9 /* ButtonLookupView.xib */,
+				3C719A321121CDBB00074034 /* ColorLookupView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -264,6 +277,7 @@
 				3CC6F3891121C630002B68B9 /* WhichButton5.png in Resources */,
 				3CC6F38A1121C630002B68B9 /* WhichButton6.png in Resources */,
 				3CC6F38C1121C688002B68B9 /* WhichButton0.png in Resources */,
+				3C719A331121CDBB00074034 /* ColorLookupView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +297,8 @@
 				3CAC81A011176B1E00A18521 /* EmergencyNumbersModel.m in Sources */,
 				3C2A950711209C8D00D10B62 /* ItemTableViewController.m in Sources */,
 				3CC6F3041121B6AB002B68B9 /* ButtonLookupTableViewController.m in Sources */,
+				3C719A311121CDA600074034 /* ColorLookupTableViewController.m in Sources */,
+				3C719A3E1121D2D400074034 /* UIImage_Resize.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

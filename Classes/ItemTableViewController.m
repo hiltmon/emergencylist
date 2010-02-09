@@ -10,6 +10,7 @@
 #import "EmergencyNumbersModel.h"
 //#import "TwoColumnTableViewCell.h"
 #import "ButtonLookupTableViewController.h"
+#import "ColorLookupTableViewController.h"
 
 @implementation ItemTableViewController
 
@@ -163,7 +164,9 @@ titleForHeaderInSection:(NSInteger)section
 			if (row == 0)
 			{
 				cell.textLabel.text = @"Button";
-				cell.detailTextLabel.text = model.currentContactButton;
+				cell.detailTextLabel.text = 
+					[model.buttonsArray objectAtIndex:
+						[model.currentContactButton intValue]];
 			}
 			else if (row == 1)
 			{
@@ -207,6 +210,17 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 				[self.navigationController 
 					pushViewController:buttonLookupController animated:YES];
 				[buttonLookupController release];
+			}
+			
+			if (row == 1)
+			{
+				ColorLookupTableViewController *colorLookupController = 
+					[[ColorLookupTableViewController alloc]
+					 initWithNibName:@"ColorLookupView" bundle:nil];
+				[colorLookupController setModel:model];
+				[self.navigationController 
+					pushViewController:colorLookupController animated:YES];
+				[colorLookupController release];
 			}
 			break;
 	}

@@ -14,12 +14,14 @@
 {
 	NSMutableArray *contactsArray;
 	NSArray *buttonsArray;
+	NSArray *colorsArray;
 	
 	NSUInteger currentContactIndex;
 }
 
 @property (nonatomic, assign) NSUInteger currentContactIndex;
 @property (nonatomic, readonly) NSArray *buttonsArray;
+@property (nonatomic, readonly) NSArray *colorsArray;
 
 //- (id)init;
 - (NSUInteger)count;
