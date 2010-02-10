@@ -253,8 +253,6 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 			
 			break;
 	}
-	
-	
 }
 
 @end

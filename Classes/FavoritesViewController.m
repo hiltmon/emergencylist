@@ -44,15 +44,22 @@
 		andColor:(NSString *)myColor 
 	   forButton:(UIButton *)button
 {
+	NSString *modifiedTitle = [NSString stringWithFormat:@"\n\n\n%@", title];
 	// Set the title to be the same for ALL states
-	[button setTitle:title forState:UIControlStateNormal];
-	[button setTitle:title forState:UIControlStateHighlighted];
-	[button setTitle:title forState:UIControlStateDisabled];
-	[button setTitle:title forState:UIControlStateSelected];
+	[button setTitle:modifiedTitle forState:UIControlStateNormal];
+	[button setTitle:modifiedTitle forState:UIControlStateHighlighted];
+	[button setTitle:modifiedTitle forState:UIControlStateDisabled];
+	[button setTitle:modifiedTitle forState:UIControlStateSelected];
 	
 	// TODO: Optimize by caching images
 	// Create the button backgrounds
-	[button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+	[button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+	if ([myColor isEqualToString:@"Yellow"] 
+		|| [myColor isEqualToString:@"Cyan"])
+	{
+		[button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+	}
+	[button setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
 	
 	NSString *backgroundImageName = 
 		[NSString stringWithFormat:@"%@Button.png", myColor];

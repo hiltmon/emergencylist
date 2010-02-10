@@ -115,7 +115,8 @@
 	
 	colorsArray = [[NSArray alloc] initWithObjects:@"Default",
 					@"Red", @"Green",
-					@"Blue", @"Yellow", nil];
+					@"Blue", @"Yellow",
+				    @"Cyan", @"Purple", nil];
 	
 	return self;
 }

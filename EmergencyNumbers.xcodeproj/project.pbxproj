@@ -13,12 +13,6 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
-		3C00C5C41118913800A83BB0 /* BlueButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C00C5BE1118913800A83BB0 /* BlueButton.png */; };
-		3C00C5C51118913800A83BB0 /* DefaultButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C00C5BF1118913800A83BB0 /* DefaultButton.png */; };
-		3C00C5C61118913800A83BB0 /* GrayButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C00C5C01118913800A83BB0 /* GrayButton.png */; };
-		3C00C5C71118913800A83BB0 /* GreenButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C00C5C11118913800A83BB0 /* GreenButton.png */; };
-		3C00C5C81118913800A83BB0 /* RedButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C00C5C21118913800A83BB0 /* RedButton.png */; };
-		3C00C5C91118913800A83BB0 /* YellowButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C00C5C31118913800A83BB0 /* YellowButton.png */; };
 		3C2A950711209C8D00D10B62 /* ItemTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A950611209C8D00D10B62 /* ItemTableViewController.m */; };
 		3C2A950911209CAD00D10B62 /* ItemTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C2A950811209CAD00D10B62 /* ItemTableView.xib */; };
 		3C36385711171D53004A128B /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C36385511171D53004A128B /* FavoritesViewController.m */; };
@@ -42,6 +36,14 @@
 		3CC6F3891121C630002B68B9 /* WhichButton5.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CC6F3831121C630002B68B9 /* WhichButton5.png */; };
 		3CC6F38A1121C630002B68B9 /* WhichButton6.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CC6F3841121C630002B68B9 /* WhichButton6.png */; };
 		3CC6F38C1121C688002B68B9 /* WhichButton0.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CC6F38B1121C688002B68B9 /* WhichButton0.png */; };
+		3CCD21B51123348500A1CD52 /* BlueButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CCD21AD1123348500A1CD52 /* BlueButton.png */; };
+		3CCD21B61123348500A1CD52 /* CyanButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CCD21AE1123348500A1CD52 /* CyanButton.png */; };
+		3CCD21B71123348500A1CD52 /* DefaultButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CCD21AF1123348500A1CD52 /* DefaultButton.png */; };
+		3CCD21B81123348500A1CD52 /* GrayButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CCD21B01123348500A1CD52 /* GrayButton.png */; };
+		3CCD21B91123348500A1CD52 /* GreenButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CCD21B11123348500A1CD52 /* GreenButton.png */; };
+		3CCD21BA1123348500A1CD52 /* PurpleButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CCD21B21123348500A1CD52 /* PurpleButton.png */; };
+		3CCD21BB1123348500A1CD52 /* RedButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CCD21B31123348500A1CD52 /* RedButton.png */; };
+		3CCD21BC1123348500A1CD52 /* YellowButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CCD21B41123348500A1CD52 /* YellowButton.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,12 +56,6 @@
 		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* EmergencyNumbers_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmergencyNumbers_Prefix.pch; sourceTree = "<group>"; };
-		3C00C5BE1118913800A83BB0 /* BlueButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueButton.png; sourceTree = "<group>"; };
-		3C00C5BF1118913800A83BB0 /* DefaultButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DefaultButton.png; sourceTree = "<group>"; };
-		3C00C5C01118913800A83BB0 /* GrayButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GrayButton.png; sourceTree = "<group>"; };
-		3C00C5C11118913800A83BB0 /* GreenButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GreenButton.png; sourceTree = "<group>"; };
-		3C00C5C21118913800A83BB0 /* RedButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedButton.png; sourceTree = "<group>"; };
-		3C00C5C31118913800A83BB0 /* YellowButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YellowButton.png; sourceTree = "<group>"; };
 		3C2A950511209C8D00D10B62 /* ItemTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemTableViewController.h; sourceTree = "<group>"; };
 		3C2A950611209C8D00D10B62 /* ItemTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemTableViewController.m; sourceTree = "<group>"; };
 		3C2A950811209CAD00D10B62 /* ItemTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableView.xib; sourceTree = "<group>"; };
@@ -92,6 +88,14 @@
 		3CC6F3831121C630002B68B9 /* WhichButton5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WhichButton5.png; sourceTree = "<group>"; };
 		3CC6F3841121C630002B68B9 /* WhichButton6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WhichButton6.png; sourceTree = "<group>"; };
 		3CC6F38B1121C688002B68B9 /* WhichButton0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WhichButton0.png; sourceTree = "<group>"; };
+		3CCD21AD1123348500A1CD52 /* BlueButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueButton.png; sourceTree = "<group>"; };
+		3CCD21AE1123348500A1CD52 /* CyanButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CyanButton.png; sourceTree = "<group>"; };
+		3CCD21AF1123348500A1CD52 /* DefaultButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DefaultButton.png; sourceTree = "<group>"; };
+		3CCD21B01123348500A1CD52 /* GrayButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GrayButton.png; sourceTree = "<group>"; };
+		3CCD21B11123348500A1CD52 /* GreenButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GreenButton.png; sourceTree = "<group>"; };
+		3CCD21B21123348500A1CD52 /* PurpleButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PurpleButton.png; sourceTree = "<group>"; };
+		3CCD21B31123348500A1CD52 /* RedButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedButton.png; sourceTree = "<group>"; };
+		3CCD21B41123348500A1CD52 /* YellowButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YellowButton.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* EmergencyNumbers-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "EmergencyNumbers-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -194,6 +198,14 @@
 		3C00C5BD1118913800A83BB0 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3CCD21AD1123348500A1CD52 /* BlueButton.png */,
+				3CCD21AE1123348500A1CD52 /* CyanButton.png */,
+				3CCD21AF1123348500A1CD52 /* DefaultButton.png */,
+				3CCD21B01123348500A1CD52 /* GrayButton.png */,
+				3CCD21B11123348500A1CD52 /* GreenButton.png */,
+				3CCD21B21123348500A1CD52 /* PurpleButton.png */,
+				3CCD21B31123348500A1CD52 /* RedButton.png */,
+				3CCD21B41123348500A1CD52 /* YellowButton.png */,
 				3CC6F38B1121C688002B68B9 /* WhichButton0.png */,
 				3CC6F37F1121C630002B68B9 /* WhichButton1.png */,
 				3CC6F3801121C630002B68B9 /* WhichButton2.png */,
@@ -202,12 +214,6 @@
 				3CC6F3831121C630002B68B9 /* WhichButton5.png */,
 				3CC6F3841121C630002B68B9 /* WhichButton6.png */,
 				3CC3D796112089FE001EDDC5 /* Emergency.png */,
-				3C00C5BE1118913800A83BB0 /* BlueButton.png */,
-				3C00C5BF1118913800A83BB0 /* DefaultButton.png */,
-				3C00C5C01118913800A83BB0 /* GrayButton.png */,
-				3C00C5C11118913800A83BB0 /* GreenButton.png */,
-				3C00C5C21118913800A83BB0 /* RedButton.png */,
-				3C00C5C31118913800A83BB0 /* YellowButton.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -261,12 +267,6 @@
 				3C36385811171D53004A128B /* FavoritesView.xib in Resources */,
 				3C363A3711173B78004A128B /* ContactsTableView.xib in Resources */,
 				3C363A7411173EF4004A128B /* ContactsDetailView.xib in Resources */,
-				3C00C5C41118913800A83BB0 /* BlueButton.png in Resources */,
-				3C00C5C51118913800A83BB0 /* DefaultButton.png in Resources */,
-				3C00C5C61118913800A83BB0 /* GrayButton.png in Resources */,
-				3C00C5C71118913800A83BB0 /* GreenButton.png in Resources */,
-				3C00C5C81118913800A83BB0 /* RedButton.png in Resources */,
-				3C00C5C91118913800A83BB0 /* YellowButton.png in Resources */,
 				3CC3D797112089FE001EDDC5 /* Emergency.png in Resources */,
 				3C2A950911209CAD00D10B62 /* ItemTableView.xib in Resources */,
 				3CC6F3061121B6C1002B68B9 /* ButtonLookupView.xib in Resources */,
@@ -278,6 +278,14 @@
 				3CC6F38A1121C630002B68B9 /* WhichButton6.png in Resources */,
 				3CC6F38C1121C688002B68B9 /* WhichButton0.png in Resources */,
 				3C719A331121CDBB00074034 /* ColorLookupView.xib in Resources */,
+				3CCD21B51123348500A1CD52 /* BlueButton.png in Resources */,
+				3CCD21B61123348500A1CD52 /* CyanButton.png in Resources */,
+				3CCD21B71123348500A1CD52 /* DefaultButton.png in Resources */,
+				3CCD21B81123348500A1CD52 /* GrayButton.png in Resources */,
+				3CCD21B91123348500A1CD52 /* GreenButton.png in Resources */,
+				3CCD21BA1123348500A1CD52 /* PurpleButton.png in Resources */,
+				3CCD21BB1123348500A1CD52 /* RedButton.png in Resources */,
+				3CCD21BC1123348500A1CD52 /* YellowButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
