@@ -10,6 +10,7 @@
 #import "EmergencyNumbersModel.h"
 #import "ButtonLookupTableViewController.h"
 #import "ColorLookupTableViewController.h"
+#import "IconLookupTableViewController.h"
 #import "ContactsDetailViewController.h"
 
 @implementation ItemTableViewController
@@ -126,8 +127,7 @@
     switch (section)
 	{
 		case NameSection:		return 2;
-		// TODO: 3 when add icon
-		case ButtonSection:		return 2;
+		case ButtonSection:		return 3;
 	}
 	
 	return 0;
@@ -194,6 +194,11 @@ titleForHeaderInSection:(NSInteger)section
 				cell.textLabel.text = @"Color";
 				cell.detailTextLabel.text = model.currentContactColor;
 			}
+			else if (row == 2)
+			{
+				cell.textLabel.text = @"Icon";
+				cell.detailTextLabel.text = model.currentContactIcon;
+			}
 			
 			break;
 	}
@@ -249,6 +254,17 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 				[self.navigationController 
 					pushViewController:colorLookupController animated:YES];
 				[colorLookupController release];
+			}
+
+			if (row == 2)
+			{
+				IconLookupTableViewController *iconLookupController = 
+				[[IconLookupTableViewController alloc]
+					initWithNibName:@"IconLookupView" bundle:nil];
+				[iconLookupController setModel:model];
+				[self.navigationController 
+					pushViewController:iconLookupController animated:YES];
+				[iconLookupController release];
 			}
 			
 			break;

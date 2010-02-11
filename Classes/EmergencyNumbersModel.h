@@ -15,6 +15,7 @@
 	NSMutableArray *contactsArray;
 	NSArray *buttonsArray;
 	NSArray *colorsArray;
+	NSArray *iconsArray;
 	
 	NSUInteger currentContactIndex;
 }
@@ -22,6 +23,7 @@
 @property (nonatomic, assign) NSUInteger currentContactIndex;
 @property (nonatomic, readonly) NSArray *buttonsArray;
 @property (nonatomic, readonly) NSArray *colorsArray;
+@property (nonatomic, readonly) NSArray *iconsArray;
 
 //- (id)init;
 - (NSUInteger)count;
@@ -46,6 +48,10 @@
 - (NSString *)currentContactColor;
 - (void)setCurrentContactColor:(NSString *)color;
 - (NSString *)contactColorAtIndex:(NSUInteger)index;
+
+- (NSString *)currentContactIcon;
+- (void)setCurrentContactIcon:(NSString *)color;
+- (NSString *)contactIconAtIndex:(NSUInteger)index;
 
 //  Actions
 - (void)save;

@@ -24,6 +24,7 @@
 @synthesize currentContactIndex;
 @synthesize buttonsArray;
 @synthesize colorsArray;
+@synthesize iconsArray;
 
 #pragma mark -
 #pragma mark init and dealloc
@@ -118,6 +119,11 @@
 					@"Blue", @"Yellow",
 				    @"Cyan", @"Purple", nil];
 	
+	iconsArray = [[NSArray alloc] initWithObjects:@"Default",
+				   @"Fire", @"Home",
+				   @"Medical", @"Person", @"Police",
+				   @"Power", nil];
+	
 	return self;
 }
 
@@ -126,6 +132,7 @@
 	[contactsArray dealloc];
 	[buttonsArray dealloc];
 	[colorsArray dealloc];
+	[iconsArray dealloc];
 	
 	[super dealloc];
 }
@@ -296,6 +303,21 @@
 	return [[contactsArray objectAtIndex:index] valueForKey:@"color"];
 }
 
+- (NSString *)currentContactIcon
+{
+	return [self contactIconAtIndex:self.currentContactIndex];
+}
+
+- (void)setCurrentContactIcon:(NSString *)icon
+{
+	[[self currentContactRecord] setValue:icon forKey:@"icon"];
+}
+
+- (NSString *)contactIconAtIndex:(NSUInteger)index
+{
+	return [[contactsArray objectAtIndex:index] valueForKey:@"icon"];
+}
+
 #pragma mark -
 #pragma mark Actions
 
@@ -351,6 +373,7 @@
 	[newItem setObject:@"Default" forKey:@"color"];
 	[newItem setObject:@"" forKey:@"number"];
 	[newItem setObject:@"0" forKey:@"button"];
+	[newItem setObject:@"Default" forKey:@"icon"];
 	
 	[contactsArray addObject:newItem];
 	[newItem release];
