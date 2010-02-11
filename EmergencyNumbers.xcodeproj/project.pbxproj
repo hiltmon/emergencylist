@@ -27,6 +27,15 @@
 		3C719A3E1121D2D400074034 /* UIImage_Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C719A3D1121D2D400074034 /* UIImage_Resize.m */; };
 		3CAC81A011176B1E00A18521 /* EmergencyNumbersModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CAC819F11176B1E00A18521 /* EmergencyNumbersModel.m */; };
 		3CC3D797112089FE001EDDC5 /* Emergency.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CC3D796112089FE001EDDC5 /* Emergency.png */; };
+		3CC6BBFF11247EFD00CD18CA /* DefaultIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CC6BBF811247EFD00CD18CA /* DefaultIcon.png */; };
+		3CC6BC0011247EFD00CD18CA /* FireIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CC6BBF911247EFD00CD18CA /* FireIcon.png */; };
+		3CC6BC0111247EFD00CD18CA /* HomeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CC6BBFA11247EFD00CD18CA /* HomeIcon.png */; };
+		3CC6BC0211247EFD00CD18CA /* MedicalIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CC6BBFB11247EFD00CD18CA /* MedicalIcon.png */; };
+		3CC6BC0311247EFD00CD18CA /* PersonIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CC6BBFC11247EFD00CD18CA /* PersonIcon.png */; };
+		3CC6BC0411247EFD00CD18CA /* PoliceIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CC6BBFD11247EFD00CD18CA /* PoliceIcon.png */; };
+		3CC6BC0511247EFD00CD18CA /* PowerIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CC6BBFE11247EFD00CD18CA /* PowerIcon.png */; };
+		3CC6BC25112480D300CD18CA /* IconLookupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC6BC24112480D300CD18CA /* IconLookupTableViewController.m */; };
+		3CC6BC2E1124818E00CD18CA /* IconLookupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CC6BC2D1124818E00CD18CA /* IconLookupView.xib */; };
 		3CC6F3041121B6AB002B68B9 /* ButtonLookupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC6F3031121B6AB002B68B9 /* ButtonLookupTableViewController.m */; };
 		3CC6F3061121B6C1002B68B9 /* ButtonLookupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CC6F3051121B6C1002B68B9 /* ButtonLookupView.xib */; };
 		3CC6F3851121C630002B68B9 /* WhichButton1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CC6F37F1121C630002B68B9 /* WhichButton1.png */; };
@@ -78,6 +87,16 @@
 		3CAC819E11176B1E00A18521 /* EmergencyNumbersModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmergencyNumbersModel.h; sourceTree = "<group>"; };
 		3CAC819F11176B1E00A18521 /* EmergencyNumbersModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmergencyNumbersModel.m; sourceTree = "<group>"; };
 		3CC3D796112089FE001EDDC5 /* Emergency.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Emergency.png; sourceTree = "<group>"; };
+		3CC6BBF811247EFD00CD18CA /* DefaultIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DefaultIcon.png; sourceTree = "<group>"; };
+		3CC6BBF911247EFD00CD18CA /* FireIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FireIcon.png; sourceTree = "<group>"; };
+		3CC6BBFA11247EFD00CD18CA /* HomeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HomeIcon.png; sourceTree = "<group>"; };
+		3CC6BBFB11247EFD00CD18CA /* MedicalIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MedicalIcon.png; sourceTree = "<group>"; };
+		3CC6BBFC11247EFD00CD18CA /* PersonIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PersonIcon.png; sourceTree = "<group>"; };
+		3CC6BBFD11247EFD00CD18CA /* PoliceIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PoliceIcon.png; sourceTree = "<group>"; };
+		3CC6BBFE11247EFD00CD18CA /* PowerIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PowerIcon.png; sourceTree = "<group>"; };
+		3CC6BC23112480D300CD18CA /* IconLookupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconLookupTableViewController.h; sourceTree = "<group>"; };
+		3CC6BC24112480D300CD18CA /* IconLookupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconLookupTableViewController.m; sourceTree = "<group>"; };
+		3CC6BC2D1124818E00CD18CA /* IconLookupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IconLookupView.xib; sourceTree = "<group>"; };
 		3CC6F3021121B6AB002B68B9 /* ButtonLookupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonLookupTableViewController.h; sourceTree = "<group>"; };
 		3CC6F3031121B6AB002B68B9 /* ButtonLookupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonLookupTableViewController.m; sourceTree = "<group>"; };
 		3CC6F3051121B6C1002B68B9 /* ButtonLookupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonLookupView.xib; sourceTree = "<group>"; };
@@ -136,6 +155,8 @@
 				3C719A301121CDA600074034 /* ColorLookupTableViewController.m */,
 				3C719A3C1121D2D400074034 /* UIImage_Resize.h */,
 				3C719A3D1121D2D400074034 /* UIImage_Resize.m */,
+				3CC6BC23112480D300CD18CA /* IconLookupTableViewController.h */,
+				3CC6BC24112480D300CD18CA /* IconLookupTableViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -181,6 +202,7 @@
 				3C2A950811209CAD00D10B62 /* ItemTableView.xib */,
 				3CC6F3051121B6C1002B68B9 /* ButtonLookupView.xib */,
 				3C719A321121CDBB00074034 /* ColorLookupView.xib */,
+				3CC6BC2D1124818E00CD18CA /* IconLookupView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -198,6 +220,13 @@
 		3C00C5BD1118913800A83BB0 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3CC6BBF811247EFD00CD18CA /* DefaultIcon.png */,
+				3CC6BBF911247EFD00CD18CA /* FireIcon.png */,
+				3CC6BBFA11247EFD00CD18CA /* HomeIcon.png */,
+				3CC6BBFB11247EFD00CD18CA /* MedicalIcon.png */,
+				3CC6BBFC11247EFD00CD18CA /* PersonIcon.png */,
+				3CC6BBFD11247EFD00CD18CA /* PoliceIcon.png */,
+				3CC6BBFE11247EFD00CD18CA /* PowerIcon.png */,
 				3CCD21AD1123348500A1CD52 /* BlueButton.png */,
 				3CCD21AE1123348500A1CD52 /* CyanButton.png */,
 				3CCD21AF1123348500A1CD52 /* DefaultButton.png */,
@@ -286,6 +315,14 @@
 				3CCD21BA1123348500A1CD52 /* PurpleButton.png in Resources */,
 				3CCD21BB1123348500A1CD52 /* RedButton.png in Resources */,
 				3CCD21BC1123348500A1CD52 /* YellowButton.png in Resources */,
+				3CC6BBFF11247EFD00CD18CA /* DefaultIcon.png in Resources */,
+				3CC6BC0011247EFD00CD18CA /* FireIcon.png in Resources */,
+				3CC6BC0111247EFD00CD18CA /* HomeIcon.png in Resources */,
+				3CC6BC0211247EFD00CD18CA /* MedicalIcon.png in Resources */,
+				3CC6BC0311247EFD00CD18CA /* PersonIcon.png in Resources */,
+				3CC6BC0411247EFD00CD18CA /* PoliceIcon.png in Resources */,
+				3CC6BC0511247EFD00CD18CA /* PowerIcon.png in Resources */,
+				3CC6BC2E1124818E00CD18CA /* IconLookupView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +344,7 @@
 				3CC6F3041121B6AB002B68B9 /* ButtonLookupTableViewController.m in Sources */,
 				3C719A311121CDA600074034 /* ColorLookupTableViewController.m in Sources */,
 				3C719A3E1121D2D400074034 /* UIImage_Resize.m in Sources */,
+				3CC6BC25112480D300CD18CA /* IconLookupTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

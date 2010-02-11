@@ -216,128 +216,7 @@
 		</dict>
 	</array>
 	<key>OpenEditors</key>
-	<array>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>3CCD21E511233E2200A1CD52</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>FavoritesViewController.m</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>3CCD21E611233E2200A1CD52</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>FavoritesViewController.m</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>3CCD222B1123409800A1CD52</string>
-						<key>history</key>
-						<array>
-							<string>3CCD21E011233D3200A1CD52</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {750, 461}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>831 660 750 502 0 0 1920 1178 </string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>3CCD21E811233E2200A1CD52</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>ItemTableViewController.m</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>3CCD21E911233E2200A1CD52</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>ItemTableViewController.m</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>3CCD222C1123409800A1CD52</string>
-						<key>history</key>
-						<array>
-							<string>3CCD21E111233D7600A1CD52</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {748, 485}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>941 645 748 526 0 0 1920 1178 </string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>3CCD21CA1123359900A1CD52</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>EmergencyNumbersModel.m</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>3CCD21CB1123359900A1CD52</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>EmergencyNumbersModel.m</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>3CCD222D1123409800A1CD52</string>
-						<key>history</key>
-						<array>
-							<string>3CCD21C51123350C00A1CD52</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {746, 488}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>330 616 746 529 0 0 1920 1178 </string>
-			</dict>
-		</dict>
-	</array>
+	<array/>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>-1</integer>
@@ -404,20 +283,16 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
-								<string>080E96DDFE201D6D7F000001</string>
-								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>26</integer>
-									<integer>23</integer>
-									<integer>0</integer>
+									<integer>11</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 93}, {186, 475}}</string>
+							<string>{{0, 0}, {186, 475}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -452,7 +327,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>MyNewFile14.java</string>
+								<string></string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -460,7 +335,7 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>MyNewFile14.java</string>
+										<string></string>
 									</dict>
 									<key>SplitCount</key>
 									<string>1</string>
@@ -519,9 +394,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>3CCD21C81123359900A1CD52</string>
+				<string>3CC6BBB1112453FA00CD18CA</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>3CCD21C91123359900A1CD52</string>
+				<string>3CC6BBB2112453FA00CD18CA</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -642,7 +517,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>287522968.74376702</real>
+	<real>287607327.08780301</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -659,16 +534,12 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>3CCD222E1123409800A1CD52</string>
-		<string>3CCD21D51123359900A1CD52</string>
-		<string>3CCD21D61123359900A1CD52</string>
-		<string>1CD10A99069EF8BA00B06720</string>
-		<string>3CCD21CA1123359900A1CD52</string>
-		<string>3CCD21E811233E2200A1CD52</string>
-		<string>/Users/Hiltmon/Projects/Apps/EmergencyNumbers/EmergencyNumbers.xcodeproj</string>
-		<string>3CCD21E511233E2200A1CD52</string>
-		<string>3C36384E11171CCF004A128B</string>
+		<string>3CC6BBC4112455B800CD18CA</string>
+		<string>3CC6BBBC112453FA00CD18CA</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>1CD10A99069EF8BA00B06720</string>
+		<string>3C36384E11171CCF004A128B</string>
+		<string>/Users/Hiltmon/Projects/Apps/EmergencyNumbers/EmergencyNumbers.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>17 629 788 534 0 0 1920 1178 </string>
@@ -750,7 +621,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>3C36384E11171CCF004A128B</string>
-				<string>3CCD21CD1123359900A1CD52</string>
+				<string>3CC6BBB3112453FA00CD18CA</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -763,7 +634,7 @@
 			<key>WindowToolGUID</key>
 			<string>3C36384E11171CCF004A128B</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -874,13 +745,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>3CCD21CE1123359900A1CD52</string>
+				<string>3CC6BBB4112453FA00CD18CA</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>3CCD21CF1123359900A1CD52</string>
-				<string>3CCD21D01123359900A1CD52</string>
-				<string>3CCD21D11123359900A1CD52</string>
-				<string>3CCD21D21123359900A1CD52</string>
-				<string>3CCD21D31123359900A1CD52</string>
+				<string>3CC6BBB5112453FA00CD18CA</string>
+				<string>3CC6BBB6112453FA00CD18CA</string>
+				<string>3CC6BBB7112453FA00CD18CA</string>
+				<string>3CC6BBB8112453FA00CD18CA</string>
+				<string>3CC6BBB9112453FA00CD18CA</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -1034,7 +905,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>3CCD21D41123359900A1CD52</string>
+				<string>3CC6BBBA112453FA00CD18CA</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
@@ -1044,7 +915,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>
