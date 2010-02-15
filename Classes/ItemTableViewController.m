@@ -25,6 +25,24 @@
     [super dealloc];
 }
 
+- (void)callNumber
+{
+	NSString *callNumber = [model currentContactNumber];
+	
+	if (![callNumber isEqualToString:@""])
+	{
+		UIAlertView *callAlert = [[UIAlertView alloc]
+							  initWithTitle:nil
+							  message:[NSString stringWithFormat:@"Calling %@", callNumber]
+							  delegate:self 
+							  cancelButtonTitle:@"OK" 
+							  otherButtonTitles:nil];
+		[callAlert show];
+		[callAlert release];
+	}
+	
+}
+
 - (void)cancelAdd
 {
 	[delegate contactAddViewController:self didAddContact:NO];
@@ -76,6 +94,19 @@
 		self.navigationItem.rightBarButtonItem = saveButton;
 		[saveButton release];
 	}
+	else
+	{
+		// Setup the SAVE button
+		UIBarButtonItem *callButton = 
+		[[UIBarButtonItem alloc] initWithTitle:@"Call" 
+										 style:UIBarButtonItemStylePlain 
+										target:self 
+										action:@selector(callNumber)];
+		self.navigationItem.rightBarButtonItem = callButton;
+		[callButton release];
+		
+	}
+
 }
 
 

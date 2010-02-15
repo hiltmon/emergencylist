@@ -25,7 +25,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = 3C36383B11171CC8004A128B /* EmergencyNumbers */;
-		activeSDKPreference = iphonesimulator3.1.2;
+		activeSDKPreference = iphoneos3.1.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* EmergencyNumbers */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* EmergencyNumbers */,
@@ -193,8 +193,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 287950941;
-			PBXWorkspaceStateSaveDate = 287950941;
+			PBXPerProjectTemplateStateSaveDate = 287962891;
+			PBXWorkspaceStateSaveDate = 287962891;
 		};
 		sourceControlManager = 3C36385011171CCF004A128B /* Source Control */;
 		userBuildSettings = {
@@ -217,10 +217,10 @@
 	};
 	3C2A950611209C8D00D10B62 /* ItemTableViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {878, 3458}}";
-			sepNavSelRange = "{2114, 0}";
-			sepNavVisRange = "{1988, 279}";
-			sepNavWindowFrame = "{{941, 589}, {748, 582}}";
+			sepNavIntBoundsRect = "{{0, 0}, {720, 3952}}";
+			sepNavSelRange = "{807, 11}";
+			sepNavVisRange = "{626, 176}";
+			sepNavWindowFrame = "{{1088, 99}, {748, 582}}";
 		};
 	};
 	3C36383B11171CC8004A128B /* EmergencyNumbers */ = {
@@ -230,7 +230,7 @@
 		argumentStrings = (
 		);
 		autoAttachOnCrash = 1;
-		breakpointsEnabled = 1;
+		breakpointsEnabled = 0;
 		configStateDict = {
 		};
 		customDataFormattersEnabled = 1;
@@ -243,7 +243,7 @@
 		enableDebugStr = 1;
 		environmentEntries = (
 			{
-				active = NO;
+				active = YES;
 				name = NSZombieEnabled;
 				value = YES;
 			},
@@ -293,18 +293,18 @@
 	};
 	3C36385411171D53004A128B /* FavoritesViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {691, 442}}";
-			sepNavSelRange = "{516, 18}";
-			sepNavVisRange = "{0, 948}";
+			sepNavIntBoundsRect = "{{0, 0}, {691, 468}}";
+			sepNavSelRange = "{943, 37}";
+			sepNavVisRange = "{0, 983}";
 			sepNavWindowFrame = "{{831, 604}, {750, 558}}";
 		};
 	};
 	3C36385511171D53004A128B /* FavoritesViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {691, 2197}}";
-			sepNavSelRange = "{2506, 0}";
-			sepNavVisRange = "{2127, 1371}";
-			sepNavWindowFrame = "{{831, 604}, {750, 558}}";
+			sepNavIntBoundsRect = "{{0, 0}, {878, 2860}}";
+			sepNavSelRange = "{1221, 7}";
+			sepNavVisRange = "{1052, 493}";
+			sepNavWindowFrame = "{{830, 604}, {750, 558}}";
 		};
 	};
 	3C36385C11171D8A004A128B /* ContactsViewController.m */ = {
@@ -328,7 +328,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 57;
-		modificationTime = 287962318.184287;
+		modificationTime = 287965611.258296;
 		originalNumberOfMultipleMatches = 1;
 		state = 0;
 	};
@@ -345,7 +345,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 57;
-		modificationTime = 287962318.184321;
+		modificationTime = 287965611.258342;
 		originalNumberOfMultipleMatches = 1;
 		state = 0;
 	};
@@ -362,7 +362,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 57;
-		modificationTime = 287962318.184331;
+		modificationTime = 287965611.258352;
 		originalNumberOfMultipleMatches = 1;
 		state = 0;
 	};
@@ -408,10 +408,10 @@
 	};
 	3C363A7611173F05004A128B /* ContactsDetailViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {691, 1365}}";
+			sepNavIntBoundsRect = "{{0, 0}, {691, 1417}}";
 			sepNavSelRange = "{1183, 0}";
-			sepNavVisRange = "{0, 755}";
-			sepNavWindowFrame = "{{857, 595}, {750, 558}}";
+			sepNavVisRange = "{877, 557}";
+			sepNavWindowFrame = "{{857, 594}, {750, 558}}";
 		};
 	};
 	3C719A2F1121CDA600074034 /* ColorLookupTableViewController.h */ = {
@@ -448,16 +448,16 @@
 	3CAC819E11176B1E00A18521 /* EmergencyNumbersModel.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {687, 832}}";
-			sepNavSelRange = "{1709, 0}";
-			sepNavVisRange = "{128, 1073}";
-			sepNavWindowFrame = "{{386, 342}, {746, 585}}";
+			sepNavSelRange = "{967, 0}";
+			sepNavVisRange = "{128, 1078}";
+			sepNavWindowFrame = "{{867, 572}, {746, 585}}";
 		};
 	};
 	3CAC819F11176B1E00A18521 /* EmergencyNumbersModel.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {687, 4394}}";
-			sepNavSelRange = "{1292, 0}";
-			sepNavVisRange = "{902, 1120}";
+			sepNavIntBoundsRect = "{{0, 0}, {687, 4836}}";
+			sepNavSelRange = "{3398, 55}";
+			sepNavVisRange = "{3110, 619}";
 			sepNavWindowFrame = "{{867, 572}, {746, 585}}";
 		};
 	};

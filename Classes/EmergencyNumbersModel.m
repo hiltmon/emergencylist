@@ -146,6 +146,24 @@
 	return @"";
 }
 
+- (NSString *)contactNumberForButton:(NSString *)button
+{
+	if ([button isEqualToString:@"0"])
+	{
+		return @"";
+	}
+	
+	for (NSDictionary *item in contactsArray)
+	{
+		if ([[item valueForKey:@"button"] isEqualToString:button])
+		{
+			return [item valueForKey:@"number"];
+		}
+	}
+	
+	return @"";
+}
+
 - (NSDictionary *)currentContactRecord
 {
 	return [contactsArray objectAtIndex:self.currentContactIndex];

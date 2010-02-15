@@ -121,14 +121,47 @@
 	for (int i = 0; i < [model count]; i++)
 	{
 		NSInteger whichButton = [[model contactButtonAtIndex:i] intValue];
+		
 		if (whichButton > 0)
 		{
+			// Gray out invalid buttons
+			NSString *color = [model contactColorAtIndex:i];
+			if ([[model contactNumberAtIndex:i] isEqualToString:@""])
+			{
+				color = @"Gray";
+			}
+			
 			[self setTitle:[model contactNameAtIndex:i] 
-					 color:[model contactColorAtIndex:i]
+					 color:color
 					  icon:[model contactIconAtIndex:i]
 				 forButton:[buttonArray objectAtIndex:whichButton-1]];
 			[[buttonArray objectAtIndex:whichButton-1] setHidden:NO];
+			
+			//[color release];
 		}
+	}
+}
+
+#pragma mark -
+#pragma mark Actions
+
+- (IBAction) buttonPressed:(id)sender
+{
+	// Get the index
+	NSUInteger whichButton = [buttonArray indexOfObject:sender]+1;
+	NSString *callNumber = [model contactNumberForButton:
+							[NSString stringWithFormat:@"%d", whichButton]];
+	
+	if (![callNumber isEqualToString:@""])
+	{
+		UIAlertView *callAlert = [[UIAlertView alloc]
+							  initWithTitle:nil
+							  message:[NSString stringWithFormat:@"Calling %@", callNumber]
+							  delegate:self 
+							  cancelButtonTitle:@"OK" 
+							  otherButtonTitles:nil];
+		[callAlert show];
+		[callAlert release];
 	}
 }
 

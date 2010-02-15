@@ -29,6 +29,7 @@
 - (NSUInteger)count;
 - (BOOL)isButtonInUse:(NSString *)button;
 - (NSString *)contactNameForButton:(NSString *)button;
+- (NSString *)contactNumberForButton:(NSString *)button;
 
 // Virtual Accessors
 - (NSString *)currentContactName;

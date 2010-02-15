@@ -30,4 +30,6 @@
 @property (nonatomic, assign) IBOutlet UIButton *button5;
 @property (nonatomic, assign) IBOutlet UIButton *button6;
 
+- (IBAction) buttonPressed:(id)sender;
+
 @end
