@@ -12,7 +12,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {691, 572}}";
 			sepNavSelRange = "{689, 0}";
-			sepNavVisRange = "{381, 709}";
+			sepNavVisRange = "{0, 956}";
 			sepNavWindowFrame = "{{869, 609}, {750, 558}}";
 		};
 	};
@@ -100,7 +100,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					291,
+					317,
 					20,
 					48,
 					43,
@@ -302,8 +302,8 @@
 	3C36385511171D53004A128B /* FavoritesViewController.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {691, 2197}}";
-			sepNavSelRange = "{3224, 0}";
-			sepNavVisRange = "{2838, 992}";
+			sepNavSelRange = "{2506, 0}";
+			sepNavVisRange = "{2127, 1371}";
 			sepNavWindowFrame = "{{831, 604}, {750, 558}}";
 		};
 	};
@@ -328,9 +328,9 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 57;
-		modificationTime = 287950762.822547;
+		modificationTime = 287962318.184287;
 		originalNumberOfMultipleMatches = 1;
-		state = 1;
+		state = 0;
 	};
 	3C3638A31117232F004A128B /* ContactsViewController.m:57 */ = {
 		isa = PBXFileBreakpoint;
@@ -345,9 +345,9 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 57;
-		modificationTime = 287950762.822561;
+		modificationTime = 287962318.184321;
 		originalNumberOfMultipleMatches = 1;
-		state = 1;
+		state = 0;
 	};
 	3C3638A511172333004A128B /* ContactsViewController.m:57 */ = {
 		isa = PBXFileBreakpoint;
@@ -362,9 +362,9 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 57;
-		modificationTime = 287950762.822527;
+		modificationTime = 287962318.184331;
 		originalNumberOfMultipleMatches = 1;
-		state = 1;
+		state = 0;
 	};
 	3C363A06111738F8004A128B /* ContactsNavController.h */ = {
 		uiCtxt = {
@@ -455,10 +455,15 @@
 	};
 	3CAC819F11176B1E00A18521 /* EmergencyNumbersModel.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {687, 4888}}";
-			sepNavSelRange = "{7926, 0}";
-			sepNavVisRange = "{7244, 914}";
+			sepNavIntBoundsRect = "{{0, 0}, {687, 4394}}";
+			sepNavSelRange = "{1292, 0}";
+			sepNavVisRange = "{902, 1120}";
 			sepNavWindowFrame = "{{867, 572}, {746, 585}}";
+		};
+	};
+	3CC6BBF811247EFD00CD18CA /* DefaultIcon.png */ = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{15, 591}, {748, 582}}";
 		};
 	};
 	3CC6BC23112480D300CD18CA /* IconLookupTableViewController.h */ = {
@@ -498,9 +503,44 @@
 			sepNavWindowFrame = "{{38, 570}, {748, 582}}";
 		};
 	};
+	3CCD21AD1123348500A1CD52 /* BlueButton.png */ = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{38, 570}, {748, 582}}";
+		};
+	};
+	3CCD21AE1123348500A1CD52 /* CyanButton.png */ = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{61, 549}, {748, 582}}";
+		};
+	};
 	3CCD21AF1123348500A1CD52 /* DefaultButton.png */ = {
 		uiCtxt = {
 			sepNavWindowFrame = "{{15, 591}, {748, 582}}";
+		};
+	};
+	3CCD21B01123348500A1CD52 /* GrayButton.png */ = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{84, 528}, {748, 582}}";
+		};
+	};
+	3CCD21B11123348500A1CD52 /* GreenButton.png */ = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{107, 507}, {748, 582}}";
+		};
+	};
+	3CCD21B21123348500A1CD52 /* PurpleButton.png */ = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{130, 486}, {748, 582}}";
+		};
+	};
+	3CCD21B31123348500A1CD52 /* RedButton.png */ = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{153, 465}, {748, 582}}";
+		};
+	};
+	3CCD21B41123348500A1CD52 /* YellowButton.png */ = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{176, 444}, {748, 582}}";
 		};
 	};
 	8D1107310486CEB800E47090 /* EmergencyNumbers-Info.plist */ = {

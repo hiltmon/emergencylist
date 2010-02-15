@@ -6,9 +6,6 @@
 //  Copyright 2010 NoVerse.com. All rights reserved.
 // ------------------------------------------------------------------------
 
-#import <stdlib.h>		// For random numbers
-#import <time.h>
-
 #import "EmergencyNumbersModel.h"
 
 @interface EmergencyNumbersModel ()
@@ -43,69 +40,30 @@
 	}
 	else
 	{
-		// TODO: Create a default file
+		// Creating a Defult File
+		// TODO: Use address book
 		NSMutableArray *array = [[NSMutableArray alloc] init];
-		srandom(time(NULL));
+		NSArray *startNames = [[NSArray alloc] initWithObjects:@"1 Press",
+							   @"2 Button", @"3 To Call",
+							   @"4 Emergency", @"5 Number", 
+							   @"6 Instantly", nil];
 		
-		for (int i = 1; i < 15; i++)
+		for (int i = 1; i <= 6; i++)
 		{
 			NSMutableDictionary *element1 = [[NSMutableDictionary alloc] init];
-			[element1 setObject:[NSString stringWithFormat:@"Contact %d", i] 
-						 forKey:@"name"];
-			
-			// Pick a random color
-			int c = random() % 5;
+			[element1 setObject:[startNames objectAtIndex:i-1] forKey:@"name"];
 			[element1 setObject:@"Default" forKey:@"color"];
-			
-			if (c == 1)
-			{
-				[element1 setObject:@"Red" forKey:@"color"];
-			}
-			
-			if (c == 2)
-			{
-				[element1 setObject:@"Green" forKey:@"color"];
-			}
-			
-			if (c == 3)
-			{
-				[element1 setObject:@"Blue" forKey:@"color"];
-			}
-			
-			if (c == 4)
-			{
-				[element1 setObject:@"Yellow" forKey:@"color"];
-			}
-			
-			if (i < 10)
-			{
-				[element1 
-					setObject:[NSString stringWithFormat:@"1917555000%d", i]  
-					   forKey:@"number"];
-			}
-			else 
-			{
-				[element1
-					setObject:[NSString stringWithFormat:@"191755500%d", i]  
-						forKey:@"number"];
-			}
-			
-			if ((i % 3 == 0) && (i < 16))
-			{
-				[element1 setObject:[NSString stringWithFormat:@"%d", i/3] 
-							 forKey:@"button"];
-			}
-			else
-			{
-				[element1 setObject:@"0" forKey:@"button"];
-			}
-			
+			[element1 setObject:@"" forKey:@"number"];
+			[element1 setObject:[NSString stringWithFormat:@"%d", i] 
+						 forKey:@"button"];
+			[element1 setObject:@"Default" forKey:@"icon"];
 			[array addObject:element1];
 			[element1 release];
 		}
 		
 		contactsArray = [array retain];
 		[array release];
+		[startNames release];
 	}
 	
 	// Setup the master arrays

@@ -84,25 +84,25 @@
 	
 	// TODO: Optimize by caching images
 	// Create the button backgrounds
-	[button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-	if ([myColor isEqualToString:@"Yellow"] 
-		|| [myColor isEqualToString:@"Cyan"]
-		|| [myColor isEqualToString:@"Green"])
-	{
+	//[button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+	//if ([myColor isEqualToString:@"Yellow"] 
+//		|| [myColor isEqualToString:@"Cyan"]
+//		|| [myColor isEqualToString:@"Green"])
+//	{
 		[button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-	}
+//	}
 	[button setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
 	
 	UIImage *blendedImage = [self newImageForColor:myColor andIcon:myIcon];
 	[button setBackgroundImage:blendedImage 
 					   forState:UIControlStateNormal];
-	[blendedImage release];
+	//[blendedImage release];
 	
 	// Pressed is always Gray
 	UIImage *pressedImage = [self newImageForColor:@"Gray" andIcon:myIcon];
 	[button setBackgroundImage:pressedImage 
 					  forState:UIControlStateHighlighted];
-	[pressedImage release];
+	//[pressedImage release];
 	
 	// In case the parent draws a back image
 	button.backgroundColor = [UIColor clearColor];
