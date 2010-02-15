@@ -96,11 +96,13 @@
 	UIImage *blendedImage = [self newImageForColor:myColor andIcon:myIcon];
 	[button setBackgroundImage:blendedImage 
 					   forState:UIControlStateNormal];
+	[blendedImage release];
 	
 	// Pressed is always Gray
 	UIImage *pressedImage = [self newImageForColor:@"Gray" andIcon:myIcon];
 	[button setBackgroundImage:pressedImage 
 					  forState:UIControlStateHighlighted];
+	[pressedImage release];
 	
 	// In case the parent draws a back image
 	button.backgroundColor = [UIColor clearColor];

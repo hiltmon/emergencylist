@@ -359,6 +359,8 @@
 			[self setCurrentContactIndex:i];
 		}
 	}
+	
+	[oldContactName release];
 }
 
 - (void)deleteRow:(NSUInteger)row

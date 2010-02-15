@@ -26,6 +26,8 @@
 		3C719A331121CDBB00074034 /* ColorLookupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C719A321121CDBB00074034 /* ColorLookupView.xib */; };
 		3C719A3E1121D2D400074034 /* UIImage_Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C719A3D1121D2D400074034 /* UIImage_Resize.m */; };
 		3CAC81A011176B1E00A18521 /* EmergencyNumbersModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CAC819F11176B1E00A18521 /* EmergencyNumbersModel.m */; };
+		3CB45E5D1129AFA500323D47 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CB45E5C1129AFA500323D47 /* AddressBook.framework */; };
+		3CB45E611129AFAA00323D47 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CB45E601129AFAA00323D47 /* AddressBookUI.framework */; };
 		3CC3D797112089FE001EDDC5 /* Emergency.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CC3D796112089FE001EDDC5 /* Emergency.png */; };
 		3CC6BBFF11247EFD00CD18CA /* DefaultIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CC6BBF811247EFD00CD18CA /* DefaultIcon.png */; };
 		3CC6BC0011247EFD00CD18CA /* FireIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CC6BBF911247EFD00CD18CA /* FireIcon.png */; };
@@ -86,6 +88,8 @@
 		3C719A3D1121D2D400074034 /* UIImage_Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImage_Resize.m; sourceTree = "<group>"; };
 		3CAC819E11176B1E00A18521 /* EmergencyNumbersModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmergencyNumbersModel.h; sourceTree = "<group>"; };
 		3CAC819F11176B1E00A18521 /* EmergencyNumbersModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmergencyNumbersModel.m; sourceTree = "<group>"; };
+		3CB45E5C1129AFA500323D47 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		3CB45E601129AFAA00323D47 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		3CC3D796112089FE001EDDC5 /* Emergency.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Emergency.png; sourceTree = "<group>"; };
 		3CC6BBF811247EFD00CD18CA /* DefaultIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DefaultIcon.png; sourceTree = "<group>"; };
 		3CC6BBF911247EFD00CD18CA /* FireIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FireIcon.png; sourceTree = "<group>"; };
@@ -126,6 +130,8 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
+				3CB45E5D1129AFA500323D47 /* AddressBook.framework in Frameworks */,
+				3CB45E611129AFAA00323D47 /* AddressBookUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +184,8 @@
 				3C00C5BD1118913800A83BB0 /* Images */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				3CB45E5C1129AFA500323D47 /* AddressBook.framework */,
+				3CB45E601129AFAA00323D47 /* AddressBookUI.framework */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";

@@ -7,6 +7,8 @@
 // ------------------------------------------------------------------------
 
 #import <UIKit/UIKit.h>
+#import <AddressBook/AddressBook.h>
+#import <AddressBookUI/AddressBookUI.h>
 
 #import "ItemTableViewController.h"
 
@@ -14,11 +16,21 @@
 @class EmergencyNumbersModel;
 
 @interface ContactsTableViewController : UITableViewController 
-	<UITableViewDataSource, UITableViewDelegate, ItemAddDelegate>
+	<UITableViewDataSource, UITableViewDelegate, 
+	 UIActionSheetDelegate, ABPeoplePickerNavigationControllerDelegate,
+	 ItemAddDelegate>
 {
 	IBOutlet UITableView *contactsTableView;
 
 	EmergencyNumbersModel *model;
+	
+	NSString *tempName;
+	NSString *tempNumber;
 }
+
+- (void)addNew;
+
+@property (nonatomic, retain) NSString *tempName;
+@property (nonatomic, retain) NSString *tempNumber;
 
 @end

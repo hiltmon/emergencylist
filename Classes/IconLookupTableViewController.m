@@ -90,12 +90,13 @@
 	cell.imageView.image = 
 		[[UIImage imageWithCGImage:tmp] 
 			scaleToSize:CGSizeMake(32.0f, 32.0f)];
-	
+
 	if ([cell.textLabel.text isEqualToString:model.currentContactIcon])
 	{
 		[cell setAccessoryType:UITableViewCellAccessoryCheckmark];
 	}
-	
+
+	CGImageRelease(tmp);
     return cell;
 }
 

@@ -25,7 +25,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = 3C36383B11171CC8004A128B /* EmergencyNumbers */;
-		activeSDKPreference = iphoneos3.1.2;
+		activeSDKPreference = iphonesimulator3.1.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* EmergencyNumbers */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* EmergencyNumbers */,
@@ -100,7 +100,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					317,
+					291,
 					20,
 					48,
 					43,
@@ -193,8 +193,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 287593455;
-			PBXWorkspaceStateSaveDate = 287593455;
+			PBXPerProjectTemplateStateSaveDate = 287950941;
+			PBXWorkspaceStateSaveDate = 287950941;
 		};
 		sourceControlManager = 3C36385011171CCF004A128B /* Source Control */;
 		userBuildSettings = {
@@ -217,9 +217,9 @@
 	};
 	3C2A950611209C8D00D10B62 /* ItemTableViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {689, 3484}}";
-			sepNavSelRange = "{6440, 0}";
-			sepNavVisRange = "{5636, 926}";
+			sepNavIntBoundsRect = "{{0, 0}, {878, 3458}}";
+			sepNavSelRange = "{2114, 0}";
+			sepNavVisRange = "{1988, 279}";
 			sepNavWindowFrame = "{{941, 589}, {748, 582}}";
 		};
 	};
@@ -243,7 +243,7 @@
 		enableDebugStr = 1;
 		environmentEntries = (
 			{
-				active = YES;
+				active = NO;
 				name = NSZombieEnabled;
 				value = YES;
 			},
@@ -301,9 +301,9 @@
 	};
 	3C36385511171D53004A128B /* FavoritesViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {691, 2158}}";
-			sepNavSelRange = "{3388, 0}";
-			sepNavVisRange = "{2757, 1023}";
+			sepNavIntBoundsRect = "{{0, 0}, {691, 2197}}";
+			sepNavSelRange = "{3224, 0}";
+			sepNavVisRange = "{2838, 992}";
 			sepNavWindowFrame = "{{831, 604}, {750, 558}}";
 		};
 	};
@@ -328,9 +328,9 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 57;
-		modificationTime = 287607223.796605;
+		modificationTime = 287950762.822547;
 		originalNumberOfMultipleMatches = 1;
-		state = 0;
+		state = 1;
 	};
 	3C3638A31117232F004A128B /* ContactsViewController.m:57 */ = {
 		isa = PBXFileBreakpoint;
@@ -345,9 +345,9 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 57;
-		modificationTime = 287607223.796665;
+		modificationTime = 287950762.822561;
 		originalNumberOfMultipleMatches = 1;
-		state = 0;
+		state = 1;
 	};
 	3C3638A511172333004A128B /* ContactsViewController.m:57 */ = {
 		isa = PBXFileBreakpoint;
@@ -362,9 +362,9 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 57;
-		modificationTime = 287607223.796693;
+		modificationTime = 287950762.822527;
 		originalNumberOfMultipleMatches = 1;
-		state = 0;
+		state = 1;
 	};
 	3C363A06111738F8004A128B /* ContactsNavController.h */ = {
 		uiCtxt = {
@@ -384,17 +384,17 @@
 	};
 	3C363A14111739DC004A128B /* ContactsTableViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {691, 430}}";
-			sepNavSelRange = "{564, 0}";
-			sepNavVisRange = "{0, 650}";
+			sepNavIntBoundsRect = "{{0, 0}, {691, 481}}";
+			sepNavSelRange = "{651, 42}";
+			sepNavVisRange = "{131, 833}";
 			sepNavWindowFrame = "{{205, 487}, {750, 558}}";
 		};
 	};
 	3C363A15111739DC004A128B /* ContactsTableViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {691, 2665}}";
-			sepNavSelRange = "{5400, 0}";
-			sepNavVisRange = "{0, 882}";
+			sepNavIntBoundsRect = "{{0, 0}, {878, 4485}}";
+			sepNavSelRange = "{1434, 0}";
+			sepNavVisRange = "{1156, 460}";
 			sepNavWindowFrame = "{{868, 584}, {750, 558}}";
 		};
 	};
@@ -455,9 +455,9 @@
 	};
 	3CAC819F11176B1E00A18521 /* EmergencyNumbersModel.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {687, 5031}}";
-			sepNavSelRange = "{2726, 0}";
-			sepNavVisRange = "{2204, 777}";
+			sepNavIntBoundsRect = "{{0, 0}, {687, 4888}}";
+			sepNavSelRange = "{7926, 0}";
+			sepNavVisRange = "{7244, 914}";
 			sepNavWindowFrame = "{{867, 572}, {746, 585}}";
 		};
 	};
@@ -471,9 +471,9 @@
 	};
 	3CC6BC24112480D300CD18CA /* IconLookupTableViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {689, 1495}}";
-			sepNavSelRange = "{2191, 0}";
-			sepNavVisRange = "{1475, 1044}";
+			sepNavIntBoundsRect = "{{0, 0}, {689, 1469}}";
+			sepNavSelRange = "{2473, 0}";
+			sepNavVisRange = "{1872, 873}";
 			sepNavWindowFrame = "{{884, 590}, {748, 582}}";
 		};
 	};
