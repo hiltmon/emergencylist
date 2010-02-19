@@ -18,9 +18,11 @@
 	UIButton *button4;
 	UIButton *button5;
 	UIButton *button6;
+	UIImageView *startImage;
 	
 	EmergencyNumbersModel *model;
 	NSArray *buttonArray;
+	
 }
 
 @property (nonatomic, assign) IBOutlet UIButton *button1;
@@ -29,6 +31,7 @@
 @property (nonatomic, assign) IBOutlet UIButton *button4;
 @property (nonatomic, assign) IBOutlet UIButton *button5;
 @property (nonatomic, assign) IBOutlet UIButton *button6;
+@property (nonatomic, assign) IBOutlet UIImageView *startImage;
 
 - (IBAction) buttonPressed:(id)sender;
 

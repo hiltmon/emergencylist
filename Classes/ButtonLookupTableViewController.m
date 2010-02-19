@@ -75,22 +75,25 @@
     
     // Set up the cell...
 	NSUInteger row = [indexPath row];
-	cell.textLabel.text = [model contactNameForButton:
-						 [NSString stringWithFormat:@"%d", row]];
+	
+	EmergencyContact *theContact = [model contactForButton:row];
+
+	cell.textLabel.text = theContact.name;
 	cell.textLabel.textColor = [UIColor blackColor];
 	[cell setAccessoryType:UITableViewCellAccessoryNone];
 	
-	if ([cell.textLabel.text isEqualToString:@""])
+	if (cell.textLabel.text == nil)
 	{
 		cell.textLabel.text = [model.buttonsArray objectAtIndex:row];
 		cell.textLabel.textColor = [UIColor lightGrayColor];
 	}
+	
 	NSString *rowImageName = 
 		[NSString stringWithFormat:@"WhichButton%d.png", row];
 	cell.imageView.image = 
 		[UIImage imageNamed:rowImageName] ;
 	
-	if ([model.currentContactButton intValue] == row)
+	if ((theContact != nil) && ([theContact.button intValue] == row))
 	{
 		[cell setAccessoryType:UITableViewCellAccessoryCheckmark];
 	}
@@ -107,7 +110,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 	NSUInteger row = [indexPath row];
 	NSString *whichButton = [NSString stringWithFormat:@"%d", row];
 	[model clearButton:whichButton];
-	[model setCurrentContactButton:whichButton];
+	[[model currentContact] setButton:whichButton];
 	[model save];
 	
 	[tableView reloadData];

@@ -34,9 +34,6 @@
 
 - (IBAction)textFieldDoneEditing:(id)sender
 {
-	// Hide the keyboard
-	//[sender resignFirstResponder];
-	
 	[model save];
 }
 
@@ -44,12 +41,12 @@
 {
 	if (sender == nameField)
 	{
-		[model setCurrentContactName:nameField.text];
+		[[model currentContact] setName:nameField.text];
 	}
 	
 	if (sender == numberField)
 	{
-		[model setCurrentContactNumber:numberField.text];
+		[[model currentContact] setNumber:numberField.text];
 	}
 }
 
@@ -80,8 +77,8 @@
 {
 	[super viewDidLoad];
 	
-	[nameField setText:[model currentContactName]];
-	[numberField setText:[model currentContactNumber]];
+	[nameField setText:[[model currentContact] name]];
+	[numberField setText:[[model currentContact] number]];
 	
 	self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
 	

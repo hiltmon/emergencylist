@@ -11,13 +11,11 @@
 @interface EmergencyNumbersModel ()
 
 - (NSString *)dataFilePath;
-- (NSDictionary *)currentContactRecord;
 
 @end
 
 @implementation EmergencyNumbersModel
 
-//@synthesize contactsArray;
 @synthesize currentContactIndex;
 @synthesize buttonsArray;
 @synthesize colorsArray;
@@ -40,30 +38,11 @@
 	}
 	else
 	{
-		// Creating a Defult File
-		// TODO: Use address book
+		// Creating a Defult File - Its Blank
+		// TODO: Use address book???
 		NSMutableArray *array = [[NSMutableArray alloc] init];
-		NSArray *startNames = [[NSArray alloc] initWithObjects:@"1 Press",
-							   @"2 Button", @"3 To Call",
-							   @"4 Emergency", @"5 Number", 
-							   @"6 Instantly", nil];
-		
-		for (int i = 1; i <= 6; i++)
-		{
-			NSMutableDictionary *element1 = [[NSMutableDictionary alloc] init];
-			[element1 setObject:[startNames objectAtIndex:i-1] forKey:@"name"];
-			[element1 setObject:@"Default" forKey:@"color"];
-			[element1 setObject:@"" forKey:@"number"];
-			[element1 setObject:[NSString stringWithFormat:@"%d", i] 
-						 forKey:@"button"];
-			[element1 setObject:@"Default" forKey:@"icon"];
-			[array addObject:element1];
-			[element1 release];
-		}
-		
 		contactsArray = [array retain];
 		[array release];
-		[startNames release];
 	}
 	
 	// Setup the master arrays
@@ -128,45 +107,27 @@
 	return NO;
 }
 
-- (NSString *)contactNameForButton:(NSString *)button
+- (EmergencyContact *)contactForButton:(NSUInteger)button
 {
-	if ([button isEqualToString:@"0"])
+	if ((button == 0) || (button > 6))
 	{
-		return @"";
+		return nil;
 	}
+	
+	NSString *buttonKey = [NSString stringWithFormat:@"%d", button];
 	
 	for (NSDictionary *item in contactsArray)
 	{
-		if ([[item valueForKey:@"button"] isEqualToString:button])
+		if ([[item valueForKey:@"button"] isEqualToString:buttonKey])
 		{
-			return [item valueForKey:@"name"];
+			EmergencyContact *theContact =
+				[[[EmergencyContact alloc] init] autorelease];
+			theContact.contact = item;
+			return theContact;
 		}
 	}
 	
-	return @"";
-}
-
-- (NSString *)contactNumberForButton:(NSString *)button
-{
-	if ([button isEqualToString:@"0"])
-	{
-		return @"";
-	}
-	
-	for (NSDictionary *item in contactsArray)
-	{
-		if ([[item valueForKey:@"button"] isEqualToString:button])
-		{
-			return [item valueForKey:@"number"];
-		}
-	}
-	
-	return @"";
-}
-
-- (NSDictionary *)currentContactRecord
-{
-	return [contactsArray objectAtIndex:self.currentContactIndex];
+	return nil;
 }
 
 - (NSString *)formatPhoneNumber:(NSString *)phoneNumber
@@ -207,91 +168,37 @@
 #pragma mark -
 #pragma mark Virtual Accessors
 
-- (NSString *)currentContactName
-{
-	return [self contactNameAtIndex:self.currentContactIndex];
-}
 
-- (void)setCurrentContactName:(NSString *)name
+- (EmergencyContact *)currentContact
 {
-	[[self currentContactRecord] setValue:name forKey:@"name"];
+	EmergencyContact *theContact =
+	[[[EmergencyContact alloc] init] autorelease];
+	theContact.contact = [contactsArray objectAtIndex:self.currentContactIndex];
+	return theContact;
 }
 
 - (NSString *)contactNameAtIndex:(NSUInteger)index
 {
-	return [[contactsArray objectAtIndex:index] valueForKey:@"name"];
-}
-
-- (NSString *)currentContactNumber
-{
-	return [self contactNumberAtIndex:self.currentContactIndex];
+	// If blank, reply with a nice blank name.
+	NSString *contactName = 
+		[[contactsArray objectAtIndex:index] valueForKey:@"name"];
+	if ((contactName == nil) || ([contactName isEqualToString:@""]))
+	{
+		contactName = 
+			[NSString stringWithFormat:@"<Blank Contact %d>", index];
+	}
+	return contactName;
 }
 
 - (NSString *)formattedCurrentContactNumber
 {
-	return [self formatPhoneNumber:
-			[self contactNumberAtIndex:self.currentContactIndex]];
-}
-
-- (void)setCurrentContactNumber:(NSString *)number
-{
-	[[self currentContactRecord] setValue:number forKey:@"number"];
-}
-
-- (NSString *)contactNumberAtIndex:(NSUInteger)index
-{
-	return [[contactsArray objectAtIndex:index] valueForKey:@"number"];
+	return [self formattedContactNumberAtIndex:self.currentContactIndex];
 }
 
 - (NSString *)formattedContactNumberAtIndex:(NSUInteger)index
 {
 	return [self formatPhoneNumber:
 			[[contactsArray objectAtIndex:index] valueForKey:@"number"]];
-}
-
-- (NSString *)currentContactButton
-{
-	return [self contactButtonAtIndex:self.currentContactIndex];
-}
-
-- (void)setCurrentContactButton:(NSString *)button
-{
-	[[self currentContactRecord] setValue:button forKey:@"button"];
-}
-
-- (NSString *)contactButtonAtIndex:(NSUInteger)index
-{
-	return [[contactsArray objectAtIndex:index] valueForKey:@"button"];
-}
-
-- (NSString *)currentContactColor
-{
-	return [self contactColorAtIndex:self.currentContactIndex];
-}
-
-- (void)setCurrentContactColor:(NSString *)color
-{
-	[[self currentContactRecord] setValue:color forKey:@"color"];
-}
-
-- (NSString *)contactColorAtIndex:(NSUInteger)index
-{
-	return [[contactsArray objectAtIndex:index] valueForKey:@"color"];
-}
-
-- (NSString *)currentContactIcon
-{
-	return [self contactIconAtIndex:self.currentContactIndex];
-}
-
-- (void)setCurrentContactIcon:(NSString *)icon
-{
-	[[self currentContactRecord] setValue:icon forKey:@"icon"];
-}
-
-- (NSString *)contactIconAtIndex:(NSUInteger)index
-{
-	return [[contactsArray objectAtIndex:index] valueForKey:@"icon"];
 }
 
 #pragma mark -
@@ -310,14 +217,19 @@
 
 - (void)save
 {
-	//NSLog(@"save...");
 	NSString *filePath = [self dataFilePath];
 	[contactsArray writeToFile:filePath atomically:YES];
 }
 
 - (void)sort
 {
-	NSString *oldContactName = [[self currentContactName] copy];
+	// Cannot sort an empty array
+	if ([contactsArray count] == 0)
+	{
+		return;
+	}
+	
+	NSString *oldContactName = [[[self currentContact] name] copy];
 	
 	NSSortDescriptor *descriptor = 
 		[[[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES] 

@@ -30,7 +30,5 @@
 
 @property (nonatomic, retain) EmergencyNumbersModel *model;
 
-// - (void)applicationWillTerminate:(NSNotification *)notification;
-
 @end
 

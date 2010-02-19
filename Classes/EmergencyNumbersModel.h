@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "EmergencyContact.h"
+
 #define kFilename @"data.plist"
 
 @interface EmergencyNumbersModel : NSObject
@@ -28,36 +30,19 @@
 //- (id)init;
 - (NSUInteger)count;
 - (BOOL)isButtonInUse:(NSString *)button;
-- (NSString *)contactNameForButton:(NSString *)button;
-- (NSString *)contactNumberForButton:(NSString *)button;
+- (EmergencyContact *)contactForButton:(NSUInteger)button;
 
 // Virtual Accessors
-- (NSString *)currentContactName;
-- (void)setCurrentContactName:(NSString *)name;
+- (EmergencyContact *)currentContact;
 - (NSString *)contactNameAtIndex:(NSUInteger)index;
 
-- (NSString *)currentContactNumber;
 - (NSString *)formattedCurrentContactNumber;
-- (void)setCurrentContactNumber:(NSString *)number;
-- (NSString *)contactNumberAtIndex:(NSUInteger)index;
 - (NSString *)formattedContactNumberAtIndex:(NSUInteger)index;
-
-- (NSString *)currentContactButton;
-- (void)setCurrentContactButton:(NSString *)button;
-- (NSString *)contactButtonAtIndex:(NSUInteger)index;
-
-- (NSString *)currentContactColor;
-- (void)setCurrentContactColor:(NSString *)color;
-- (NSString *)contactColorAtIndex:(NSUInteger)index;
-
-- (NSString *)currentContactIcon;
-- (void)setCurrentContactIcon:(NSString *)color;
-- (NSString *)contactIconAtIndex:(NSUInteger)index;
 
 //  Actions
 - (void)save;
 - (void)sort;
-- (void)clearButton:(NSString *)button;
+- (void)clearButton:(NSString *)button; // All instances of button are cleared
 - (void)deleteRow:(NSUInteger)row;
 - (void)addObject:(NSString *)name;
 

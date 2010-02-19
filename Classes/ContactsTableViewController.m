@@ -39,7 +39,6 @@
 						   otherButtonTitles:@"Add from Address Book",
 											 @"Add Manually",nil];
 	
-    //popupQuery.actionSheetStyle = UIActionSheetStyleBlackOpaque;
     [popupQuery showInView:self.tabBarController.view];
     [popupQuery release];
 }
@@ -50,13 +49,12 @@
 // to become a vector of contacts ...  maybe.
 - (void)addNew
 {
-	//NSLog(@"addNew %@ %@", tempName, tempNumber);
 	[model addObject:@""];
 	[model setCurrentContactIndex:[model count]-1];
 	if (![tempName isEqualToString:@""])
 	{
-		[model setCurrentContactName:tempName];
-		[model setCurrentContactNumber:tempNumber];
+		[[model currentContact] setName:tempName];
+		[[model currentContact] setNumber:tempNumber];
 	}
 	
 	ItemTableViewController *addController = 
@@ -110,12 +108,17 @@
     
 	[model sort];
     [[self tableView] reloadData];
-	
-	[[self tableView] 
-		scrollToRowAtIndexPath:
-			[NSIndexPath indexPathForRow:[model currentContactIndex] inSection:0]
-				atScrollPosition:UITableViewScrollPositionMiddle 
+
+	// Scroll only if there are contacts
+	if ([model count] > 0)
+	{
+		[[self tableView] 
+			scrollToRowAtIndexPath:
+				[NSIndexPath indexPathForRow:[model currentContactIndex] 
+								   inSection:0]
+					atScrollPosition:UITableViewScrollPositionMiddle 
 						animated:YES];
+	}
 }
 
 - (void)viewDidLoad
@@ -189,6 +192,19 @@
 	NSUInteger row = [indexPath row];
 	cell.textLabel.text = [model contactNameAtIndex:row];
 	cell.detailTextLabel.text = [model formattedContactNumberAtIndex:row];
+	
+	// Set the text to gray if the name starts with a '<'
+	NSString *prefix = 
+		[cell.textLabel.text substringWithRange: NSMakeRange (0, 1)];
+	if ([prefix isEqualToString:@"<"])
+	{
+		cell.textLabel.textColor = [UIColor grayColor];
+	}
+	else
+	{
+		cell.textLabel.textColor = [UIColor blackColor];
+	}
+
     return cell;
 }
 
@@ -250,10 +266,10 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
 		
 		// Show only phone numbers in the details page
 		NSArray *displayedItems = [NSArray arrayWithObjects:
-								   [NSNumber numberWithInt:kABPersonPhoneProperty],
-								   nil];
+			[NSNumber numberWithInt:kABPersonPhoneProperty], nil];
 		picker.displayedProperties = displayedItems;
-		[self.navigationController presentModalViewController:picker animated:YES];
+		[self.navigationController presentModalViewController:picker 
+													 animated:YES];
 		[picker release];
     }
 	else if (buttonIndex == 1)

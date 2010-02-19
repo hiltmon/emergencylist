@@ -27,13 +27,15 @@
 
 - (void)callNumber
 {
-	NSString *callNumber = [model currentContactNumber];
+	NSString *callNumber = [[model currentContact] number];
 	
 	if (![callNumber isEqualToString:@""])
 	{
 		UIAlertView *callAlert = [[UIAlertView alloc]
 							  initWithTitle:nil
-							  message:[NSString stringWithFormat:@"Calling %@", callNumber]
+							  message:
+								  [NSString stringWithFormat:@"Calling %@", 
+										callNumber]
 							  delegate:self 
 							  cancelButtonTitle:@"OK" 
 							  otherButtonTitles:nil];
@@ -53,20 +55,12 @@
 	[delegate contactAddViewController:self didAddContact:YES];
 }
 
-// Save only when there's a number and a name
-- (BOOL)isValid
-{
-	return !([model.currentContactName isEqualToString:@""]
-			|| [model.currentContactNumber isEqualToString:@""]);
-}
-
 #pragma mark -
 #pragma mark Action Methods
 
 
 #pragma mark -
 #pragma mark UIViewController
-
 
 - (void)viewDidLoad
 {
@@ -96,7 +90,7 @@
 	}
 	else
 	{
-		// Setup the SAVE button
+		// Setup the CALL button
 		UIBarButtonItem *callButton = 
 		[[UIBarButtonItem alloc] initWithTitle:@"Call" 
 										 style:UIBarButtonItemStylePlain 
@@ -109,7 +103,6 @@
 
 }
 
-
 //  Override inherited method to automatically refresh table view's data
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -119,7 +112,8 @@
 	
 	if ([[self title] isEqualToString:kNewItem])
 	{
-		self.navigationItem.rightBarButtonItem.enabled = [self isValid];
+		self.navigationItem.rightBarButtonItem.enabled = 
+			[[model currentContact] isValid];
 	}
 }
 
@@ -170,7 +164,7 @@ titleForHeaderInSection:(NSInteger)section
     switch (section)
     {
         case NameSection:  return @"Emergency Contact";
-        case ButtonSection: return @"Quick Button";
+        case ButtonSection: return @"Quick Call Button";
     }
     
     return nil;
@@ -196,13 +190,14 @@ titleForHeaderInSection:(NSInteger)section
     // Set up the cell...
 	NSUInteger section = [indexPath section];
 	NSUInteger row = [indexPath row];
+	EmergencyContact *theContact = [model currentContact];
 	switch (section)
 	{
 		case NameSection:
 			if (row == 0)
 			{
 				cell.textLabel.text = @"Name";
-				cell.detailTextLabel.text = model.currentContactName;
+				cell.detailTextLabel.text = theContact.name;
 			}
 			else
 			{
@@ -218,17 +213,17 @@ titleForHeaderInSection:(NSInteger)section
 				cell.textLabel.text = @"Button";
 				cell.detailTextLabel.text = 
 					[model.buttonsArray objectAtIndex:
-						[model.currentContactButton intValue]];
+						[theContact.button intValue]];
 			}
 			else if (row == 1)
 			{
 				cell.textLabel.text = @"Color";
-				cell.detailTextLabel.text = model.currentContactColor;
+				cell.detailTextLabel.text = theContact.color;
 			}
 			else if (row == 2)
 			{
 				cell.textLabel.text = @"Icon";
-				cell.detailTextLabel.text = model.currentContactIcon;
+				cell.detailTextLabel.text = theContact.icon;
 			}
 			
 			break;
@@ -250,13 +245,13 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 	switch (section)
 	{
 		case NameSection:
-			;	// Violation in C99 BNF - cannot decalre a variable at
+			;	// Violation in C99 BNF - cannot declare a variable at
 				// the start of a case block
 			ContactsDetailViewController *contactDetailController = 
 				[[ContactsDetailViewController alloc]
 					initWithNibName:@"ContactsDetailView" bundle:nil];
 			
-			//[contactDetailController setTitle:@"Info"];
+			[contactDetailController setTitle:@"Emergency Contact"];
 			[contactDetailController setModel:model];
 			[self.navigationController 
 				pushViewController:contactDetailController animated:YES];
@@ -271,6 +266,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 					[[ButtonLookupTableViewController alloc]
 						initWithNibName:@"ButtonLookupView" bundle:nil];
 				[buttonLookupController setModel:model];
+				[buttonLookupController setTitle:@"Which Quick Call Button?"];
 				[self.navigationController 
 					pushViewController:buttonLookupController animated:YES];
 				[buttonLookupController release];
@@ -282,6 +278,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 					[[ColorLookupTableViewController alloc]
 					 initWithNibName:@"ColorLookupView" bundle:nil];
 				[colorLookupController setModel:model];
+				[colorLookupController setTitle:@"Pick a Quick Call Color"];
 				[self.navigationController 
 					pushViewController:colorLookupController animated:YES];
 				[colorLookupController release];
@@ -293,6 +290,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 				[[IconLookupTableViewController alloc]
 					initWithNibName:@"IconLookupView" bundle:nil];
 				[iconLookupController setModel:model];
+				[iconLookupController setTitle:@"Pick a Quick Call Icon"];
 				[self.navigationController 
 					pushViewController:iconLookupController animated:YES];
 				[iconLookupController release];

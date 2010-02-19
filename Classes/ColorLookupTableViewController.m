@@ -86,7 +86,7 @@
 		[[UIImage imageNamed:rowImageName] 
 			scaleToSize:CGSizeMake(32.0f, 32.0f)];
 	
-	if ([cell.textLabel.text isEqualToString:model.currentContactColor])
+	if ([cell.textLabel.text isEqualToString:[[model currentContact] color]])
 	{
 		[cell setAccessoryType:UITableViewCellAccessoryCheckmark];
 	}
@@ -99,7 +99,7 @@
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	NSUInteger row = [indexPath row];
-	[model setCurrentContactColor:[model.colorsArray objectAtIndex:row]];
+	[[model currentContact] setColor:[model.colorsArray objectAtIndex:row]];
 	[model save];
 	
 	[tableView reloadData];

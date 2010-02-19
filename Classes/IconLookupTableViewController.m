@@ -91,7 +91,7 @@
 		[[UIImage imageWithCGImage:tmp] 
 			scaleToSize:CGSizeMake(32.0f, 32.0f)];
 
-	if ([cell.textLabel.text isEqualToString:model.currentContactIcon])
+	if ([cell.textLabel.text isEqualToString:[[model currentContact] icon]])
 	{
 		[cell setAccessoryType:UITableViewCellAccessoryCheckmark];
 	}
@@ -105,7 +105,7 @@
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	NSUInteger row = [indexPath row];
-	[model setCurrentContactIcon:[model.iconsArray objectAtIndex:row]];
+	[[model currentContact] setIcon:[model.iconsArray objectAtIndex:row]];
 	[model save];
 	
 	[tableView reloadData];

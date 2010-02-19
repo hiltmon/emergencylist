@@ -12,7 +12,6 @@
 
 #import "ItemTableViewController.h"
 
-//@class ContactsDetailViewController;
 @class EmergencyNumbersModel;
 
 @interface ContactsTableViewController : UITableViewController 

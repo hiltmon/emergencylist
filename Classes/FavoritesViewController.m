@@ -33,6 +33,7 @@
 @synthesize button4;
 @synthesize button5;
 @synthesize button6;
+@synthesize startImage;
 
 #pragma mark -
 
@@ -84,13 +85,7 @@
 	
 	// TODO: Optimize by caching images
 	// Create the button backgrounds
-	//[button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-	//if ([myColor isEqualToString:@"Yellow"] 
-//		|| [myColor isEqualToString:@"Cyan"]
-//		|| [myColor isEqualToString:@"Green"])
-//	{
-		[button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//	}
+	[button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
 	[button setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
 	
 	UIImage *blendedImage = [self newImageForColor:myColor andIcon:myIcon];
@@ -110,35 +105,34 @@
 
 - (void)reloadData
 {
-	button1.hidden = YES;
-	button2.hidden = YES;
-	button3.hidden = YES;
-	button4.hidden = YES;
-	button5.hidden = YES;
-	button6.hidden = YES;
-	
-	// Set the buttons...
-	for (int i = 0; i < [model count]; i++)
+	// Set the buttons
+	BOOL areButtonsVisible = NO;
+	for (int i = 1; i <= 6; i++)
 	{
-		NSInteger whichButton = [[model contactButtonAtIndex:i] intValue];
-		
-		if (whichButton > 0)
+		EmergencyContact *theContact = [model contactForButton:i];
+		if (theContact == nil) 
 		{
-			// Gray out invalid buttons
-			NSString *color = [model contactColorAtIndex:i];
-			if ([[model contactNumberAtIndex:i] isEqualToString:@""])
-			{
-				color = @"Gray";
-			}
-			
-			[self setTitle:[model contactNameAtIndex:i] 
-					 color:color
-					  icon:[model contactIconAtIndex:i]
-				 forButton:[buttonArray objectAtIndex:whichButton-1]];
-			[[buttonArray objectAtIndex:whichButton-1] setHidden:NO];
-			
-			//[color release];
+			// Create a Gray button
+			[self setTitle:@""
+					 color:@"Gray"
+					  icon:@"None"
+				 forButton:[buttonArray objectAtIndex:i-1]];
 		}
+		else
+		{
+			[self setTitle:theContact.name 
+					 color:theContact.color
+					  icon:theContact.icon
+				 forButton:[buttonArray objectAtIndex:i-1]];
+			areButtonsVisible = YES;
+		}
+	}
+	
+	// Show start image if no buttons visible
+	startImage.hidden = areButtonsVisible;
+	for (UIButton *button in buttonArray)
+	{
+		button.hidden = !areButtonsVisible;
 	}
 }
 
@@ -149,14 +143,30 @@
 {
 	// Get the index
 	NSUInteger whichButton = [buttonArray indexOfObject:sender]+1;
-	NSString *callNumber = [model contactNumberForButton:
-							[NSString stringWithFormat:@"%d", whichButton]];
+	EmergencyContact *theContact = [model contactForButton:whichButton];
 	
-	if (![callNumber isEqualToString:@""])
+	if (theContact == nil)
+	{
+		return;
+	}
+	
+	if ([theContact.number isEqualToString:@""])
+	{
+		UIAlertView *badAlert = [[UIAlertView alloc]
+								  initWithTitle:@"Unable to Call"
+								  message:@"No number set for Quick Call"								  delegate:self 
+								  cancelButtonTitle:@"OK" 
+								  otherButtonTitles:nil];
+		[badAlert show];
+		[badAlert release];
+	}
+	else
 	{
 		UIAlertView *callAlert = [[UIAlertView alloc]
 							  initWithTitle:nil
-							  message:[NSString stringWithFormat:@"Calling %@", callNumber]
+							  message:
+									[NSString stringWithFormat:@"Calling %@", 
+										theContact.number]
 							  delegate:self 
 							  cancelButtonTitle:@"OK" 
 							  otherButtonTitles:nil];
