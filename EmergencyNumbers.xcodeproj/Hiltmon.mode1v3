@@ -396,9 +396,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>3C16A0AC112F0B16003F86BA</string>
+				<string>3C83B9BE112F3F8D00E984C8</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>3C16A0AD112F0B16003F86BA</string>
+				<string>3C83B9BF112F3F8D00E984C8</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -519,7 +519,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>288307048.24332798</real>
+	<real>288309133.96410799</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -536,12 +536,11 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1C530D57069F1CE1000CFCEE</string>
-		<string>3C16A0C9112F0B16003F86BA</string>
-		<string>3C16A0CA112F0B16003F86BA</string>
+		<string>3C83B9C0112F3F8D00E984C8</string>
+		<string>3C83B9C1112F3F8D00E984C8</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>3C36384E11171CCF004A128B</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/Hiltmon/Projects/Apps/EmergencyNumbers/EmergencyNumbers.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -624,7 +623,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>3C36384E11171CCF004A128B</string>
-				<string>3C16A0C1112F0B16003F86BA</string>
+				<string>3C83B9B6112F3F8200E984C8</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -637,7 +636,7 @@
 			<key>WindowToolGUID</key>
 			<string>3C36384E11171CCF004A128B</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -748,13 +747,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>3C16A0C2112F0B16003F86BA</string>
+				<string>3C83B9B7112F3F8200E984C8</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>3C16A0C3112F0B16003F86BA</string>
-				<string>3C16A0C4112F0B16003F86BA</string>
-				<string>3C16A0C5112F0B16003F86BA</string>
-				<string>3C16A0C6112F0B16003F86BA</string>
-				<string>3C16A0C7112F0B16003F86BA</string>
+				<string>3C83B9B8112F3F8200E984C8</string>
+				<string>3C83B9B9112F3F8200E984C8</string>
+				<string>3C83B9BA112F3F8200E984C8</string>
+				<string>3C83B9BB112F3F8200E984C8</string>
+				<string>3C83B9BC112F3F8200E984C8</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -910,7 +909,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>3C16A0C8112F0B16003F86BA</string>
+				<string>3C83B9BD112F3F8200E984C8</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
@@ -920,7 +919,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>
