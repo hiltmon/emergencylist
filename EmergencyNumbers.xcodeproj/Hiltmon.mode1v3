@@ -285,19 +285,17 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
-								<string>080E96DDFE201D6D7F000001</string>
-								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>1C37FAAC04509CD000000102</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>44</integer>
+									<integer>14</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 332}, {186, 475}}</string>
+							<string>{{0, 0}, {186, 475}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -397,9 +395,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>3CB71EA81129F7C500D3C937</string>
+				<string>3C16A074112EF3AC003F86BA</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>3CB71EA91129F7C500D3C937</string>
+				<string>3C16A075112EF3AC003F86BA</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -520,7 +518,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>287965791.936436</real>
+	<real>288289720.96707499</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -537,13 +535,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1C530D57069F1CE1000CFCEE</string>
-		<string>3CB71EBC1129F82C00D3C937</string>
-		<string>3CB71EB61129F7C500D3C937</string>
-		<string>1CD10A99069EF8BA00B06720</string>
-		<string>/Users/Hiltmon/Projects/Apps/EmergencyNumbers/EmergencyNumbers.xcodeproj</string>
 		<string>3C36384E11171CCF004A128B</string>
-		<string>1C78EAAD065D492600B07095</string>
+		<string>/Users/Hiltmon/Projects/Apps/EmergencyNumbers/EmergencyNumbers.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>17 630 788 534 0 0 1920 1178 </string>
@@ -584,8 +577,6 @@
 							<string>0pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -625,7 +616,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>3C36384E11171CCF004A128B</string>
-				<string>3CB71EAD1129F7C500D3C937</string>
+				<string>3C16A076112EF3AC003F86BA</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -638,7 +629,7 @@
 			<key>WindowToolGUID</key>
 			<string>3C36384E11171CCF004A128B</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -749,13 +740,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>3CB71EAE1129F7C500D3C937</string>
+				<string>3C82980C112AECA30084D649</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>3CB71EAF1129F7C500D3C937</string>
-				<string>3CB71EB01129F7C500D3C937</string>
-				<string>3CB71EB11129F7C500D3C937</string>
-				<string>3CB71EB21129F7C500D3C937</string>
-				<string>3CB71EB31129F7C500D3C937</string>
+				<string>3C82980D112AECA30084D649</string>
+				<string>3C82980E112AECA30084D649</string>
+				<string>3C82980F112AECA30084D649</string>
+				<string>3C829810112AECA30084D649</string>
+				<string>3C829811112AECA30084D649</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -911,7 +902,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>3CB71EB41129F7C500D3C937</string>
+				<string>3C829812112AECA30084D649</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
@@ -921,7 +912,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

@@ -25,7 +25,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = 3C36383B11171CC8004A128B /* EmergencyNumbers */;
-		activeSDKPreference = iphoneos3.1.2;
+		activeSDKPreference = iphonesimulator3.1.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* EmergencyNumbers */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* EmergencyNumbers */,
@@ -87,7 +87,7 @@
 				PBXFileTableDataSourceColumnWidthsKey = (
 					22,
 					300,
-					229,
+					228.58349609375,
 				);
 				PBXFileTableDataSourceColumnsKey = (
 					PBXExecutablesDataSource_ActiveFlagID,
@@ -193,8 +193,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 287962891;
-			PBXWorkspaceStateSaveDate = 287962891;
+			PBXPerProjectTemplateStateSaveDate = 288289694;
+			PBXWorkspaceStateSaveDate = 288289694;
 		};
 		sourceControlManager = 3C36385011171CCF004A128B /* Source Control */;
 		userBuildSettings = {
@@ -230,7 +230,7 @@
 		argumentStrings = (
 		);
 		autoAttachOnCrash = 1;
-		breakpointsEnabled = 0;
+		breakpointsEnabled = 1;
 		configStateDict = {
 		};
 		customDataFormattersEnabled = 1;
@@ -328,7 +328,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 57;
-		modificationTime = 287965611.258296;
+		modificationTime = 288025766.8536739;
 		originalNumberOfMultipleMatches = 1;
 		state = 0;
 	};
@@ -345,7 +345,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 57;
-		modificationTime = 287965611.258342;
+		modificationTime = 288025766.853727;
 		originalNumberOfMultipleMatches = 1;
 		state = 0;
 	};
@@ -362,7 +362,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 57;
-		modificationTime = 287965611.258352;
+		modificationTime = 288025766.853737;
 		originalNumberOfMultipleMatches = 1;
 		state = 0;
 	};
@@ -455,9 +455,9 @@
 	};
 	3CAC819F11176B1E00A18521 /* EmergencyNumbersModel.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {687, 4836}}";
-			sepNavSelRange = "{3398, 55}";
-			sepNavVisRange = "{3110, 619}";
+			sepNavIntBoundsRect = "{{0, 0}, {687, 4433}}";
+			sepNavSelRange = "{2377, 0}";
+			sepNavVisRange = "{1410, 1011}";
 			sepNavWindowFrame = "{{867, 572}, {746, 585}}";
 		};
 	};

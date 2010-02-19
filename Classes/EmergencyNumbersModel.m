@@ -80,7 +80,7 @@
 	iconsArray = [[NSArray alloc] initWithObjects:@"Default",
 				   @"Fire", @"Home",
 				   @"Medical", @"Person", @"Police",
-				   @"Power", nil];
+				   @"Power", @"Religion", @"School", nil];
 	
 	return self;
 }

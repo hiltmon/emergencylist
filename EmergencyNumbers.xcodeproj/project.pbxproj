@@ -25,6 +25,8 @@
 		3C719A311121CDA600074034 /* ColorLookupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C719A301121CDA600074034 /* ColorLookupTableViewController.m */; };
 		3C719A331121CDBB00074034 /* ColorLookupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C719A321121CDBB00074034 /* ColorLookupView.xib */; };
 		3C719A3E1121D2D400074034 /* UIImage_Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C719A3D1121D2D400074034 /* UIImage_Resize.m */; };
+		3C829801112AEC840084D649 /* ReligionIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C8297FF112AEC840084D649 /* ReligionIcon.png */; };
+		3C829802112AEC840084D649 /* SchoolIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C829800112AEC840084D649 /* SchoolIcon.png */; };
 		3CAC81A011176B1E00A18521 /* EmergencyNumbersModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CAC819F11176B1E00A18521 /* EmergencyNumbersModel.m */; };
 		3CB45E5D1129AFA500323D47 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CB45E5C1129AFA500323D47 /* AddressBook.framework */; };
 		3CB45E611129AFAA00323D47 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CB45E601129AFAA00323D47 /* AddressBookUI.framework */; };
@@ -89,6 +91,8 @@
 		3C719A321121CDBB00074034 /* ColorLookupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorLookupView.xib; sourceTree = "<group>"; };
 		3C719A3C1121D2D400074034 /* UIImage_Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImage_Resize.h; sourceTree = "<group>"; };
 		3C719A3D1121D2D400074034 /* UIImage_Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImage_Resize.m; sourceTree = "<group>"; };
+		3C8297FF112AEC840084D649 /* ReligionIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ReligionIcon.png; sourceTree = "<group>"; };
+		3C829800112AEC840084D649 /* SchoolIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SchoolIcon.png; sourceTree = "<group>"; };
 		3CAC819E11176B1E00A18521 /* EmergencyNumbersModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmergencyNumbersModel.h; sourceTree = "<group>"; };
 		3CAC819F11176B1E00A18521 /* EmergencyNumbersModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmergencyNumbersModel.m; sourceTree = "<group>"; };
 		3CB45E5C1129AFA500323D47 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
@@ -237,6 +241,8 @@
 		3C00C5BD1118913800A83BB0 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3C8297FF112AEC840084D649 /* ReligionIcon.png */,
+				3C829800112AEC840084D649 /* SchoolIcon.png */,
 				3CC6BBF811247EFD00CD18CA /* DefaultIcon.png */,
 				3CC6BBF911247EFD00CD18CA /* FireIcon.png */,
 				3CC6BBFA11247EFD00CD18CA /* HomeIcon.png */,
@@ -343,6 +349,8 @@
 				3CB63C771129E9E7006D2D53 /* Icon.png in Resources */,
 				3CB63CA21129EEF2006D2D53 /* Icon-Small.png in Resources */,
 				3CB63CA61129F217006D2D53 /* Default.png in Resources */,
+				3C829801112AEC840084D649 /* ReligionIcon.png in Resources */,
+				3C829802112AEC840084D649 /* SchoolIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
