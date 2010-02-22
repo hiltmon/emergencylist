@@ -25,7 +25,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = 3C36383B11171CC8004A128B /* EmergencyNumbers */;
-		activeSDKPreference = iphonesimulator3.1.2;
+		activeSDKPreference = iphoneos3.1.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* EmergencyNumbers */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* EmergencyNumbers */,
@@ -193,8 +193,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 288307369;
-			PBXWorkspaceStateSaveDate = 288307369;
+			PBXPerProjectTemplateStateSaveDate = 288573061;
+			PBXWorkspaceStateSaveDate = 288573061;
 		};
 		sourceControlManager = 3C36385011171CCF004A128B /* Source Control */;
 		userBuildSettings = {
@@ -228,7 +228,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {689, 936}}";
 			sepNavSelRange = "{1180, 0}";
-			sepNavVisRange = "{0, 712}";
+			sepNavVisRange = "{688, 607}";
 			sepNavWindowFrame = "{{882, 596}, {748, 582}}";
 		};
 	};
@@ -241,10 +241,10 @@
 	};
 	3C2A950611209C8D00D10B62 /* ItemTableViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {720, 4030}}";
-			sepNavSelRange = "{4679, 29}";
-			sepNavVisRange = "{4464, 360}";
-			sepNavWindowFrame = "{{869, 581}, {748, 582}}";
+			sepNavIntBoundsRect = "{{0, 0}, {689, 3861}}";
+			sepNavSelRange = "{728, 0}";
+			sepNavVisRange = "{460, 524}";
+			sepNavWindowFrame = "{{1050, 584}, {748, 582}}";
 		};
 	};
 	3C36383B11171CC8004A128B /* EmergencyNumbers */ = {
@@ -317,17 +317,17 @@
 	};
 	3C36385411171D53004A128B /* FavoritesViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {691, 507}}";
-			sepNavSelRange = "{1022, 10}";
-			sepNavVisRange = "{173, 907}";
+			sepNavIntBoundsRect = "{{0, 0}, {691, 533}}";
+			sepNavSelRange = "{226, 75}";
+			sepNavVisRange = "{0, 1018}";
 			sepNavWindowFrame = "{{831, 604}, {750, 558}}";
 		};
 	};
 	3C36385511171D53004A128B /* FavoritesViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {852, 3068}}";
-			sepNavSelRange = "{4280, 0}";
-			sepNavVisRange = "{5199, 768}";
+			sepNavIntBoundsRect = "{{0, 0}, {878, 1430}}";
+			sepNavSelRange = "{823, 0}";
+			sepNavVisRange = "{1485, 378}";
 			sepNavWindowFrame = "{{831, 604}, {750, 558}}";
 		};
 	};
@@ -352,7 +352,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 57;
-		modificationTime = 288309097.823492;
+		modificationTime = 288573365.257787;
 		originalNumberOfMultipleMatches = 1;
 		state = 0;
 	};
@@ -369,7 +369,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 57;
-		modificationTime = 288309097.82352;
+		modificationTime = 288573365.257833;
 		originalNumberOfMultipleMatches = 1;
 		state = 0;
 	};
@@ -386,7 +386,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 57;
-		modificationTime = 288309097.823542;
+		modificationTime = 288573365.257845;
 		originalNumberOfMultipleMatches = 1;
 		state = 0;
 	};
@@ -469,6 +469,38 @@
 			sepNavVisRange = "{0, 888}";
 		};
 	};
+	3CA7CD611133221700E89769 /* QuickCallButton.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {689, 454}}";
+			sepNavSelRange = "{473, 0}";
+			sepNavVisRange = "{0, 479}";
+			sepNavWindowFrame = "{{938, 378}, {748, 582}}";
+		};
+	};
+	3CA7CD621133221700E89769 /* QuickCallButton.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {689, 1339}}";
+			sepNavSelRange = "{505, 0}";
+			sepNavVisRange = "{2372, 870}";
+			sepNavWindowFrame = "{{938, 378}, {748, 582}}";
+		};
+	};
+	3CA7CDF011333EEA00E89769 /* QuickCall.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {689, 454}}";
+			sepNavSelRange = "{344, 0}";
+			sepNavVisRange = "{0, 434}";
+			sepNavWindowFrame = "{{872, 596}, {748, 582}}";
+		};
+	};
+	3CA7CDF111333EEA00E89769 /* QuickCall.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {689, 1079}}";
+			sepNavSelRange = "{1484, 0}";
+			sepNavVisRange = "{729, 853}";
+			sepNavWindowFrame = "{{872, 596}, {748, 582}}";
+		};
+	};
 	3CAC819E11176B1E00A18521 /* EmergencyNumbersModel.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {687, 650}}";
@@ -479,10 +511,10 @@
 	};
 	3CAC819F11176B1E00A18521 /* EmergencyNumbersModel.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {687, 3458}}";
-			sepNavSelRange = "{4852, 0}";
-			sepNavVisRange = "{5299, 845}";
-			sepNavWindowFrame = "{{867, 572}, {746, 585}}";
+			sepNavIntBoundsRect = "{{0, 0}, {687, 3731}}";
+			sepNavSelRange = "{3233, 72}";
+			sepNavVisRange = "{3003, 812}";
+			sepNavWindowFrame = "{{183, 460}, {746, 585}}";
 		};
 	};
 	3CB63C761129E9E7006D2D53 /* Icon.png */ = {

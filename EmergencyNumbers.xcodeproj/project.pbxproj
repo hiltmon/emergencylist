@@ -31,6 +31,14 @@
 		3C719A3E1121D2D400074034 /* UIImage_Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C719A3D1121D2D400074034 /* UIImage_Resize.m */; };
 		3C829801112AEC840084D649 /* ReligionIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C8297FF112AEC840084D649 /* ReligionIcon.png */; };
 		3C829802112AEC840084D649 /* SchoolIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C829800112AEC840084D649 /* SchoolIcon.png */; };
+		3CA7CC9F1133123100E89769 /* GovernmentIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CA7CC9A1133123100E89769 /* GovernmentIcon.png */; };
+		3CA7CCA01133123100E89769 /* InsuranceIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CA7CC9B1133123100E89769 /* InsuranceIcon.png */; };
+		3CA7CCA11133123100E89769 /* MoneyIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CA7CC9C1133123100E89769 /* MoneyIcon.png */; };
+		3CA7CCA21133123100E89769 /* OfficeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CA7CC9D1133123100E89769 /* OfficeIcon.png */; };
+		3CA7CCA31133123100E89769 /* WorkIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CA7CC9E1133123100E89769 /* WorkIcon.png */; };
+		3CA7CCAA113316F300E89769 /* PinkButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CA7CCA9113316F300E89769 /* PinkButton.png */; };
+		3CA7CD631133221700E89769 /* QuickCallButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CA7CD621133221700E89769 /* QuickCallButton.m */; };
+		3CA7CDF211333EEA00E89769 /* QuickCall.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CA7CDF111333EEA00E89769 /* QuickCall.m */; };
 		3CAC81A011176B1E00A18521 /* EmergencyNumbersModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CAC819F11176B1E00A18521 /* EmergencyNumbersModel.m */; };
 		3CB45E5D1129AFA500323D47 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CB45E5C1129AFA500323D47 /* AddressBook.framework */; };
 		3CB45E611129AFAA00323D47 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CB45E601129AFAA00323D47 /* AddressBookUI.framework */; };
@@ -102,6 +110,16 @@
 		3C719A3D1121D2D400074034 /* UIImage_Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImage_Resize.m; sourceTree = "<group>"; };
 		3C8297FF112AEC840084D649 /* ReligionIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ReligionIcon.png; sourceTree = "<group>"; };
 		3C829800112AEC840084D649 /* SchoolIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SchoolIcon.png; sourceTree = "<group>"; };
+		3CA7CC9A1133123100E89769 /* GovernmentIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GovernmentIcon.png; sourceTree = "<group>"; };
+		3CA7CC9B1133123100E89769 /* InsuranceIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = InsuranceIcon.png; sourceTree = "<group>"; };
+		3CA7CC9C1133123100E89769 /* MoneyIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MoneyIcon.png; sourceTree = "<group>"; };
+		3CA7CC9D1133123100E89769 /* OfficeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OfficeIcon.png; sourceTree = "<group>"; };
+		3CA7CC9E1133123100E89769 /* WorkIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WorkIcon.png; sourceTree = "<group>"; };
+		3CA7CCA9113316F300E89769 /* PinkButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PinkButton.png; sourceTree = "<group>"; };
+		3CA7CD611133221700E89769 /* QuickCallButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickCallButton.h; sourceTree = "<group>"; };
+		3CA7CD621133221700E89769 /* QuickCallButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickCallButton.m; sourceTree = "<group>"; };
+		3CA7CDF011333EEA00E89769 /* QuickCall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickCall.h; sourceTree = "<group>"; };
+		3CA7CDF111333EEA00E89769 /* QuickCall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickCall.m; sourceTree = "<group>"; };
 		3CAC819E11176B1E00A18521 /* EmergencyNumbersModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmergencyNumbersModel.h; sourceTree = "<group>"; };
 		3CAC819F11176B1E00A18521 /* EmergencyNumbersModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmergencyNumbersModel.m; sourceTree = "<group>"; };
 		3CB45E5C1129AFA500323D47 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
@@ -184,6 +202,10 @@
 				3CC6BC24112480D300CD18CA /* IconLookupTableViewController.m */,
 				3C719A3C1121D2D400074034 /* UIImage_Resize.h */,
 				3C719A3D1121D2D400074034 /* UIImage_Resize.m */,
+				3CA7CD611133221700E89769 /* QuickCallButton.h */,
+				3CA7CD621133221700E89769 /* QuickCallButton.m */,
+				3CA7CDF011333EEA00E89769 /* QuickCall.h */,
+				3CA7CDF111333EEA00E89769 /* QuickCall.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -252,6 +274,12 @@
 		3C00C5BD1118913800A83BB0 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3CA7CCA9113316F300E89769 /* PinkButton.png */,
+				3CA7CC9A1133123100E89769 /* GovernmentIcon.png */,
+				3CA7CC9B1133123100E89769 /* InsuranceIcon.png */,
+				3CA7CC9C1133123100E89769 /* MoneyIcon.png */,
+				3CA7CC9D1133123100E89769 /* OfficeIcon.png */,
+				3CA7CC9E1133123100E89769 /* WorkIcon.png */,
 				3C16A1FD112F29A2003F86BA /* NoneIcon.png */,
 				3C16A1F8112F2898003F86BA /* QuickCall.png */,
 				3C16A091112F0790003F86BA /* StartImage.png */,
@@ -368,6 +396,12 @@
 				3C16A092112F0790003F86BA /* StartImage.png in Resources */,
 				3C16A1F9112F2898003F86BA /* QuickCall.png in Resources */,
 				3C16A1FE112F29A2003F86BA /* NoneIcon.png in Resources */,
+				3CA7CC9F1133123100E89769 /* GovernmentIcon.png in Resources */,
+				3CA7CCA01133123100E89769 /* InsuranceIcon.png in Resources */,
+				3CA7CCA11133123100E89769 /* MoneyIcon.png in Resources */,
+				3CA7CCA21133123100E89769 /* OfficeIcon.png in Resources */,
+				3CA7CCA31133123100E89769 /* WorkIcon.png in Resources */,
+				3CA7CCAA113316F300E89769 /* PinkButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +425,8 @@
 				3C719A3E1121D2D400074034 /* UIImage_Resize.m in Sources */,
 				3CC6BC25112480D300CD18CA /* IconLookupTableViewController.m in Sources */,
 				3C16A0D0112F0D49003F86BA /* EmergencyContact.m in Sources */,
+				3CA7CD631133221700E89769 /* QuickCallButton.m in Sources */,
+				3CA7CDF211333EEA00E89769 /* QuickCall.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,21 +6,15 @@
 //  Copyright 2010 NoVerse.com. All rights reserved.
 // ------------------------------------------------------------------------
 
-#import "QuartzCore/CALayer.h"			// Needed for blending images
-
 #import "FavoritesViewController.h"
 #import "EmergencyNumbersAppDelegate.h"	// Needed to get to model
 #import "EmergencyNumbersModel.h"
 
+#import "QuickCall.h"
+
 // Private methods
 @interface FavoritesViewController ()
 
-- (UIImage *)newImageForColor:(NSString *)myColor
-					  andIcon:(NSString *)myIcon;
-- (void)setTitle:(NSString *)title 
-		   color:(NSString *)myColor 
-			icon:(NSString *)myIcon
-	   forButton:(UIButton *)button;
 - (void)reloadData;
 
 @end
@@ -44,65 +38,6 @@
     [super dealloc];
 }
 
-- (UIImage *)newImageForColor:(NSString *)myColor
-					  andIcon:(NSString *)myIcon
-{
-	NSString *backgroundImageName = 
-		[NSString stringWithFormat:@"%@Button.png", myColor];
-	UIImage *buttonBackground = [UIImage imageNamed:backgroundImageName];
-	
-	// Apply the merge
-	NSString *iconImageName = 
-		[NSString stringWithFormat:@"%@Icon.png", myIcon];
-	UIImage* topImage    = [UIImage imageNamed:iconImageName];
-	UIImageView* imageView = [[UIImageView alloc] initWithImage:buttonBackground];
-	UIImageView* subView   = [[UIImageView alloc] initWithImage:topImage];
-	subView.alpha = 0.5;  // Customize the opacity of the top image.
-	[imageView addSubview:subView];
-	UIGraphicsBeginImageContext(imageView.frame.size);
-	[[imageView layer] renderInContext:UIGraphicsGetCurrentContext()];
-	UIImage* blendedImage = UIGraphicsGetImageFromCurrentImageContext();
-	UIGraphicsEndImageContext();
-	[subView release];
-	[imageView release];
-	
-	return blendedImage;
-}
-
-// Ugly in API, need to set the title of a button for all states
-// TODO: Add comment
-- (void)setTitle:(NSString *)title 
-		   color:(NSString *)myColor
-			icon:(NSString *)myIcon
-	   forButton:(UIButton *)button
-{
-	NSString *modifiedTitle = [NSString stringWithFormat:@"\n\n\n%@", title];
-	// Set the title to be the same for ALL states
-	[button setTitle:modifiedTitle forState:UIControlStateNormal];
-	[button setTitle:modifiedTitle forState:UIControlStateHighlighted];
-	[button setTitle:modifiedTitle forState:UIControlStateDisabled];
-	[button setTitle:modifiedTitle forState:UIControlStateSelected];
-	
-	// TODO: Optimize by caching images
-	// Create the button backgrounds
-	[button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-	[button setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
-	
-	UIImage *blendedImage = [self newImageForColor:myColor andIcon:myIcon];
-	[button setBackgroundImage:blendedImage 
-					   forState:UIControlStateNormal];
-	//[blendedImage release];
-	
-	// Pressed is always Gray
-	UIImage *pressedImage = [self newImageForColor:@"Gray" andIcon:myIcon];
-	[button setBackgroundImage:pressedImage 
-					  forState:UIControlStateHighlighted];
-	//[pressedImage release];
-	
-	// In case the parent draws a back image
-	button.backgroundColor = [UIColor clearColor];
-}
-
 - (void)reloadData
 {
 	// Set the buttons
@@ -113,17 +48,15 @@
 		if (theContact == nil) 
 		{
 			// Create a Gray button
-			[self setTitle:@""
-					 color:@"Gray"
-					  icon:@"None"
-				 forButton:[buttonArray objectAtIndex:i-1]];
+			[[buttonArray objectAtIndex:i-1] setTitle:@""
+												color:@"Gray"
+												 icon:@"None"];
 		}
 		else
 		{
-			[self setTitle:theContact.name 
-					 color:theContact.color
-					  icon:theContact.icon
-				 forButton:[buttonArray objectAtIndex:i-1]];
+			[[buttonArray objectAtIndex:i-1] setTitle:theContact.name 
+												color:theContact.color
+												 icon:theContact.icon];
 			areButtonsVisible = YES;
 		}
 	}
@@ -145,34 +78,7 @@
 	NSUInteger whichButton = [buttonArray indexOfObject:sender]+1;
 	EmergencyContact *theContact = [model contactForButton:whichButton];
 	
-	if (theContact == nil)
-	{
-		return;
-	}
-	
-	if ([theContact.number isEqualToString:@""])
-	{
-		UIAlertView *badAlert = [[UIAlertView alloc]
-								  initWithTitle:@"Unable to Call"
-								  message:@"No number set for Quick Call"								  delegate:self 
-								  cancelButtonTitle:@"OK" 
-								  otherButtonTitles:nil];
-		[badAlert show];
-		[badAlert release];
-	}
-	else
-	{
-		UIAlertView *callAlert = [[UIAlertView alloc]
-							  initWithTitle:nil
-							  message:
-									[NSString stringWithFormat:@"Calling %@", 
-										theContact.number]
-							  delegate:self 
-							  cancelButtonTitle:@"OK" 
-							  otherButtonTitles:nil];
-		[callAlert show];
-		[callAlert release];
-	}
+	[QuickCall call:theContact];
 }
 
 #pragma mark -

@@ -13,6 +13,8 @@
 #import "IconLookupTableViewController.h"
 #import "ContactsDetailViewController.h"
 
+#import "QuickCall.h"
+
 @implementation ItemTableViewController
 
 @synthesize model;
@@ -27,22 +29,7 @@
 
 - (void)callNumber
 {
-	NSString *callNumber = [[model currentContact] number];
-	
-	if (![callNumber isEqualToString:@""])
-	{
-		UIAlertView *callAlert = [[UIAlertView alloc]
-							  initWithTitle:nil
-							  message:
-								  [NSString stringWithFormat:@"Calling %@", 
-										callNumber]
-							  delegate:self 
-							  cancelButtonTitle:@"OK" 
-							  otherButtonTitles:nil];
-		[callAlert show];
-		[callAlert release];
-	}
-	
+	[QuickCall call:[model currentContact]];
 }
 
 - (void)cancelAdd

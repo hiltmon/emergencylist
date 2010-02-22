@@ -54,12 +54,14 @@
 	colorsArray = [[NSArray alloc] initWithObjects:@"Default",
 					@"Red", @"Green",
 					@"Blue", @"Yellow",
-				    @"Cyan", @"Purple", nil];
+				    @"Cyan", @"Pink", @"Purple", nil];
 	
 	iconsArray = [[NSArray alloc] initWithObjects:@"Default",
-				   @"Fire", @"Home",
-				   @"Medical", @"Person", @"Police",
-				   @"Power", @"Religion", @"School", nil];
+				   @"Fire", @"Government", @"Home",
+				   @"Insurance", @"Medical", @"Money", 
+				   @"Office", @"Person", @"Police",
+				   @"Power", @"Religion", @"School", 
+				   @"Work", nil];
 	
 	return self;
 }

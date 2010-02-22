@@ -8,16 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+#import "QuickCallButton.h"
+
 @class EmergencyNumbersModel;
 
 @interface FavoritesViewController : UIViewController
 {
-	UIButton *button1;
-	UIButton *button2;
-	UIButton *button3;
-	UIButton *button4;
-	UIButton *button5;
-	UIButton *button6;
+	QuickCallButton *button1;
+	QuickCallButton *button2;
+	QuickCallButton *button3;
+	QuickCallButton *button4;
+	QuickCallButton *button5;
+	QuickCallButton *button6;
 	UIImageView *startImage;
 	
 	EmergencyNumbersModel *model;
@@ -25,12 +27,12 @@
 	
 }
 
-@property (nonatomic, assign) IBOutlet UIButton *button1;
-@property (nonatomic, assign) IBOutlet UIButton *button2;
-@property (nonatomic, assign) IBOutlet UIButton *button3;
-@property (nonatomic, assign) IBOutlet UIButton *button4;
-@property (nonatomic, assign) IBOutlet UIButton *button5;
-@property (nonatomic, assign) IBOutlet UIButton *button6;
+@property (nonatomic, assign) IBOutlet QuickCallButton *button1;
+@property (nonatomic, assign) IBOutlet QuickCallButton *button2;
+@property (nonatomic, assign) IBOutlet QuickCallButton *button3;
+@property (nonatomic, assign) IBOutlet QuickCallButton *button4;
+@property (nonatomic, assign) IBOutlet QuickCallButton *button5;
+@property (nonatomic, assign) IBOutlet QuickCallButton *button6;
 @property (nonatomic, assign) IBOutlet UIImageView *startImage;
 
 - (IBAction) buttonPressed:(id)sender;
