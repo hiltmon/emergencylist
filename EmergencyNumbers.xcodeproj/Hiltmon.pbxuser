@@ -23,7 +23,7 @@
 		);
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
-		activeBuildConfigurationName = Debug;
+		activeBuildConfigurationName = Distribution;
 		activeExecutable = 3C36383B11171CC8004A128B /* EmergencyNumbers */;
 		activeSDKPreference = iphoneos3.1.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* EmergencyNumbers */;
@@ -87,7 +87,7 @@
 				PBXFileTableDataSourceColumnWidthsKey = (
 					22,
 					300,
-					228.58349609375,
+					229,
 				);
 				PBXFileTableDataSourceColumnsKey = (
 					PBXExecutablesDataSource_ActiveFlagID,
@@ -193,8 +193,12 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 288573061;
-			PBXWorkspaceStateSaveDate = 288573061;
+			PBXPerProjectTemplateStateSaveDate = 288973891;
+			PBXWorkspaceStateSaveDate = 288973891;
+		};
+		perUserProjectItems = {
+			3C823EE311371EFE0015650B /* PBXTextBookmark */ = 3C823EE311371EFE0015650B /* PBXTextBookmark */;
+			3CDA32E411396E9400F3BE79 /* PBXTextBookmark */ = 3CDA32E411396E9400F3BE79 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 3C36385011171CCF004A128B /* Source Control */;
 		userBuildSettings = {
@@ -352,7 +356,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 57;
-		modificationTime = 288573365.257787;
+		modificationTime = 288824743.117574;
 		originalNumberOfMultipleMatches = 1;
 		state = 0;
 	};
@@ -369,7 +373,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 57;
-		modificationTime = 288573365.257833;
+		modificationTime = 288824743.117635;
 		originalNumberOfMultipleMatches = 1;
 		state = 0;
 	};
@@ -386,7 +390,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 57;
-		modificationTime = 288573365.257845;
+		modificationTime = 288824743.117666;
 		originalNumberOfMultipleMatches = 1;
 		state = 0;
 	};
@@ -468,6 +472,16 @@
 			sepNavSelRange = "{370, 0}";
 			sepNavVisRange = "{0, 888}";
 		};
+	};
+	3C823EE311371EFE0015650B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3CC6F3031121B6AB002B68B9 /* ButtonLookupTableViewController.m */;
+		name = "ButtonLookupTableViewController.m: 99";
+		rLen = 0;
+		rLoc = 2442;
+		rType = 0;
+		vrLen = 960;
+		vrLoc = 1610;
 	};
 	3CA7CD611133221700E89769 /* QuickCallButton.h */ = {
 		uiCtxt = {
@@ -563,9 +577,9 @@
 	};
 	3CC6F3031121B6AB002B68B9 /* ButtonLookupTableViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {687, 1482}}";
-			sepNavSelRange = "{2152, 0}";
-			sepNavVisRange = "{2026, 821}";
+			sepNavIntBoundsRect = "{{0, 0}, {687, 1625}}";
+			sepNavSelRange = "{2442, 0}";
+			sepNavVisRange = "{1610, 960}";
 			sepNavWindowFrame = "{{993, 563}, {746, 585}}";
 		};
 	};
@@ -613,6 +627,16 @@
 		uiCtxt = {
 			sepNavWindowFrame = "{{176, 444}, {748, 582}}";
 		};
+	};
+	3CDA32E411396E9400F3BE79 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3CC6F3031121B6AB002B68B9 /* ButtonLookupTableViewController.m */;
+		name = "ButtonLookupTableViewController.m: 99";
+		rLen = 0;
+		rLoc = 2442;
+		rType = 0;
+		vrLen = 960;
+		vrLoc = 1610;
 	};
 	8D1107310486CEB800E47090 /* EmergencyNumbers-Info.plist */ = {
 		uiCtxt = {

@@ -93,10 +93,10 @@
 	cell.imageView.image = 
 		[UIImage imageNamed:rowImageName] ;
 	
-	if ((theContact != nil) && ([theContact.button intValue] == row))
-	{
-		[cell setAccessoryType:UITableViewCellAccessoryCheckmark];
-	}
+	//if ((theContact != nil) && ([theContact.button intValue] == row))
+	//{
+	//	[cell setAccessoryType:UITableViewCellAccessoryCheckmark];
+	//}
 	
     return cell;
 }
