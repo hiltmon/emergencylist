@@ -1,40 +1,35 @@
 // ------------------------------------------------------------------------
-//  ItemTableViewController.h
+//  AddressBookLookupTableViewController.h
 //  EmergencyNumbers
 //
-//  Created by Hilton Lipschitz on 2/8/10.
+//  Created by Hilton Lipschitz on 3/2/10.
 //  Copyright 2010 NoVerse.com. All rights reserved.
 // ------------------------------------------------------------------------
 
 #import <UIKit/UIKit.h>
 
 #import "PhoneNumberFormatter.h"
-
-#import "AddItemProtocol.h"
-
-#define kNewItem @"New List Entry"
+#import "AddAddressProtocol.h"
 
 @class EmergencyNumbersModel;
 
-// Constants for each section in the table view
-enum
+@interface AddressBookLookupTableViewController : UITableViewController
+	<UITableViewDataSource, UITableViewDelegate>
 {
-	NameSection,
-	ButtonSection
-};
-
-@interface ItemTableViewController : UITableViewController
-	<UITableViewDelegate, UITableViewDataSource>
-{
-	IBOutlet UITableView *itemTableView;
+	IBOutlet UITableView *iconsTableView;
 	
 	EmergencyNumbersModel *model;
 	PhoneNumberFormatter *formatter;
 	
-	id<AddItemProtocol> delegate;
+	NSMutableArray *availableCallList;
+	NSMutableArray *availableCallIndex;
+	
+	id <AddAddressProtocol> delegate;
 }
 
 @property (nonatomic, assign) EmergencyNumbersModel *model;
-@property (nonatomic, assign) id<AddItemProtocol> delegate;
+@property (nonatomic, assign) id<AddAddressProtocol> delegate;
 
 @end
+
+

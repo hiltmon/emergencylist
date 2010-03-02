@@ -26,6 +26,11 @@
 		3C363A3711173B78004A128B /* ContactsTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C363A3611173B78004A128B /* ContactsTableView.xib */; };
 		3C363A7411173EF4004A128B /* ContactsDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C363A7311173EF4004A128B /* ContactsDetailView.xib */; };
 		3C363A7711173F05004A128B /* ContactsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C363A7611173F05004A128B /* ContactsDetailViewController.m */; };
+		3C69C121113D55F00011F428 /* PhoneNumberFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C69C120113D55F00011F428 /* PhoneNumberFormatter.m */; };
+		3C69C22A113D74C00011F428 /* AddressBookLookupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C69C229113D74C00011F428 /* AddressBookLookupTableViewController.m */; };
+		3C69C22C113D74DB0011F428 /* AddressBookLookupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C69C22B113D74DB0011F428 /* AddressBookLookupView.xib */; };
+		3C69C421113D93430011F428 /* BullIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C69C420113D93430011F428 /* BullIcon.png */; };
+		3C69C432113D98110011F428 /* MaskIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C69C431113D98110011F428 /* MaskIcon.png */; };
 		3C719A311121CDA600074034 /* ColorLookupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C719A301121CDA600074034 /* ColorLookupTableViewController.m */; };
 		3C719A331121CDBB00074034 /* ColorLookupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C719A321121CDBB00074034 /* ColorLookupView.xib */; };
 		3C719A3E1121D2D400074034 /* UIImage_Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C719A3D1121D2D400074034 /* UIImage_Resize.m */; };
@@ -103,6 +108,15 @@
 		3C363A7311173EF4004A128B /* ContactsDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactsDetailView.xib; sourceTree = "<group>"; };
 		3C363A7511173F05004A128B /* ContactsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsDetailViewController.h; sourceTree = "<group>"; };
 		3C363A7611173F05004A128B /* ContactsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsDetailViewController.m; sourceTree = "<group>"; };
+		3C69C11F113D55F00011F428 /* PhoneNumberFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneNumberFormatter.h; sourceTree = "<group>"; };
+		3C69C120113D55F00011F428 /* PhoneNumberFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneNumberFormatter.m; sourceTree = "<group>"; };
+		3C69C228113D74C00011F428 /* AddressBookLookupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBookLookupTableViewController.h; sourceTree = "<group>"; };
+		3C69C229113D74C00011F428 /* AddressBookLookupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressBookLookupTableViewController.m; sourceTree = "<group>"; };
+		3C69C22B113D74DB0011F428 /* AddressBookLookupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressBookLookupView.xib; sourceTree = "<group>"; };
+		3C69C2E0113D840F0011F428 /* AddItemProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddItemProtocol.h; sourceTree = "<group>"; };
+		3C69C37B113D8ACF0011F428 /* AddAddressProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAddressProtocol.h; sourceTree = "<group>"; };
+		3C69C420113D93430011F428 /* BullIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BullIcon.png; sourceTree = "<group>"; };
+		3C69C431113D98110011F428 /* MaskIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MaskIcon.png; sourceTree = "<group>"; };
 		3C719A2F1121CDA600074034 /* ColorLookupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorLookupTableViewController.h; sourceTree = "<group>"; };
 		3C719A301121CDA600074034 /* ColorLookupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorLookupTableViewController.m; sourceTree = "<group>"; };
 		3C719A321121CDBB00074034 /* ColorLookupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorLookupView.xib; sourceTree = "<group>"; };
@@ -200,12 +214,18 @@
 				3C719A301121CDA600074034 /* ColorLookupTableViewController.m */,
 				3CC6BC23112480D300CD18CA /* IconLookupTableViewController.h */,
 				3CC6BC24112480D300CD18CA /* IconLookupTableViewController.m */,
+				3C69C228113D74C00011F428 /* AddressBookLookupTableViewController.h */,
+				3C69C229113D74C00011F428 /* AddressBookLookupTableViewController.m */,
 				3C719A3C1121D2D400074034 /* UIImage_Resize.h */,
 				3C719A3D1121D2D400074034 /* UIImage_Resize.m */,
 				3CA7CD611133221700E89769 /* QuickCallButton.h */,
 				3CA7CD621133221700E89769 /* QuickCallButton.m */,
 				3CA7CDF011333EEA00E89769 /* QuickCall.h */,
 				3CA7CDF111333EEA00E89769 /* QuickCall.m */,
+				3C69C11F113D55F00011F428 /* PhoneNumberFormatter.h */,
+				3C69C120113D55F00011F428 /* PhoneNumberFormatter.m */,
+				3C69C2E0113D840F0011F428 /* AddItemProtocol.h */,
+				3C69C37B113D8ACF0011F428 /* AddAddressProtocol.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -257,6 +277,7 @@
 				3CC6F3051121B6C1002B68B9 /* ButtonLookupView.xib */,
 				3C719A321121CDBB00074034 /* ColorLookupView.xib */,
 				3CC6BC2D1124818E00CD18CA /* IconLookupView.xib */,
+				3C69C22B113D74DB0011F428 /* AddressBookLookupView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -274,6 +295,8 @@
 		3C00C5BD1118913800A83BB0 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3C69C431113D98110011F428 /* MaskIcon.png */,
+				3C69C420113D93430011F428 /* BullIcon.png */,
 				3CA7CCA9113316F300E89769 /* PinkButton.png */,
 				3CA7CC9A1133123100E89769 /* GovernmentIcon.png */,
 				3CA7CC9B1133123100E89769 /* InsuranceIcon.png */,
@@ -402,6 +425,9 @@
 				3CA7CCA21133123100E89769 /* OfficeIcon.png in Resources */,
 				3CA7CCA31133123100E89769 /* WorkIcon.png in Resources */,
 				3CA7CCAA113316F300E89769 /* PinkButton.png in Resources */,
+				3C69C22C113D74DB0011F428 /* AddressBookLookupView.xib in Resources */,
+				3C69C421113D93430011F428 /* BullIcon.png in Resources */,
+				3C69C432113D98110011F428 /* MaskIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,6 +453,8 @@
 				3C16A0D0112F0D49003F86BA /* EmergencyContact.m in Sources */,
 				3CA7CD631133221700E89769 /* QuickCallButton.m in Sources */,
 				3CA7CDF211333EEA00E89769 /* QuickCall.m in Sources */,
+				3C69C121113D55F00011F428 /* PhoneNumberFormatter.m in Sources */,
+				3C69C22A113D74C00011F428 /* AddressBookLookupTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

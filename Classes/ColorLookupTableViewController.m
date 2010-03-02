@@ -102,7 +102,11 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 	[[model currentContact] setColor:[model.colorsArray objectAtIndex:row]];
 	[model save];
 	
-	[tableView reloadData];
+	// If pop back on select
+	[self.navigationController popViewControllerAnimated:YES];
+	
+	// If not pop, reload the table
+	//[tableView reloadData];
 }
 
 @end

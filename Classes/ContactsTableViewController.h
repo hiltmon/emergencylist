@@ -7,21 +7,22 @@
 // ------------------------------------------------------------------------
 
 #import <UIKit/UIKit.h>
-#import <AddressBook/AddressBook.h>
-#import <AddressBookUI/AddressBookUI.h>
 
 #import "ItemTableViewController.h"
+#import "AddressBookLookupTableViewController.h"
+#import "PhoneNumberFormatter.h"
 
 @class EmergencyNumbersModel;
 
 @interface ContactsTableViewController : UITableViewController 
 	<UITableViewDataSource, UITableViewDelegate, 
-	 UIActionSheetDelegate, ABPeoplePickerNavigationControllerDelegate,
-	 ItemAddDelegate>
+	 UIActionSheetDelegate,
+	 AddItemProtocol, AddAddressProtocol>
 {
 	IBOutlet UITableView *contactsTableView;
 
 	EmergencyNumbersModel *model;
+	PhoneNumberFormatter *phoneNumberFormatter;
 	
 	NSString *tempName;
 	NSString *tempNumber;

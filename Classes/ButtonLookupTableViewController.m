@@ -113,7 +113,11 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 	[[model currentContact] setButton:whichButton];
 	[model save];
 	
-	[tableView reloadData];
+	// If pop back on select
+	[self.navigationController popViewControllerAnimated:YES];
+	
+	// If not pop, reload the table
+	//[tableView reloadData];
 }
 
 @end

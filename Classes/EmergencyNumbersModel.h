@@ -35,9 +35,7 @@
 // Virtual Accessors
 - (EmergencyContact *)currentContact;
 - (NSString *)contactNameAtIndex:(NSUInteger)index;
-
-- (NSString *)formattedCurrentContactNumber;
-- (NSString *)formattedContactNumberAtIndex:(NSUInteger)index;
+- (NSString *)contactNumberAtIndex:(NSUInteger)index;
 
 //  Actions
 - (void)save;

@@ -24,6 +24,8 @@
 
 - (void)dealloc
 {
+	[formatter release];
+	
     [super dealloc];
 }
 
@@ -34,12 +36,12 @@
 
 - (void)cancelAdd
 {
-	[delegate contactAddViewController:self didAddContact:NO];
+	[delegate contactAddViewController:nil didAddContact:NO];
 }
 
 - (void)saveAdd
 {
-	[delegate contactAddViewController:self didAddContact:YES];
+	[delegate contactAddViewController:nil didAddContact:YES];
 }
 
 #pragma mark -
@@ -88,6 +90,7 @@
 		
 	}
 
+	formatter = [[PhoneNumberFormatter alloc] init];
 }
 
 //  Override inherited method to automatically refresh table view's data
@@ -189,7 +192,7 @@ titleForHeaderInSection:(NSInteger)section
 			else
 			{
 				cell.textLabel.text = @"Number";
-				cell.detailTextLabel.text = model.formattedCurrentContactNumber;
+				cell.detailTextLabel.text = [formatter format:theContact.number];
 			}
 
 			break;

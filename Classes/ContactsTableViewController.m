@@ -23,6 +23,8 @@
 	[tempName dealloc];
 	[tempNumber dealloc];
 	
+	[phoneNumberFormatter release];
+	
     [super dealloc];
 }
 
@@ -58,8 +60,8 @@
 	}
 	
 	ItemTableViewController *addController = 
-	[[ItemTableViewController alloc]
-		initWithNibName:@"ItemTableView" bundle:nil];
+		[[ItemTableViewController alloc]
+		 initWithNibName:@"ItemTableView" bundle:nil];
 	addController.delegate = self;
 	
 	addController.title = kNewItem;
@@ -76,8 +78,7 @@
 	[addController release];
 }
 
-- (void)contactAddViewController:
-	(ItemTableViewController *)ItemTableViewController
+- (void)contactAddViewController:(id *)controller
                    didAddContact:(BOOL)addedContact
 {
 	if (addedContact)
@@ -96,6 +97,20 @@
 	}
 
 	[self.navigationController dismissModalViewControllerAnimated:YES];
+}
+
+- (void)cancelAddressAdd
+{
+	[self.navigationController dismissModalViewControllerAnimated:YES];
+}
+
+- (void)addAddressName:(NSString *)name andNumber:(NSString *)number
+{
+	self.tempName = name;
+	self.tempNumber = number;
+	[self.navigationController dismissModalViewControllerAnimated:NO];
+	
+	[self addNew];
 }
 
 #pragma mark -
@@ -141,6 +156,9 @@
 								 action:@selector(popupActionSheet)];
 	self.navigationItem.rightBarButtonItem = addButton;
 	[addButton release];
+	
+	// Setup the formatter
+	phoneNumberFormatter = [[PhoneNumberFormatter alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -191,7 +209,8 @@
     // Set up the cell...
 	NSUInteger row = [indexPath row];
 	cell.textLabel.text = [model contactNameAtIndex:row];
-	cell.detailTextLabel.text = [model formattedContactNumberAtIndex:row];
+	cell.detailTextLabel.text = 
+		[phoneNumberFormatter format:[model contactNumberAtIndex:row]];
 	
 	// Set the text to gray if the name starts with a '<'
 	NSString *prefix = 
@@ -259,17 +278,21 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 0)
 	{
-		// Add from Address Book
-		ABPeoplePickerNavigationController *picker =
-			[[ABPeoplePickerNavigationController alloc] init];
-		picker.peoplePickerDelegate = self;
+		AddressBookLookupTableViewController *picker = 
+			[[AddressBookLookupTableViewController alloc]
+				initWithNibName:@"AddressBookLookupView" bundle:nil];
+		picker.delegate = self;
+		[picker setTitle:@"Pick a Contact Number"];
+		[picker setModel:model];
 		
-		// Show only phone numbers in the details page
-		NSArray *displayedItems = [NSArray arrayWithObjects:
-			[NSNumber numberWithInt:kABPersonPhoneProperty], nil];
-		picker.displayedProperties = displayedItems;
-		[self.navigationController presentModalViewController:picker 
-													 animated:YES];
+		UINavigationController *addNavController = 
+			[[UINavigationController alloc]
+			 initWithRootViewController:picker];
+		
+		[self.navigationController 
+			presentModalViewController:addNavController 
+				animated:YES];
+		[addNavController release];
 		[picker release];
     }
 	else if (buttonIndex == 1)
@@ -280,77 +303,6 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
 		
 		[self addNew];
     }
-}
-
-#pragma mark -
-#pragma mark ABPeoplePickerNavigationController Delegate
-
-// Cancel, hide it and do nothing
-- (void)peoplePickerNavigationControllerDidCancel:
-	(ABPeoplePickerNavigationController *)peoplePicker;
-{
-	[self dismissModalViewControllerAnimated:YES];
-}
-
-// Called when an attribute is picked.  Goodie.
-- (BOOL)peoplePickerNavigationController:
-	(ABPeoplePickerNavigationController *)peoplePicker 
-	  shouldContinueAfterSelectingPerson:(ABRecordRef)person 
-								property:(ABPropertyID)property 
-							  identifier:(ABMultiValueIdentifier)identifier
-{
-	// Get the data
-	CFStringRef cfName = ABRecordCopyCompositeName(person);
-	self.tempName = [NSString stringWithString:(NSString *)cfName];
-	CFRelease(cfName);
-
-	ABMultiValueRef container = ABRecordCopyValue(person, property);
-	CFStringRef contactData = 
-		ABMultiValueCopyValueAtIndex(container, identifier);
-	CFRelease(container);
-	
-	// Strip () and -
-	// TODO: Improve this mess
-	NSMutableString *received = 
-		[NSMutableString stringWithString:(NSString *)contactData];
-	[received replaceOccurrencesOfString:@"(" 
-							  withString:@"" 
-								 options:NSCaseInsensitiveSearch 
-								   range:NSMakeRange(0, [received length])];
-	[received replaceOccurrencesOfString:@")" 
-							  withString:@"" 
-								options:NSCaseInsensitiveSearch 
-								   range:NSMakeRange(0, [received length])];
-	[received replaceOccurrencesOfString:@"-" 
-							  withString:@"" 
-								 options:NSCaseInsensitiveSearch 
-								   range:NSMakeRange(0, [received length])];
-	[received replaceOccurrencesOfString:@" " 
-							  withString:@"" 
-								 options:NSCaseInsensitiveSearch 
-								   range:NSMakeRange(0, [received length])];
-	self.tempNumber = received;
-	CFRelease(contactData);
-	
-	// Hide it and close it
-	[self dismissModalViewControllerAnimated:NO];
-	
-	// Trigger a create new after all this view has been cleared away
-	// Calling the selector direcly seems to cause a crash
-	// The zero in the delay means perform this seector next in the run loop
-	// after all currently queued events
-	[self performSelector:@selector(addNew) withObject:nil afterDelay:0];
-	
-	return NO;
-}
-
-// Called when a person is picked.  Since I want the user to
-// pick a number, say NO.
-- (BOOL)peoplePickerNavigationController:
-	(ABPeoplePickerNavigationController *)peoplePicker
-	  shouldContinueAfterSelectingPerson:(ABRecordRef)person
-{
-	return YES;
 }
 
 @end

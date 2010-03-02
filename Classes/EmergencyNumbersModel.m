@@ -56,9 +56,9 @@
 					@"Blue", @"Yellow",
 				    @"Cyan", @"Pink", @"Purple", nil];
 	
-	iconsArray = [[NSArray alloc] initWithObjects:@"Default",
+	iconsArray = [[NSArray alloc] initWithObjects:@"Bull", @"Default",
 				   @"Fire", @"Government", @"Home",
-				   @"Insurance", @"Medical", @"Money", 
+				   @"Insurance", @"Mask", @"Medical", @"Money", 
 				   @"Office", @"Person", @"Police",
 				   @"Power", @"Religion", @"School", 
 				   @"Work", nil];
@@ -132,41 +132,6 @@
 	return nil;
 }
 
-- (NSString *)formatPhoneNumber:(NSString *)phoneNumber
-{
-	if ([phoneNumber isEqualToString:@""])
-	{
-		return phoneNumber;
-	}
-	
-	// ALERT: USA Only, need to implement locales...
-	NSMutableString *formatted = 
-		[[NSMutableString alloc] initWithString:phoneNumber];
-	
-	// Has 1 prefix?
-	NSString *prefix = [phoneNumber substringWithRange: NSMakeRange (0, 1)];
-	if (!([prefix isEqualToString:@"1"]) && ([phoneNumber length] > 7))
-	{
-		// insert the 1
-		[formatted insertString:@"1" atIndex:0];
-	}
-	
-	// Here either 1xxxxxxxxxx or xxxxxxx
-	if ([formatted length] == 7)
-	{
-		[formatted insertString:@"-" atIndex:3];
-	}
-	
-	if ([formatted length] == 11)
-	{
-		[formatted insertString:@"-" atIndex:7];
-		[formatted insertString:@") " atIndex:4];
-		[formatted insertString:@" (" atIndex:1];
-	}
-
-	return [formatted autorelease];
-}
-
 #pragma mark -
 #pragma mark Virtual Accessors
 
@@ -192,15 +157,9 @@
 	return contactName;
 }
 
-- (NSString *)formattedCurrentContactNumber
+- (NSString *)contactNumberAtIndex:(NSUInteger)index
 {
-	return [self formattedContactNumberAtIndex:self.currentContactIndex];
-}
-
-- (NSString *)formattedContactNumberAtIndex:(NSUInteger)index
-{
-	return [self formatPhoneNumber:
-			[[contactsArray objectAtIndex:index] valueForKey:@"number"]];
+	return [[contactsArray objectAtIndex:index] valueForKey:@"number"];
 }
 
 #pragma mark -
