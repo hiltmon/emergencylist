@@ -56,9 +56,18 @@
 	{
 		ABRecordRef person = [addresses objectAtIndex:i];
 		
+		// It is possible for address books to have no name entries
 		CFStringRef cfName = ABRecordCopyCompositeName(person);
-		aName = [NSString stringWithString:(NSString *)cfName];
-		CFRelease(cfName);
+		if (cfName != nil)
+		{
+			aName = [NSString stringWithString:(NSString *)cfName];
+			CFRelease(cfName);
+		}
+		else
+		{
+			aName = @"No Name";
+		}
+
 		
 		CFStringRef cfSortName = ABRecordCopyValue(person, 
 												   kABPersonLastNameProperty);

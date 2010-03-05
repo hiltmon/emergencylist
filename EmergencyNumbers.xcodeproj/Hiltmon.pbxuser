@@ -23,7 +23,7 @@
 		);
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
-		activeBuildConfigurationName = Release;
+		activeBuildConfigurationName = Debug;
 		activeExecutable = 3C36383B11171CC8004A128B /* EmergencyNumbers */;
 		activeSDKPreference = iphoneos3.1.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* EmergencyNumbers */;
@@ -193,8 +193,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 289257566;
-			PBXWorkspaceStateSaveDate = 289257566;
+			PBXPerProjectTemplateStateSaveDate = 289363664;
+			PBXWorkspaceStateSaveDate = 289363664;
 		};
 		sourceControlManager = 3C36385011171CCF004A128B /* Source Control */;
 		userBuildSettings = {
@@ -255,7 +255,7 @@
 		argumentStrings = (
 		);
 		autoAttachOnCrash = 1;
-		breakpointsEnabled = 0;
+		breakpointsEnabled = 1;
 		configStateDict = {
 		};
 		customDataFormattersEnabled = 1;
@@ -353,7 +353,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 57;
-		modificationTime = 289257740.511082;
+		modificationTime = 289363861.077881;
 		originalNumberOfMultipleMatches = 1;
 		state = 0;
 	};
@@ -370,7 +370,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 57;
-		modificationTime = 289257740.511121;
+		modificationTime = 289363861.077925;
 		originalNumberOfMultipleMatches = 1;
 		state = 0;
 	};
@@ -387,7 +387,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 57;
-		modificationTime = 289257740.511131;
+		modificationTime = 289363861.077941;
 		originalNumberOfMultipleMatches = 1;
 		state = 0;
 	};
@@ -465,9 +465,9 @@
 	};
 	3C69C229113D74C00011F428 /* AddressBookLookupTableViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {689, 3445}}";
-			sepNavSelRange = "{7566, 0}";
-			sepNavVisRange = "{4590, 1027}";
+			sepNavIntBoundsRect = "{{0, 0}, {689, 3809}}";
+			sepNavSelRange = "{1374, 265}";
+			sepNavVisRange = "{1076, 888}";
 			sepNavWindowFrame = "{{883, 539}, {748, 582}}";
 		};
 	};
