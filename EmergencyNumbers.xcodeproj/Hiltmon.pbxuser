@@ -193,8 +193,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 289363664;
-			PBXWorkspaceStateSaveDate = 289363664;
+			PBXPerProjectTemplateStateSaveDate = 289577156;
+			PBXWorkspaceStateSaveDate = 289577156;
 		};
 		sourceControlManager = 3C36385011171CCF004A128B /* Source Control */;
 		userBuildSettings = {
@@ -353,7 +353,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 57;
-		modificationTime = 289363861.077881;
+		modificationTime = 289583999.700724;
 		originalNumberOfMultipleMatches = 1;
 		state = 0;
 	};
@@ -370,7 +370,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 57;
-		modificationTime = 289363861.077925;
+		modificationTime = 289583999.700816;
 		originalNumberOfMultipleMatches = 1;
 		state = 0;
 	};
@@ -387,7 +387,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 57;
-		modificationTime = 289363861.077941;
+		modificationTime = 289583999.700831;
 		originalNumberOfMultipleMatches = 1;
 		state = 0;
 	};
@@ -442,33 +442,33 @@
 	3C69C11F113D55F00011F428 /* PhoneNumberFormatter.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {689, 454}}";
-			sepNavSelRange = "{468, 0}";
+			sepNavSelRange = "{222, 0}";
 			sepNavVisRange = "{0, 597}";
 			sepNavWindowFrame = "{{950, 565}, {748, 582}}";
 		};
 	};
 	3C69C120113D55F00011F428 /* PhoneNumberFormatter.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {689, 3874}}";
-			sepNavSelRange = "{2308, 0}";
-			sepNavVisRange = "{5602, 531}";
-			sepNavWindowFrame = "{{950, 565}, {748, 582}}";
+			sepNavIntBoundsRect = "{{0, 0}, {689, 3445}}";
+			sepNavSelRange = "{222, 0}";
+			sepNavVisRange = "{3749, 676}";
+			sepNavWindowFrame = "{{827, 587}, {748, 582}}";
 		};
 	};
 	3C69C228113D74C00011F428 /* AddressBookLookupTableViewController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {689, 468}}";
-			sepNavSelRange = "{736, 0}";
+			sepNavSelRange = "{718, 18}";
 			sepNavVisRange = "{0, 909}";
 			sepNavWindowFrame = "{{1118, 563}, {748, 582}}";
 		};
 	};
 	3C69C229113D74C00011F428 /* AddressBookLookupTableViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {689, 3809}}";
-			sepNavSelRange = "{1374, 265}";
-			sepNavVisRange = "{1076, 888}";
-			sepNavWindowFrame = "{{883, 539}, {748, 582}}";
+			sepNavIntBoundsRect = "{{0, 0}, {689, 4563}}";
+			sepNavSelRange = "{3504, 0}";
+			sepNavVisRange = "{8009, 1063}";
+			sepNavWindowFrame = "{{875, 564}, {748, 582}}";
 		};
 	};
 	3C69C2E0113D840F0011F428 /* AddItemProtocol.h */ = {
@@ -546,8 +546,8 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {689, 1079}}";
 			sepNavSelRange = "{1484, 0}";
-			sepNavVisRange = "{729, 853}";
-			sepNavWindowFrame = "{{872, 596}, {748, 582}}";
+			sepNavVisRange = "{762, 851}";
+			sepNavWindowFrame = "{{68, 550}, {748, 582}}";
 		};
 	};
 	3CAC819E11176B1E00A18521 /* EmergencyNumbersModel.h */ = {

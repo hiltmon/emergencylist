@@ -23,9 +23,9 @@
 - (void)dealloc
 {
 	[availableCallList release];
+	[availableCallIndex release];
 	
-	[formatter release];
-	
+	[formatter release];	
     [super dealloc];
 }
 
@@ -34,7 +34,7 @@
 	[delegate cancelAddressAdd];
 }
 
-- (NSMutableArray *)loadAddressBook
+- (NSMutableArray *)createBaseArray
 {
 	// Sets up 26 buckets
 	NSMutableArray *tempArray = [[NSMutableArray alloc] init];
@@ -45,79 +45,148 @@
 		[letterArray release];
 	}
 	
-	// Build data source
+	return [tempArray autorelease];
+}
+
+- (NSString *)extractDisplayName:(ABRecordRef)person
+{
 	NSString *aName = @"";
-	NSString *aLastName = @"";
 	
+	// It is possible for address books to have no name entries
+	CFStringRef cfName = ABRecordCopyCompositeName(person);
+	if (cfName != nil)
+	{
+		aName = [NSString stringWithString:(NSString *)cfName];
+		CFRelease(cfName);
+	}
+	else
+	{
+		aName = @"No Name";
+	}
+	
+	return aName;
+}
+
+- (NSString *)extractSortName:(ABRecordRef)person
+{
+	NSString *aName = @"";
+	
+	CFStringRef cfSortName = ABRecordCopyValue(person, 
+											   kABPersonLastNameProperty);
+
+	if (cfSortName != nil)
+	{
+		aName = [NSString stringWithString:(NSString *)cfSortName];
+		CFRelease(cfSortName);
+	}
+	
+	return aName;
+}
+
+- (NSString *)determinePhoneType:(CFStringRef)phoneType
+{
+	// No category - no type
+	if (phoneType == nil)
+	{
+		return @"";
+	}
+	
+	NSString *aType = [NSString stringWithString:(NSString *)phoneType];
+	
+	// Using default Apple Addressbook category strings
+	// Ignoring the rest
+	if ([aType rangeOfString:@"FAX"].location != NSNotFound)
+	{
+		return @"F";
+	}
+	if ([aType rangeOfString:@"Mobile"].location != NSNotFound)
+	{
+		return @"M";
+	}
+	if ([aType rangeOfString:@"Home"].location != NSNotFound)
+	{
+		return @"H";
+	}
+	if ([aType rangeOfString:@"Work"].location != NSNotFound)
+	{
+		return @"W";
+	}
+	
+	// Unknown category
+	return @"";
+}
+
+- (void)processPerson:(ABRecordRef)person
+			intoArray:(NSMutableArray *)array
+{
+	NSString *aName = [self extractDisplayName:person];
+	NSString *aSortName = [self extractSortName:person];
+	if ([aSortName isEqualToString:@""])
+	{
+		aSortName = aName;
+	}
+	
+	ABMultiValueRef container = 
+		ABRecordCopyValue(person, kABPersonPhoneProperty);
+	
+	for (CFIndex j = 0; j < ABMultiValueGetCount(container); j++)
+	{	
+		CFStringRef phoneNumber = 
+			ABMultiValueCopyValueAtIndex(container, j);
+		if (phoneNumber != nil)
+		{
+			NSString *aNumber = 
+				[NSString stringWithString:(NSString *)phoneNumber];
+			CFRelease(phoneNumber);
+			
+			// Skip blank phone numbers
+			if ([aNumber isEqualToString:@""])
+			{
+				continue;
+			}
+			
+			NSString *aType = [self determinePhoneType:
+							   ABMultiValueCopyLabelAtIndex(container, j)];
+			
+			NSDictionary *callItem = 
+				[[NSDictionary alloc] initWithObjectsAndKeys:
+					aName, @"name",
+					aNumber, @"number",
+					aType, @"type",
+					aSortName, @"sort", nil];
+			
+			// Add to letter index
+			// Set unicode - i.e. japanese to the end
+			int c = [[aSortName uppercaseString] characterAtIndex:0] - 65;
+			if ((c < 0) || (c > 25))
+			{
+				c = 25;
+			}
+			[[array objectAtIndex:c] addObject:callItem];
+			[callItem release];	
+		}
+	}
+	
+	CFRelease(container);
+}
+
+- (NSMutableArray *)loadAddressBook
+{
+	NSMutableArray *tempArray = [self createBaseArray];
+	
+	// Build data source
 	ABAddressBookRef addressBook = ABAddressBookCreate();
 	NSArray *addresses = 
 		(NSArray *)ABAddressBookCopyArrayOfAllPeople(addressBook);
 	for (int i = 0; i < [addresses count]; i++)
 	{
 		ABRecordRef person = [addresses objectAtIndex:i];
-		
-		// It is possible for address books to have no name entries
-		CFStringRef cfName = ABRecordCopyCompositeName(person);
-		if (cfName != nil)
-		{
-			aName = [NSString stringWithString:(NSString *)cfName];
-			CFRelease(cfName);
-		}
-		else
-		{
-			aName = @"No Name";
-		}
-
-		
-		CFStringRef cfSortName = ABRecordCopyValue(person, 
-												   kABPersonLastNameProperty);
-		if (cfSortName != nil)
-		{
-			aLastName = [NSString stringWithString:(NSString *)cfSortName];
-			CFRelease(cfSortName);
-		}
-		else
-		{
-			aLastName = aName;
-		}
-		
-		ABMultiValueRef container = ABRecordCopyValue(person, 
-													  kABPersonPhoneProperty);
-			
-		for (CFIndex j = 0; j < ABMultiValueGetCount(container); j++)
-		{
-			CFStringRef phoneNumber = 
-				ABMultiValueCopyValueAtIndex(container, j);
-			NSString *aNumber = 
-				[NSString stringWithString:(NSString *)phoneNumber];
-			
-			CFStringRef phoneType = ABMultiValueCopyLabelAtIndex(container, j);
-			NSString *aType = [NSString stringWithString:(NSString *)phoneType];
-			
-			NSDictionary *callItem = 
-				[[NSDictionary alloc] initWithObjectsAndKeys:
-									  aName, @"name",
-									  aNumber, @"number",
-									  aType, @"type",
-									  aLastName, @"sort", nil];
-			int c = [[aLastName uppercaseString] characterAtIndex:0] - 65;
-			// Set unicode - i.e. japanese to the end
-			if ((c < 0) || (c > 25))
-			{
-				c = 25;
-			}
-			[[tempArray objectAtIndex:c] addObject:callItem];
-			[callItem release];
-			
-			//CFRelease(phoneNumber);
-		}
-
-		CFRelease(container);
+		[self processPerson:person intoArray:tempArray];
 	}
 	CFRelease(addressBook);
 	[addresses release];
 	
-	return [tempArray autorelease];
+	return tempArray;
 }
 
 #pragma mark -
@@ -166,10 +235,10 @@
 	// Add the save and cancel UI buttons
 	// Setup the CANCEL button
 	UIBarButtonItem *cancelButton = 
-	[[UIBarButtonItem alloc]
-		initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
-		target:self 
-		action:@selector(cancelAdd)];
+		[[UIBarButtonItem alloc]
+			initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+			target:self 
+			action:@selector(cancelAdd)];
 	self.navigationItem.leftBarButtonItem = cancelButton;
 	[cancelButton release];
 	
@@ -209,9 +278,9 @@
 titleForHeaderInSection:(NSInteger)section
 {
 	// Get the first letter of the first object's sort
-	NSArray *names = [availableCallList objectAtIndex:section];
-	NSDictionary *name = [names objectAtIndex:0];
-	NSString *keyString = [[name valueForKey:@"sort"] uppercaseString];
+	NSArray *sectionList = [availableCallList objectAtIndex:section];
+	NSDictionary *callItem = [sectionList objectAtIndex:0];
+	NSString *keyString = [[callItem valueForKey:@"sort"] uppercaseString];
 	return [NSString stringWithFormat:@"%c", [keyString characterAtIndex:0]];
 }
 
@@ -242,10 +311,17 @@ titleForHeaderInSection:(NSInteger)section
 	
 	NSArray *sectionList = [availableCallList objectAtIndex:section];
 	NSDictionary *callItem = [sectionList objectAtIndex:row];
-	// Char 4 is the first letter in the label of the number that is unique
-	cell.textLabel.text = [NSString stringWithFormat:@"%@ (%c)",
-						   [callItem objectForKey:@"name"],
-						   [[callItem objectForKey:@"type"] characterAtIndex:4]];
+	
+	if ([[callItem objectForKey:@"type"] isEqualToString:@""])
+	{
+		cell.textLabel.text = [callItem objectForKey:@"name"];
+	}
+	else
+	{
+		cell.textLabel.text = [NSString stringWithFormat:@"%@ (%@)",
+							   [callItem objectForKey:@"name"],
+							   [callItem objectForKey:@"type"]];
+	}
 	cell.detailTextLabel.text = [callItem objectForKey:@"number"];
 	
     return cell;
@@ -273,7 +349,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 								 @"U", @"V", @"W", @"X", @"Y",
 								 @"Z", nil ];
 	
-	return tempArray;
+	return [tempArray autorelease];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView 
