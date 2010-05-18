@@ -72,7 +72,6 @@
 	[buttonsArray dealloc];
 	[colorsArray dealloc];
 	[iconsArray dealloc];
-	
 	[super dealloc];
 }
 
