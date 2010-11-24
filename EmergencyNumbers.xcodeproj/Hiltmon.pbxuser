@@ -2,7 +2,7 @@
 {
 	1D3623240D0F684500981E51 /* EmergencyNumbersAppDelegate.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {691, 455}}";
+			sepNavIntBoundsRect = "{{0, 0}, {703, 455}}";
 			sepNavSelRange = "{396, 0}";
 			sepNavVisRange = "{0, 939}";
 			sepNavWindowFrame = "{{822, 609}, {750, 558}}";
@@ -25,7 +25,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = 3C36383B11171CC8004A128B /* EmergencyNumbers */;
-		activeSDKPreference = iphoneos4.0;
+		activeSDKPreference = iphonesimulator4.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* EmergencyNumbers */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* EmergencyNumbers */,
@@ -193,8 +193,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 298924361;
-			PBXWorkspaceStateSaveDate = 298924361;
+			PBXPerProjectTemplateStateSaveDate = 312305870;
+			PBXWorkspaceStateSaveDate = 312305870;
 		};
 		sourceControlManager = 3C36385011171CCF004A128B /* Source Control */;
 		userBuildSettings = {
@@ -353,7 +353,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 57;
-		modificationTime = 298922684.79149;
+		modificationTime = 312232489.269205;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -370,7 +370,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 57;
-		modificationTime = 298922684.791517;
+		modificationTime = 312232489.269187;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -387,7 +387,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 57;
-		modificationTime = 298922684.791532;
+		modificationTime = 312232489.269162;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
