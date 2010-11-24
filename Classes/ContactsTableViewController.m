@@ -15,13 +15,15 @@
 
 @synthesize tempName;
 @synthesize tempNumber;
+@synthesize tempImage;
 
 #pragma mark -
 
 - (void)dealloc
 {
-	[tempName dealloc];
-	[tempNumber dealloc];
+	[tempName release];
+	[tempNumber release];
+    [tempImage release];
 	
 	[phoneNumberFormatter release];
 	
@@ -57,6 +59,11 @@
 	{
 		[[model currentContact] setName:tempName];
 		[[model currentContact] setNumber:tempNumber];
+        [[model currentContact] setImage:tempImage];
+        if (tempImage != nil)
+        {
+            [[model currentContact] setIcon:@"Photo"];   
+        }
 	}
 	
 	ItemTableViewController *addController = 
@@ -104,10 +111,11 @@
 	[self.navigationController dismissModalViewControllerAnimated:YES];
 }
 
-- (void)addAddressName:(NSString *)name andNumber:(NSString *)number
+- (void)addAddressName:(NSString *)name andNumber:(NSString *)number withImage:(UIImage *)image
 {
 	self.tempName = name;
 	self.tempNumber = number;
+    self.tempImage = image;
 	[self.navigationController dismissModalViewControllerAnimated:NO];
 	
 	[self addNew];

@@ -50,13 +50,15 @@
 			// Create a Gray button
 			[[buttonArray objectAtIndex:i-1] setTitle:@""
 												color:@"Gray"
-												 icon:@"None"];
+												 icon:@"None"
+                                                image:nil];
 		}
 		else
 		{
 			[[buttonArray objectAtIndex:i-1] setTitle:theContact.name 
 												color:theContact.color
-												 icon:theContact.icon];
+												 icon:theContact.icon
+                                                image:theContact.image];
 			areButtonsVisible = YES;
 		}
 	}

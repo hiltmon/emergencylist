@@ -26,11 +26,13 @@
 	
 	NSString *tempName;
 	NSString *tempNumber;
+    UIImage *tempImage;
 }
 
 - (void)addNew;
 
 @property (nonatomic, retain) NSString *tempName;
 @property (nonatomic, retain) NSString *tempNumber;
+@property (nonatomic, retain) UIImage *tempImage;
 
 @end

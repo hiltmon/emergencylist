@@ -10,9 +10,9 @@
 	};
 	1D3623250D0F684500981E51 /* EmergencyNumbersAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {691, 572}}";
+			sepNavIntBoundsRect = "{{0, 0}, {703, 572}}";
 			sepNavSelRange = "{689, 0}";
-			sepNavVisRange = "{381, 709}";
+			sepNavVisRange = "{347, 743}";
 			sepNavWindowFrame = "{{819, 600}, {750, 558}}";
 		};
 	};
@@ -25,7 +25,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = 3C36383B11171CC8004A128B /* EmergencyList */;
-		activeSDKPreference = iphonesimulator4.2;
+		activeSDKPreference = iphoneos4.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* EmergencyList */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* EmergencyList */,
@@ -193,8 +193,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 312306409;
-			PBXWorkspaceStateSaveDate = 312306409;
+			PBXPerProjectTemplateStateSaveDate = 312319965;
+			PBXWorkspaceStateSaveDate = 312319965;
 		};
 		sourceControlManager = 3C36385011171CCF004A128B /* Source Control */;
 		userBuildSettings = {
@@ -218,18 +218,18 @@
 	};
 	3C16A0CE112F0D49003F86BA /* EmergencyContact.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {689, 454}}";
-			sepNavSelRange = "{800, 0}";
-			sepNavVisRange = "{0, 808}";
-			sepNavWindowFrame = "{{130, 486}, {748, 582}}";
+			sepNavIntBoundsRect = "{{0, 0}, {701, 469}}";
+			sepNavSelRange = "{847, 0}";
+			sepNavVisRange = "{0, 854}";
+			sepNavWindowFrame = "{{858, 586}, {748, 582}}";
 		};
 	};
 	3C16A0CF112F0D49003F86BA /* EmergencyContact.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {689, 936}}";
-			sepNavSelRange = "{1180, 0}";
-			sepNavVisRange = "{755, 548}";
-			sepNavWindowFrame = "{{858, 586}, {748, 582}}";
+			sepNavIntBoundsRect = "{{0, 0}, {701, 1092}}";
+			sepNavSelRange = "{1407, 0}";
+			sepNavVisRange = "{873, 679}";
+			sepNavWindowFrame = "{{211, 538}, {748, 582}}";
 		};
 	};
 	3C2A950511209C8D00D10B62 /* ItemTableViewController.h */ = {
@@ -242,9 +242,9 @@
 	};
 	3C2A950611209C8D00D10B62 /* ItemTableViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {689, 3861}}";
-			sepNavSelRange = "{5632, 127}";
-			sepNavVisRange = "{958, 850}";
+			sepNavIntBoundsRect = "{{0, 0}, {701, 3627}}";
+			sepNavSelRange = "{6884, 0}";
+			sepNavVisRange = "{5986, 1121}";
 			sepNavWindowFrame = "{{541, 485}, {748, 582}}";
 		};
 	};
@@ -308,7 +308,7 @@
 		isSCMEnabled = 0;
 		scmConfiguration = {
 			repositoryNamesForRoots = {
-				"" = MasterProject;
+				"" = "MasterProject at Noverse";
 			};
 		};
 	};
@@ -318,17 +318,17 @@
 	};
 	3C36385411171D53004A128B /* FavoritesViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {691, 507}}";
+			sepNavIntBoundsRect = "{{0, 0}, {703, 507}}";
 			sepNavSelRange = "{226, 75}";
-			sepNavVisRange = "{0, 1018}";
+			sepNavVisRange = "{0, 1083}";
 			sepNavWindowFrame = "{{831, 604}, {750, 558}}";
 		};
 	};
 	3C36385511171D53004A128B /* FavoritesViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {691, 1664}}";
-			sepNavSelRange = "{823, 0}";
-			sepNavVisRange = "{739, 638}";
+			sepNavIntBoundsRect = "{{0, 0}, {703, 1690}}";
+			sepNavSelRange = "{1204, 0}";
+			sepNavVisRange = "{715, 746}";
 			sepNavWindowFrame = "{{831, 604}, {750, 558}}";
 		};
 	};
@@ -353,9 +353,9 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 57;
-		modificationTime = 312232489.269205;
+		modificationTime = 312333373.321843;
 		originalNumberOfMultipleMatches = 1;
-		state = 1;
+		state = 0;
 	};
 	3C3638A31117232F004A128B /* ContactsViewController.m:57 */ = {
 		isa = PBXFileBreakpoint;
@@ -370,9 +370,9 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 57;
-		modificationTime = 312232489.269187;
+		modificationTime = 312333373.321901;
 		originalNumberOfMultipleMatches = 1;
-		state = 1;
+		state = 0;
 	};
 	3C3638A511172333004A128B /* ContactsViewController.m:57 */ = {
 		isa = PBXFileBreakpoint;
@@ -387,9 +387,9 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 57;
-		modificationTime = 312232489.269162;
+		modificationTime = 312333373.32196;
 		originalNumberOfMultipleMatches = 1;
-		state = 1;
+		state = 0;
 	};
 	3C363A06111738F8004A128B /* ContactsNavController.h */ = {
 		uiCtxt = {
@@ -401,25 +401,25 @@
 	};
 	3C363A07111738F8004A128B /* ContactsNavController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {687, 845}}";
+			sepNavIntBoundsRect = "{{0, 0}, {699, 845}}";
 			sepNavSelRange = "{349, 0}";
-			sepNavVisRange = "{593, 757}";
+			sepNavVisRange = "{595, 760}";
 			sepNavWindowFrame = "{{889, 580}, {746, 585}}";
 		};
 	};
 	3C363A14111739DC004A128B /* ContactsTableViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {691, 481}}";
-			sepNavSelRange = "{617, 0}";
-			sepNavVisRange = "{131, 821}";
+			sepNavIntBoundsRect = "{{0, 0}, {703, 507}}";
+			sepNavSelRange = "{654, 0}";
+			sepNavVisRange = "{131, 895}";
 			sepNavWindowFrame = "{{755, 599}, {750, 558}}";
 		};
 	};
 	3C363A15111739DC004A128B /* ContactsTableViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {691, 3991}}";
-			sepNavSelRange = "{5351, 0}";
-			sepNavVisRange = "{6968, 888}";
+			sepNavIntBoundsRect = "{{0, 0}, {703, 4134}}";
+			sepNavSelRange = "{3841, 0}";
+			sepNavVisRange = "{3547, 935}";
 			sepNavWindowFrame = "{{849, 606}, {750, 558}}";
 		};
 	};
@@ -465,9 +465,9 @@
 	};
 	3C69C229113D74C00011F428 /* AddressBookLookupTableViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {689, 4498}}";
-			sepNavSelRange = "{7653, 14}";
-			sepNavVisRange = "{7166, 972}";
+			sepNavIntBoundsRect = "{{0, 0}, {701, 5278}}";
+			sepNavSelRange = "{2894, 0}";
+			sepNavVisRange = "{2415, 935}";
 			sepNavWindowFrame = "{{327, 574}, {748, 582}}";
 		};
 	};
@@ -481,9 +481,9 @@
 	};
 	3C69C37B113D8ACF0011F428 /* AddAddressProtocol.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {689, 454}}";
-			sepNavSelRange = "{75, 0}";
-			sepNavVisRange = "{0, 430}";
+			sepNavIntBoundsRect = "{{0, 0}, {701, 469}}";
+			sepNavSelRange = "{449, 0}";
+			sepNavVisRange = "{0, 457}";
 			sepNavWindowFrame = "{{845, 596}, {748, 582}}";
 		};
 	};
@@ -505,7 +505,7 @@
 	};
 	3C719A3C1121D2D400074034 /* UIImage_Resize.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {687, 457}}";
+			sepNavIntBoundsRect = "{{0, 0}, {699, 472}}";
 			sepNavSelRange = "{399, 0}";
 			sepNavVisRange = "{0, 444}";
 			sepNavWindowFrame = "{{61, 546}, {746, 585}}";
@@ -513,25 +513,26 @@
 	};
 	3C719A3D1121D2D400074034 /* UIImage_Resize.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {687, 457}}";
+			sepNavIntBoundsRect = "{{0, 0}, {699, 472}}";
 			sepNavSelRange = "{370, 0}";
 			sepNavVisRange = "{0, 888}";
+			sepNavWindowFrame = "{{61, 546}, {746, 585}}";
 		};
 	};
 	3CA7CD611133221700E89769 /* QuickCallButton.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {689, 454}}";
-			sepNavSelRange = "{473, 0}";
-			sepNavVisRange = "{0, 479}";
+			sepNavIntBoundsRect = "{{0, 0}, {701, 469}}";
+			sepNavSelRange = "{494, 0}";
+			sepNavVisRange = "{0, 515}";
 			sepNavWindowFrame = "{{938, 378}, {748, 582}}";
 		};
 	};
 	3CA7CD621133221700E89769 /* QuickCallButton.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {689, 1261}}";
-			sepNavSelRange = "{1561, 0}";
-			sepNavVisRange = "{723, 1381}";
-			sepNavWindowFrame = "{{938, 378}, {748, 582}}";
+			sepNavIntBoundsRect = "{{0, 0}, {701, 2054}}";
+			sepNavSelRange = "{1564, 0}";
+			sepNavVisRange = "{512, 1428}";
+			sepNavWindowFrame = "{{591, 440}, {748, 582}}";
 		};
 	};
 	3CA7CDF011333EEA00E89769 /* QuickCall.h */ = {
@@ -560,10 +561,10 @@
 	};
 	3CAC819F11176B1E00A18521 /* EmergencyNumbersModel.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {687, 3029}}";
-			sepNavSelRange = "{4088, 0}";
-			sepNavVisRange = "{4419, 845}";
-			sepNavWindowFrame = "{{826, 579}, {746, 585}}";
+			sepNavIntBoundsRect = "{{0, 0}, {699, 2964}}";
+			sepNavSelRange = "{928, 0}";
+			sepNavVisRange = "{301, 821}";
+			sepNavWindowFrame = "{{265, 231}, {746, 585}}";
 		};
 	};
 	3CB63C761129E9E7006D2D53 /* Icon.png */ = {
@@ -593,7 +594,7 @@
 	};
 	3CC6BC23112480D300CD18CA /* IconLookupTableViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {689, 454}}";
+			sepNavIntBoundsRect = "{{0, 0}, {701, 469}}";
 			sepNavSelRange = "{335, 29}";
 			sepNavVisRange = "{0, 620}";
 			sepNavWindowFrame = "{{61, 549}, {748, 582}}";
@@ -601,9 +602,9 @@
 	};
 	3CC6BC24112480D300CD18CA /* IconLookupTableViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {689, 1495}}";
-			sepNavSelRange = "{2866, 0}";
-			sepNavVisRange = "{1929, 940}";
+			sepNavIntBoundsRect = "{{0, 0}, {701, 1651}}";
+			sepNavSelRange = "{2242, 0}";
+			sepNavVisRange = "{1475, 1138}";
 			sepNavWindowFrame = "{{1098, 502}, {748, 582}}";
 		};
 	};
@@ -673,7 +674,7 @@
 			sepNavIntBoundsRect = "{{0, 0}, {705, 434}}";
 			sepNavSelRange = "{0, 0}";
 			sepNavVisRect = "{{0, 0}, {705, 430}}";
-			sepNavWindowFrame = "{{522, 475}, {750, 558}}";
+			sepNavWindowFrame = "{{171, 464}, {750, 558}}";
 		};
 	};
 }

@@ -84,6 +84,13 @@
 			[model.iconsArray objectAtIndex:row]];
 	
 	UIImage *baseImage = [UIImage imageNamed:rowImageName];
+    if (row == 0)
+    {
+        if ([[model currentContact] image] != nil)
+        {
+            baseImage = [[model currentContact] image];
+        }
+    }
 	CGImageRef tmp = CGImageCreateWithImageInRect(
 		baseImage.CGImage, CGRectMake(46.0f, 10.0f, 64.0, 64.0));
 	

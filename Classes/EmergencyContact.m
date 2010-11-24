@@ -68,4 +68,16 @@
 			|| [[contact valueForKey:@"number"] isEqualToString:@""]);
 }
 
+- (UIImage *)image
+{
+	NSData *data = [contact valueForKey:@"image"];
+    return [UIImage imageWithData:data];
+}
+
+- (void)setImage:(UIImage *)image
+{
+    NSData *data = UIImagePNGRepresentation(image);
+    [contact setValue:data forKey:@"image"];
+}
+
 @end

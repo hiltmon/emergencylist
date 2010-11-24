@@ -9,6 +9,6 @@
 @protocol AddAddressProtocol
 
 - (void)cancelAddressAdd;
-- (void)addAddressName:(NSString *)name andNumber:(NSString *)number;
+- (void)addAddressName:(NSString *)name andNumber:(NSString *)number withImage:(UIImage *)image;
 
 @end

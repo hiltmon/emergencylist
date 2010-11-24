@@ -22,6 +22,7 @@
 @property (nonatomic, assign) NSString *button;
 @property (nonatomic, assign) NSString *color;
 @property (nonatomic, assign) NSString *icon;
+@property (nonatomic, assign) UIImage *image;
 
 - (BOOL)isValid;	// Has a name and a number 
 

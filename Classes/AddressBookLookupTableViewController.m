@@ -12,6 +12,7 @@
 #import "AddressBookLookupTableViewController.h"
 #import "EmergencyNumbersModel.h"
 #import "EmergencyContact.h";
+#import "UIImage_Resize.h"
 
 @implementation AddressBookLookupTableViewController
 
@@ -125,6 +126,12 @@
 	{
 		aSortName = aName;
 	}
+    
+    UIImage *image = nil;
+    if (ABPersonHasImageData(person))
+    {
+        image = [[UIImage imageWithData:(NSData *)ABPersonCopyImageData(person)] scaleToSize:CGSizeMake(75.0, 75.0)];
+    }
 	
 	ABMultiValueRef container = 
 		ABRecordCopyValue(person, kABPersonPhoneProperty);
@@ -153,7 +160,8 @@
 					aName, @"name",
 					aNumber, @"number",
 					aType, @"type",
-					aSortName, @"sort", nil];
+					aSortName, @"sort", 
+                    image, @"image", nil];
 			
 			// Add to letter index
 			// Set unicode - i.e. japanese to the end
@@ -288,7 +296,6 @@ titleForHeaderInSection:(NSInteger)section
 - (UITableViewCell *)tableView:(UITableView *)tableView 
 		 cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-   
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = 
@@ -323,6 +330,20 @@ titleForHeaderInSection:(NSInteger)section
 							   [callItem objectForKey:@"type"]];
 	}
 	cell.detailTextLabel.text = [callItem objectForKey:@"number"];
+    if ([callItem objectForKey:@"image"] != nil)
+    {
+        cell.imageView.image = [callItem objectForKey:@"image"];
+    }
+    else
+    {
+        UIImage *baseImage = [UIImage imageNamed:@"PersonIcon.png"];
+        CGImageRef tmp = CGImageCreateWithImageInRect(baseImage.CGImage, CGRectMake(46.0f, 10.0f, 64.0, 64.0));
+        
+        cell.imageView.image = [[UIImage imageWithCGImage:tmp] scaleToSize:CGSizeMake(32.0f, 32.0f)];
+        
+        CGImageRelease(tmp);
+    }
+
 	
     return cell;
 }
@@ -336,7 +357,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 	NSDictionary *callItem = [sectionList objectAtIndex:row];
 	[delegate addAddressName:[callItem objectForKey:@"name"] 
 				   andNumber:[formatter stripToNumbers:
-							  [callItem objectForKey:@"number"]]];
+							  [callItem objectForKey:@"number"]]
+                   withImage:[callItem objectForKey:@"image"]];
 }
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView

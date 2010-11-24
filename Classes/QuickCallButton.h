@@ -16,6 +16,7 @@
 
 - (void)setTitle:(NSString *)myTitle 
 		   color:(NSString *)myColor
-			icon:(NSString *)myIcon;
+			icon:(NSString *)myIcon
+           image:(UIImage *)myImage;
 
 @end

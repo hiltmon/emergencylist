@@ -56,7 +56,7 @@
 					@"Blue", @"Yellow",
 				    @"Cyan", @"Pink", @"Purple", nil];
 	
-	iconsArray = [[NSArray alloc] initWithObjects:@"Bull", @"Default",
+	iconsArray = [[NSArray alloc] initWithObjects:@"Photo", @"Bull", @"Default",
 				   @"Fire", @"Government", @"Home",
 				   @"Insurance", @"Mask", @"Medical", @"Money", 
 				   @"Office", @"Person", @"Police",
@@ -133,7 +133,6 @@
 
 #pragma mark -
 #pragma mark Virtual Accessors
-
 
 - (EmergencyContact *)currentContact
 {
