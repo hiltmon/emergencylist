@@ -32,6 +32,7 @@
 						  @"011 (###) ###-####",
 						  @"(###) ###-####",
 						  @"###-####",
+                          @"###",               // Emergency
 						  nil];
 	
 	NSArray *gbPatterns = [[NSArray alloc] initWithObjects:
@@ -40,6 +41,7 @@
 						   @"07### ######",
 						   @"#### ###-####",
 						   @"###-####",
+                           @"###",               // Emergency
 						   nil];
 	
 	NSArray *auPatterns = [[NSArray alloc] initWithObjects:
@@ -49,14 +51,18 @@
 						   @"2 #### ####",
 						   @"04## ### ###",		// Mobiles
 						   @"####-####",
+                           @"### ###",          // 13 Numbers
+                           @"###",              // Emergency
 						   nil];
 	
 	NSArray *frPatterns = [[NSArray alloc] initWithObjects:
 						   @"## ## ## ## ##",
+                           @"###",               // Emergency
 						   nil];
 	
 	NSArray *dePatterns = [[NSArray alloc] initWithObjects:
 						   @"### #######",
+                           @"###",               // Emergency
 						   nil];
 	
 	NSArray *arPatterns = [[NSArray alloc] initWithObjects:
@@ -66,14 +72,17 @@
 						   @"#### ####",
 						   @"### ####",
 						   @"### ###",
+                           @"###",               // Emergency
 						   nil];
 	
 	NSArray *brPatterns = [[NSArray alloc] initWithObjects:
 						   @"## #### ####",
+                           @"###",               // Emergency
 						   nil];
 	
 	NSArray *jpPatterns = [[NSArray alloc] initWithObjects:
 						   @"## #### ####",
+                           @"###",               // Emergency
 						   nil];
 	
 	phoneNumberPatterns = [[NSDictionary alloc] initWithObjectsAndKeys:

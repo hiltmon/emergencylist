@@ -11,7 +11,7 @@
 
 #import "AddressBookLookupTableViewController.h"
 #import "EmergencyNumbersModel.h"
-#import "EmergencyContact.h";
+#import "EmergencyContact.h"
 #import "UIImage_Resize.h"
 
 @implementation AddressBookLookupTableViewController

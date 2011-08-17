@@ -46,35 +46,37 @@
 	else
 	{
 		NSUInteger numberLength = [theContact.number length];
-		NSString *areaCode = [theContact.number substringWithRange: 
+        if (numberLength >= 7)
+        {
+            NSString *areaCode = [theContact.number substringWithRange: 
 							  NSMakeRange (numberLength-7, 3)];
 		
-		//NSLog(@"Area Code: %@", areaCode);
-		if ([areaCode isEqualToString:@"555"])
-		{
-			[self alertWithTitle:@"Movie Number"
-						 message:[NSString stringWithFormat:@"Calling %@", 
-								  theContact.number]];
-		}
-		else
-		{
-			NSString *deviceType = [UIDevice currentDevice].model;
-			if ([deviceType isEqualToString:@"iPhone"])
-			{
-				// Call it
-				NSString *phoneString = [NSString stringWithFormat:@"tel:%@", 
-										 theContact.number];
-				NSURL *phoneNumberURL = [NSURL URLWithString:phoneString];
-				[[UIApplication sharedApplication] openURL:phoneNumberURL];
-			}
-			else
-			{
-				[self alertWithTitle:@"No Phone on Device"
-							 message:[NSString stringWithFormat:@"Please Call %@", 
-									  theContact.number]];
-			}
-
-		}
+            //NSLog(@"Area Code: %@", areaCode);
+            if ([areaCode isEqualToString:@"555"])
+            {
+                [self alertWithTitle:@"Movie Number"
+                             message:[NSString stringWithFormat:@"Calling %@", 
+                                      theContact.number]];
+                return;
+            }
+        }
+        
+        // If its an iPhone, make the call
+        NSString *deviceType = [UIDevice currentDevice].model;
+        if ([deviceType isEqualToString:@"iPhone"])
+        {
+            // Call it
+            NSString *phoneString = [NSString stringWithFormat:@"tel:%@", 
+                                     theContact.number];
+            NSURL *phoneNumberURL = [NSURL URLWithString:phoneString];
+            [[UIApplication sharedApplication] openURL:phoneNumberURL];
+        }
+        else
+        {
+            [self alertWithTitle:@"No Phone on Device"
+                         message:[NSString stringWithFormat:@"Please Call %@", 
+                                  theContact.number]];
+        }
 	}
 	
 }
